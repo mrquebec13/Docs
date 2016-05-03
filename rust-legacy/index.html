@@ -523,7 +523,7 @@
 </code></pre>
 
 <ul>
-<li>Returning a non-null value overrides default behavior, plugin should call approval.Deny if it does this</li>
+<li>Returning true overrides default behavior, plugin should call approval.Deny if it does this</li>
 </ul>
 
 <h2 id="canclientlogin">CanClientLogin</h2>
@@ -622,7 +622,7 @@
 
 <ul>
 <li>Called when a player sends chat to the server</li>
-<li>Returning a non-null value overrides default behavior of chat, not commands</li>
+<li>Returning true overrides default behavior of chat, not commands</li>
 </ul>
 
 <h2 id="onplayervoice">OnPlayerVoice</h2>
@@ -661,7 +661,7 @@
 
 <ul>
 <li>Called when a player starts crafting an item</li>
-<li>Returning a non-null value overrides default behavior</li>
+<li>Returning true overrides default behavior</li>
 </ul>
 
 <h2 id="onblueprintuse">OnBlueprintUse</h2>
@@ -681,7 +681,7 @@
 
 <ul>
 <li>Called when a player tries to study a blueprint</li>
-<li>Returning a non-null value overrides default behavior</li>
+<li>Returning true overrides default behavior</li>
 </ul>
 
 <h2 id="onresearchitem">OnResearchItem</h2>
@@ -909,7 +909,7 @@
 
 <ul>
 <li>Called when a structure tries to decay</li>
-<li>Returning a non-null value overrides default behavior</li>
+<li>Returning true overrides default behavior</li>
 </ul>
 
 <h2 id="ondoortoggle">OnDoorToggle</h2>

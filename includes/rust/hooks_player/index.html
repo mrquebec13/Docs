@@ -67,9 +67,8 @@
 </code></pre>
 
 <ul>
-<li>Called from BasePlayer.EligibleForWounding</li>
-<li>Called when a player dies</li>
-<li>Returning true or false will cancel default behavior</li>
+<li>Called when any damage is attempted on player</li>
+<li>Returning true overrides default behavior</li>
 </ul>
 
 <h2 id="canclientlogin">CanClientLogin</h2>
@@ -93,9 +92,8 @@
 </code></pre>
 
 <ul>
-<li>Called from RustCore.IOnUserApprove</li>
 <li>Returning a string will use the string as the error message</li>
-<li>Returning true will allow the connection, returning nothing will by default allow the connection, returning anything else will reject it with an error message</li>
+<li>Returning true allowsthe connection, returning nothing will by default allow the connection, returning anything else will reject it with an error message</li>
 </ul>
 
 <h2 id="canlootplayer">CanLootPlayer</h2>
@@ -119,9 +117,8 @@
 </code></pre>
 
 <ul>
-<li>Called from BasePlayer.CanBeLooted</li>
 <li>Called when a player attempts to loot another player</li>
-<li>Returning true or false will cancel default behavior</li>
+<li>Returning true overrides default behavior</li>
 </ul>
 
 <h2 id="onfindspawnpoint">OnFindSpawnPoint</h2>
@@ -145,7 +142,6 @@
 </code></pre>
 
 <ul>
-<li>Called from ServerMgr.BasePlayer/SpawnPoint</li>
 <li>Useful for controlling player spawnpoints (like making all spawns occur in a set area)</li>
 <li>Return a BasePlayer.SpawnPoint object to use that spawnpoint</li>
 </ul>
@@ -171,7 +167,6 @@
 </code></pre>
 
 <ul>
-<li>Called from BasePlayer.SharedProjectileAttack and BaseMelee.DoAttackShared</li>
 <li>Useful for modifying an attack before it goes out</li>
 <li>hitInfo.HitEntity should be the entity that this attack would hit</li>
 <li>Returning true cancels the attack</li>
@@ -198,9 +193,8 @@
 </code></pre>
 
 <ul>
-<li>Called from chat.say</li>
 <li>Called when a player sends chat to the server</li>
-<li>Returning a non-null value overrides default behavior of chat, not commands</li>
+<li>Returning true overrides default behavior of chat, not commands</li>
 </ul>
 
 <h2 id="onplayerconnected">OnPlayerConnected</h2>
@@ -224,7 +218,6 @@
 </code></pre>
 
 <ul>
-<li>Called from ServerMgr.ClientReady</li>
 <li>Called before the player object is created, but after the player has been approved to join the game</li>
 <li>Can get the connection from packet.connection</li>
 <li>No return behavior</li>
@@ -251,7 +244,6 @@
 </code></pre>
 
 <ul>
-<li>Called from BasePlayer.OnDisconnected</li>
 <li>Called after the player has disconnected from the server</li>
 <li>No return behavior</li>
 </ul>
@@ -277,7 +269,6 @@
 </code></pre>
 
 <ul>
-<li>Called from BasePlayer.PlayerInit</li>
 <li>Called when the player is initializing (after they&rsquo;ve connected, before they wake up)</li>
 <li>No return behavior</li>
 </ul>
@@ -303,7 +294,6 @@
 </code></pre>
 
 <ul>
-<li>Called from BasePlayer.OnReceiveTick</li>
 <li>Called when input is received from a connected client</li>
 <li>No return behavior</li>
 </ul>
@@ -329,7 +319,6 @@
 </code></pre>
 
 <ul>
-<li>Called from BasePlayer.Respawn</li>
 <li>Called when the player spawns (specifically when they click the &ldquo;Respawn&rdquo; button)</li>
 <li>ONLY called after the player has transitioned from dead to not-dead, so not when they&rsquo;re waking up</li>
 <li>This means it&rsquo;s possible for a player to connect and disconnect from a server without OnPlayerRespawned ever triggering for them</li>
@@ -357,7 +346,6 @@
 </code></pre>
 
 <ul>
-<li>Called from PlayerLoot.StartLootingEntity</li>
 <li>Called when the player starts looting an entity</li>
 <li>No return behavior</li>
 </ul>
@@ -383,7 +371,6 @@
 </code></pre>
 
 <ul>
-<li>Called from PlayerLoot.StartLootingPlayer</li>
 <li>Called when the player starts looting another player</li>
 <li>No return behavior</li>
 </ul>
@@ -409,7 +396,6 @@
 </code></pre>
 
 <ul>
-<li>Called from PlayerLoot.StartLootingItem</li>
 <li>Called when the player starts looting an item</li>
 <li>No return behavior</li>
 </ul>
@@ -435,7 +421,6 @@
 </code></pre>
 
 <ul>
-<li>Called from BasePlayer.EndSleeping</li>
 <li>Called when a player awakes</li>
 <li>No return behavior</li>
 </ul>
@@ -461,7 +446,6 @@
 </code></pre>
 
 <ul>
-<li>Called from RustCore.IOnRocketLaunched</li>
 <li>Called when a player launches a rocket</li>
 <li>No return behavior</li>
 </ul>
@@ -487,7 +471,6 @@
 </code></pre>
 
 <ul>
-<li>Called from PlayerMetabolism.RunMetabolism</li>
 <li>Called before a metabolism update occurs for the specified player</li>
 <li>Metabolism update consists of managing the player&rsquo;s temperature, health etc.</li>
 <li>You can use this to turn off or change certain aspects of the metabolism, either by editing values before returning, or taking complete control of the method</li>
@@ -516,9 +499,8 @@
 </code></pre>
 
 <ul>
-<li>Called from ConnectionAuth.OnNewConnection</li>
 <li>Called when a new connection is made by a user, after token, but before other checks.</li>
-<li>Returning a non-null value overrides default behavior, plugin should call Reject if it does this</li>
+<li>Returning true overrides default behavior, plugin should call Reject if it does this</li>
 </ul>
 
 <h2 id="onuserapprove">OnUserApprove</h2>
@@ -542,9 +524,8 @@
 </code></pre>
 
 <ul>
-<li>Called from ConnectionAuth.OnNewConnection</li>
 <li>Used by RustCore and abstracted into CanClientLogin</li>
-<li>Returning a non-null value overrides default behavior, plugin should call Reject if it does this</li>
+<li>Returning true overrides default behavior, plugin should call Reject if it does this</li>
 </ul>
 
 <h2 id="onweaponfired">OnWeaponFired</h2>
@@ -568,7 +549,6 @@
 </code></pre>
 
 <ul>
-<li>Called from RustCore.IOnWeaponFired</li>
 <li>Called when a player fires a weapon</li>
 <li>No return behavior</li>
 </ul>
@@ -594,7 +574,6 @@
 </code></pre>
 
 <ul>
-<li>Called from RustCore.IOnWeaponThrown</li>
 <li>Called when a player throws a weapon (grenade, c4, &hellip;)</li>
 <li>No return behavior</li>
 </ul>

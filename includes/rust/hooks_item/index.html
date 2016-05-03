@@ -46,6 +46,31 @@
       <div class="content">
         <h1 id="item-hooks">Item Hooks</h1>
 
+<h2 id="canacceptitem">CanAcceptItem</h2>
+<pre class="highlight csharp"><code><span class="k">void</span> <span class="nf">CanAcceptItem</span><span class="p">(</span><span class="n">ItemContainer</span> <span class="n">container</span><span class="p">,</span> <span class="n">Item</span> <span class="n">item</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="nf">Puts</span><span class="p">(</span><span class="s">"CanAcceptItem works!"</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre>
+<pre class="highlight lua"><code><span class="k">function</span> <span class="nf">PLUGIN</span><span class="p">:</span><span class="n">CanAcceptItem</span><span class="p">(</span><span class="n">container</span><span class="p">,</span> <span class="n">item</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"CanAcceptItem works!"</span><span class="p">)</span>
+<span class="k">end</span>
+</code></pre>
+<pre class="highlight javascript"><code><span class="nx">CanAcceptItem</span><span class="err">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">container</span><span class="p">,</span> <span class="nx">item</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">print</span><span class="p">(</span><span class="s2">"CanAcceptItem works!"</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre>
+<pre class="highlight coffeescript"><code><span class="nx">We</span> <span class="nx">need</span> <span class="nx">a</span> <span class="nx">CoffeeScript</span> <span class="nx">example</span> <span class="nx">here</span>
+</code></pre>
+<pre class="highlight python"><code><span class="k">def</span> <span class="nf">CanAcceptItem</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">container</span><span class="p">,</span> <span class="n">item</span><span class="p">):</span>
+    <span class="k">print</span> <span class="s">"CanAcceptItem works!"</span>
+</code></pre>
+
+<ul>
+<li>Called when attempting to put an item in a container</li>
+<li>Returning true overrides default behavior</li>
+</ul>
+
 <h2 id="onblueprintreveal">OnBlueprintReveal</h2>
 <pre class="highlight csharp"><code><span class="k">void</span> <span class="nf">OnBlueprintReveal</span><span class="p">(</span><span class="n">Item</span> <span class="n">item</span><span class="p">,</span> <span class="n">Item</span> <span class="n">revealed</span><span class="p">,</span> <span class="n">BasePlayer</span> <span class="n">player</span><span class="p">)</span>
 <span class="p">{</span>
@@ -67,7 +92,6 @@
 </code></pre>
 
 <ul>
-<li>Called from ItemModReveal.ServerCommand</li>
 <li>Called when a player attempts to reveal a blueprint</li>
 <li>No return behavior</li>
 </ul>
@@ -93,7 +117,6 @@
 </code></pre>
 
 <ul>
-<li>Called from Item.UseOneItem</li>
 <li>Called right after a consumable item is used</li>
 <li>No return behavior</li>
 </ul>
@@ -119,7 +142,6 @@
 </code></pre>
 
 <ul>
-<li>Called from BaseOven.ConsumeFuel</li>
 <li>Called right before fuel is used (furnace, lanterns, camp fires, etc.)</li>
 <li>No return behavior</li>
 </ul>
@@ -145,7 +167,6 @@
 </code></pre>
 
 <ul>
-<li>Called from ResourceDispenser.GiveResourceFromItem</li>
 <li>Called before the player is given items from a resource</li>
 <li>No return behavior</li>
 </ul>
@@ -171,9 +192,8 @@
 </code></pre>
 
 <ul>
-<li>Called from SyringeWeapon.GiveEffectsTo and MedicalTool.GiveEffectsTo</li>
 <li>Called right before a Syringe or Medkit item is used</li>
-<li>Returning a non-null value will cancel default behavior</li>
+<li>Returning true overrides default behavior</li>
 </ul>
 
 <h2 id="onitemaddedtocontainer">OnItemAddedToContainer</h2>
@@ -197,7 +217,6 @@
 </code></pre>
 
 <ul>
-<li>Called from ItemContainer.Insert</li>
 <li>Called right after an item was added to a container</li>
 <li>An entire stack has to be created, not just adding more wood to a wood stack for example</li>
 <li>No return behavior</li>
@@ -224,7 +243,6 @@
 </code></pre>
 
 <ul>
-<li>Called from ItemCrafter.CraftItem</li>
 <li>Called right after an item is added to the crafting queue</li>
 <li>Return an ItemCraftTask object to modify behavior or outcome</li>
 </ul>
@@ -250,9 +268,8 @@
 </code></pre>
 
 <ul>
-<li>Called from ItemCrafter.CancelTask</li>
 <li>Called before an item has been crafted</li>
-<li>Returning a non-null value will cancel default behavior</li>
+<li>Returning true overrides default behavior</li>
 </ul>
 
 <h2 id="onitemcraftfinished">OnItemCraftFinished</h2>
@@ -276,7 +293,6 @@
 </code></pre>
 
 <ul>
-<li>Called from ItemCrafter.FinishCrafting</li>
 <li>Called right after an item has been crafted</li>
 <li>No return behavior</li>
 </ul>
@@ -302,7 +318,6 @@
 </code></pre>
 
 <ul>
-<li>Called from Deployer.DoDeploy_Regular and Deployer.DoDeploy_Slot</li>
 <li>Called right after an item has been deployed</li>
 <li>No return behavior</li>
 </ul>
@@ -328,7 +343,6 @@
 </code></pre>
 
 <ul>
-<li>Called from RustCore.IOnItemPickup</li>
 <li>Called when a player collects an item</li>
 <li>No return behavior</li>
 </ul>
@@ -354,9 +368,8 @@
 </code></pre>
 
 <ul>
-<li>Called from ResearchTable.DoResearch</li>
 <li>Called right before a player begins to research an item</li>
-<li>Returning a non-null value will cancel default behavior</li>
+<li>Returning true overrides default behavior</li>
 </ul>
 
 <h2 id="onitemresearchend">OnItemResearchEnd</h2>
@@ -384,7 +397,6 @@
 </code></pre>
 
 <ul>
-<li>Called from RustCore.IOnItemResearchEnd</li>
 <li>Called right before a player finishes researching an item</li>
 <li>Returning a float will affect if researching is successful or not</li>
 </ul>
@@ -410,7 +422,6 @@
 </code></pre>
 
 <ul>
-<li>Called from ResearchTable.DoResearch</li>
 <li>Called when a player has started researching an item</li>
 <li>No return behavior</li>
 </ul>
@@ -436,9 +447,33 @@
 </code></pre>
 
 <ul>
-<li>Called from ItemContainer.Remove</li>
 <li>Called right after an item was removed from a container</li>
 <li>The entire stack has to be removed for this to be called, not just a little bit</li>
+<li>No return behavior</li>
+</ul>
+
+<h2 id="onitemsplit">OnItemSplit</h2>
+<pre class="highlight csharp"><code><span class="k">void</span> <span class="nf">OnItemSplit</span><span class="p">(</span><span class="n">Item</span> <span class="n">item</span><span class="p">,</span> <span class="kt">int</span> <span class="n">amount</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="nf">Puts</span><span class="p">(</span><span class="s">"OnItemSplit works!"</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre>
+<pre class="highlight lua"><code><span class="k">function</span> <span class="nf">PLUGIN</span><span class="p">:</span><span class="n">OnItemSplit</span><span class="p">(</span><span class="n">item</span><span class="p">,</span> <span class="n">amount</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"OnItemSplit works!"</span><span class="p">)</span>
+<span class="k">end</span>
+</code></pre>
+<pre class="highlight javascript"><code><span class="nx">OnItemSplit</span><span class="err">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">item</span><span class="p">,</span> <span class="nx">amount</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">print</span><span class="p">(</span><span class="s2">"OnItemSplit works!"</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre>
+<pre class="highlight coffeescript"><code><span class="nx">We</span> <span class="nx">need</span> <span class="nx">a</span> <span class="nx">CoffeeScript</span> <span class="nx">example</span> <span class="nx">here</span>
+</code></pre>
+<pre class="highlight python"><code><span class="k">def</span> <span class="nf">OnItemSplit</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">item</span><span class="p">,</span> <span class="n">amount</span><span class="p">):</span>
+    <span class="k">print</span> <span class="s">"OnItemSplit works!"</span>
+</code></pre>
+
+<ul>
+<li>Called right before an item is upgraded</li>
 <li>No return behavior</li>
 </ul>
 
@@ -448,22 +483,21 @@
     <span class="nf">Puts</span><span class="p">(</span><span class="s">"OnItemUpgrade works!"</span><span class="p">);</span>
 <span class="p">}</span>
 </code></pre>
-<pre class="highlight lua"><code><span class="k">function</span> <span class="nf">PLUGIN</span><span class="p">:</span><span class="n">OnItemUpgrade</span><span class="p">(</span><span class="n">item</span><span class="p">,</span> <span class="n">upgraded</span><span class="p">,</span> <span class="n">item</span><span class="p">)</span>
+<pre class="highlight lua"><code><span class="k">function</span> <span class="nf">PLUGIN</span><span class="p">:</span><span class="n">OnItemUpgrade</span><span class="p">(</span><span class="n">item</span><span class="p">,</span> <span class="n">upgraded</span><span class="p">,</span> <span class="n">player</span><span class="p">)</span>
     <span class="nb">print</span><span class="p">(</span><span class="s2">"OnItemUpgrade works!"</span><span class="p">)</span>
 <span class="k">end</span>
 </code></pre>
-<pre class="highlight javascript"><code><span class="nx">OnItemUpgrade</span><span class="err">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">item</span><span class="p">,</span> <span class="nx">upgraded</span><span class="p">,</span> <span class="nx">item</span><span class="p">)</span> <span class="p">{</span>
+<pre class="highlight javascript"><code><span class="nx">OnItemUpgrade</span><span class="err">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">item</span><span class="p">,</span> <span class="nx">upgraded</span><span class="p">,</span> <span class="nx">player</span><span class="p">)</span> <span class="p">{</span>
     <span class="nx">print</span><span class="p">(</span><span class="s2">"OnItemUpgrade works!"</span><span class="p">);</span>
 <span class="p">}</span>
 </code></pre>
 <pre class="highlight coffeescript"><code><span class="nx">We</span> <span class="nx">need</span> <span class="nx">a</span> <span class="nx">CoffeeScript</span> <span class="nx">example</span> <span class="nx">here</span>
 </code></pre>
-<pre class="highlight python"><code><span class="k">def</span> <span class="nf">OnItemUpgrade</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">item</span><span class="p">,</span> <span class="n">upgraded</span><span class="p">,</span> <span class="n">item</span><span class="p">):</span>
+<pre class="highlight python"><code><span class="k">def</span> <span class="nf">OnItemUpgrade</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">item</span><span class="p">,</span> <span class="n">upgraded</span><span class="p">,</span> <span class="n">player</span><span class="p">):</span>
     <span class="k">print</span> <span class="s">"OnItemUpgrade works!"</span>
 </code></pre>
 
 <ul>
-<li>Called from ItemModUpgrade.ServerCommand</li>
 <li>Called right before an item is upgraded</li>
 <li>No return behavior</li>
 </ul>
@@ -489,7 +523,6 @@
 </code></pre>
 
 <ul>
-<li>Called from Item.LoseCondition</li>
 <li>Called right before the condition of the item is modified</li>
 <li>No return behavior</li>
 </ul>
@@ -515,7 +548,6 @@
 </code></pre>
 
 <ul>
-<li>Called from RustCore.IOnPlantGather</li>
 <li>Called when a player gathers a plant</li>
 <li>No return behavior</li>
 </ul>
@@ -541,7 +573,6 @@
 </code></pre>
 
 <ul>
-<li>Called from MiningQuarry.SetOn</li>
 <li>Called when a mining quarry is turned on/enabled</li>
 <li>No return behavior</li>
 </ul>
@@ -567,7 +598,6 @@
 </code></pre>
 
 <ul>
-<li>Called from MiningQuarry.ProcessResources</li>
 <li>Called before items are gathered from a quarry</li>
 <li>No return behavior</li>
 </ul>
@@ -593,7 +623,6 @@
 </code></pre>
 
 <ul>
-<li>Called from SurveyCharge.Explode</li>
 <li>Called before items are gathered from a survey charge</li>
 <li>No return behavior</li>
 </ul>
@@ -619,7 +648,6 @@
 </code></pre>
 
 <ul>
-<li>Called from RustCore.IOnTrapArm</li>
 <li>Called when a player arms a bear trap</li>
 <li>No return behavior</li>
 </ul>
@@ -645,7 +673,6 @@
 </code></pre>
 
 <ul>
-<li>Called from RustCore.IOnTrapDisarm</li>
 <li>Called when a player disarms a land mine</li>
 <li>No return behavior</li>
 </ul>
@@ -671,7 +698,6 @@
 </code></pre>
 
 <ul>
-<li>Called from BaseTrapTrigger.OnObjectAdded</li>
 <li>Called when a trap is triggered by a game object</li>
 <li>No return behavior</li>
 </ul>
@@ -697,7 +723,6 @@
 </code></pre>
 
 <ul>
-<li>Called from BaseTrap.ObjectEntered</li>
 <li>Called when a trap is triggered by a game object</li>
 <li>No return behavior</li>
 </ul>
