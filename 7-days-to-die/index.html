@@ -846,25 +846,25 @@
 <span class="k">namespace</span> <span class="nn">Oxide.Plugins</span>
 <span class="p">{</span>
     <span class="p">[</span><span class="nf">Info</span><span class="p">(</span><span class="s">"EpicPlugin"</span><span class="p">,</span> <span class="s">"Unknown"</span><span class="p">,</span> <span class="m">1.0</span><span class="p">)]</span>
-    <span class="p">[</span><span class="nf">Description</span><span class="p">(</span><span class="s">"This example illustrates how to use a GET WebRequest."</span><span class="p">)]</span>
+    <span class="p">[</span><span class="nf">Description</span><span class="p">(</span><span class="s">"This example illustrates how to use a GET WebRequest"</span><span class="p">)]</span>
 
-    <span class="k">class</span> <span class="nc">EpicPlugin</span> <span class="p">:</span> <span class="n">RustPlugin</span>
+    <span class="k">class</span> <span class="nc">EpicPlugin</span> <span class="p">:</span> <span class="n">CovalencePlugin</span>
     <span class="p">{</span>
-        <span class="p">[</span><span class="nf">ChatCommand</span><span class="p">(</span><span class="s">"getrequest"</span><span class="p">)]</span>
-        <span class="k">void</span> <span class="nf">GetRequest</span><span class="p">(</span><span class="n">BasePlayer</span> <span class="n">player</span><span class="p">,</span> <span class="kt">string</span> <span class="n">command</span><span class="p">,</span> <span class="kt">string</span><span class="p">[]</span> <span class="n">args</span><span class="p">)</span>
+        <span class="p">[</span><span class="nf">Command</span><span class="p">(</span><span class="s">"get"</span><span class="p">)]</span>
+        <span class="k">void</span> <span class="nf">GetRequest</span><span class="p">(</span><span class="n">IPlayer</span> <span class="n">player</span><span class="p">,</span> <span class="kt">string</span> <span class="n">command</span><span class="p">,</span> <span class="kt">string</span><span class="p">[]</span> <span class="n">args</span><span class="p">)</span>
         <span class="p">{</span>
             <span class="n">webrequest</span><span class="p">.</span><span class="nf">EnqueueGet</span><span class="p">(</span><span class="s">"http://www.google.com/search?q=oxide"</span><span class="p">,</span> <span class="p">(</span><span class="n">code</span><span class="p">,</span> <span class="n">response</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="nf">GetCallback</span><span class="p">(</span><span class="n">code</span><span class="p">,</span> <span class="n">response</span><span class="p">,</span> <span class="n">player</span><span class="p">),</span> <span class="k">this</span><span class="p">);</span>
         <span class="p">}</span>
 
-        <span class="k">void</span> <span class="nf">GetCallback</span><span class="p">(</span><span class="kt">int</span> <span class="n">code</span><span class="p">,</span> <span class="kt">string</span> <span class="n">response</span><span class="p">,</span> <span class="n">BasePlayer</span> <span class="n">player</span><span class="p">)</span>
+        <span class="k">void</span> <span class="nf">GetCallback</span><span class="p">(</span><span class="kt">int</span> <span class="n">code</span><span class="p">,</span> <span class="kt">string</span> <span class="n">response</span><span class="p">,</span> <span class="n">IPlayer</span> <span class="n">player</span><span class="p">)</span>
         <span class="p">{</span>
             <span class="k">if</span> <span class="p">(</span><span class="n">response</span> <span class="p">==</span> <span class="k">null</span> <span class="p">||</span> <span class="n">code</span> <span class="p">!=</span> <span class="m">200</span><span class="p">)</span>
             <span class="p">{</span>
-                <span class="nf">Puts</span><span class="p">(</span><span class="err">$</span><span class="s">"Error: {code} - Couldn't get an answer from Google for {player.displayName}"</span><span class="p">);</span>
+                <span class="nf">Puts</span><span class="p">(</span><span class="err">$</span><span class="s">"Error: {code} - Couldn't get an answer from Google for {player.Nickname}"</span><span class="p">);</span>
                 <span class="k">return</span><span class="p">;</span>
             <span class="p">}</span>
 
-            <span class="nf">Puts</span><span class="p">(</span><span class="err">$</span><span class="s">"Google answered for {player.displayName}: {response}"</span><span class="p">);</span>
+            <span class="nf">Puts</span><span class="p">(</span><span class="err">$</span><span class="s">"Google answered for {player.Nickname}: {response}"</span><span class="p">);</span>
         <span class="p">}</span>
     <span class="p">}</span>
 <span class="p">}</span>
@@ -898,8 +898,6 @@
 
 <p>This uses the raw connection to a web page as you would on your browser.</p>
 
-<p>Returns true/false</p>
-
 <h2 id="basic-post-method">Basic Post method</h2>
 <pre class="highlight csharp"><code><span class="k">using</span> <span class="nn">Oxide.Core</span><span class="p">;</span>
 <span class="k">using</span> <span class="nn">Oxide.Core.Libraries</span><span class="p">;</span>
@@ -907,23 +905,23 @@
 <span class="k">namespace</span> <span class="nn">Oxide.Plugins</span>
 <span class="p">{</span>
     <span class="p">[</span><span class="nf">Info</span><span class="p">(</span><span class="s">"EpicPlugin"</span><span class="p">,</span> <span class="s">"Unknown"</span><span class="p">,</span> <span class="m">1.0</span><span class="p">)]</span>
-    <span class="p">[</span><span class="nf">Description</span><span class="p">(</span><span class="s">"This example illustrates how to use a POST WebRequest."</span><span class="p">)]</span>
-    <span class="k">class</span> <span class="nc">EpicPlugin</span> <span class="p">:</span> <span class="n">RustPlugin</span>
+    <span class="p">[</span><span class="nf">Description</span><span class="p">(</span><span class="s">"This example illustrates how to use a POST WebRequest"</span><span class="p">)]</span>
+    <span class="k">class</span> <span class="nc">EpicPlugin</span> <span class="p">:</span> <span class="n">CovalencePlugin</span>
     <span class="p">{</span>
-        <span class="p">[</span><span class="nf">ChatCommand</span><span class="p">(</span><span class="s">"postrequest"</span><span class="p">)]</span>
-        <span class="k">void</span> <span class="nf">PostRequest</span><span class="p">(</span><span class="n">BasePlayer</span> <span class="n">player</span><span class="p">,</span> <span class="kt">string</span> <span class="n">command</span><span class="p">,</span> <span class="kt">string</span><span class="p">[]</span> <span class="n">args</span><span class="p">)</span>
+        <span class="p">[</span><span class="nf">Command</span><span class="p">(</span><span class="s">"post"</span><span class="p">)]</span>
+        <span class="k">void</span> <span class="nf">PostRequest</span><span class="p">(</span><span class="n">IPlayer</span> <span class="n">player</span><span class="p">,</span> <span class="kt">string</span> <span class="n">command</span><span class="p">,</span> <span class="kt">string</span><span class="p">[]</span> <span class="n">args</span><span class="p">)</span>
         <span class="p">{</span>
             <span class="n">webrequest</span><span class="p">.</span><span class="nf">EnqueuePost</span><span class="p">(</span><span class="s">"http://www.google.com/search?q=oxide"</span><span class="p">,</span> <span class="s">"param1=value1&amp;param2=value2"</span><span class="p">,</span> <span class="p">(</span><span class="n">code</span><span class="p">,</span> <span class="n">response</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="nf">PostCallback</span><span class="p">(</span><span class="n">code</span><span class="p">,</span> <span class="n">response</span><span class="p">,</span> <span class="n">player</span><span class="p">),</span> <span class="k">this</span><span class="p">);</span>
         <span class="p">}</span>
 
-        <span class="k">void</span> <span class="nf">PostCallback</span><span class="p">(</span><span class="kt">int</span> <span class="n">code</span><span class="p">,</span> <span class="kt">string</span> <span class="n">response</span><span class="p">,</span> <span class="n">BasePlayer</span> <span class="n">player</span><span class="p">)</span>
+        <span class="k">void</span> <span class="nf">PostCallback</span><span class="p">(</span><span class="kt">int</span> <span class="n">code</span><span class="p">,</span> <span class="kt">string</span> <span class="n">response</span><span class="p">,</span> <span class="n">IPlayer</span> <span class="n">player</span><span class="p">)</span>
         <span class="p">{</span>
             <span class="k">if</span> <span class="p">(</span><span class="n">response</span> <span class="p">==</span> <span class="k">null</span> <span class="p">||</span> <span class="n">code</span> <span class="p">!=</span> <span class="m">200</span><span class="p">)</span>
             <span class="p">{</span>
-                <span class="nf">Puts</span><span class="p">(</span><span class="err">$</span><span class="s">"Error: {code} - Couldn't get an answer from Google for {player.displayName}"</span><span class="p">);</span>
+                <span class="nf">Puts</span><span class="p">(</span><span class="err">$</span><span class="s">"Error: {code} - Couldn't get an answer from Google for {player.Nickname}"</span><span class="p">);</span>
                 <span class="k">return</span><span class="p">;</span>
             <span class="p">}</span>
-            <span class="nf">Puts</span><span class="p">(</span><span class="s">"Google answered for "</span> <span class="p">+</span> <span class="n">player</span><span class="p">.</span><span class="n">displayName</span> <span class="p">+</span> <span class="s">": "</span> <span class="p">+</span> <span class="n">response</span><span class="p">);</span>
+            <span class="nf">Puts</span><span class="p">(</span><span class="s">"Google answered for "</span> <span class="p">+</span> <span class="n">player</span><span class="p">.</span><span class="n">Nickname</span> <span class="p">+</span> <span class="s">": "</span> <span class="p">+</span> <span class="n">response</span><span class="p">);</span>
         <span class="p">}</span>
     <span class="p">}</span>
 <span class="p">}</span>
@@ -937,8 +935,6 @@
 <pre class="highlight python"><code><span class="n">We</span> <span class="n">need</span> <span class="n">a</span> <span class="n">Python</span> <span class="n">example</span> <span class="n">here</span>
 </code></pre>
 
-<p>Returns true/false</p>
-
 <h2 id="advanced-get-method">Advanced Get method</h2>
 <pre class="highlight csharp"><code><span class="k">using</span> <span class="nn">Oxide.Core</span><span class="p">;</span>
 <span class="k">using</span> <span class="nn">Oxide.Core.Libraries</span><span class="p">;</span>
@@ -946,12 +942,12 @@
 <span class="k">namespace</span> <span class="nn">Oxide.Plugins</span>
 <span class="p">{</span>
     <span class="p">[</span><span class="nf">Info</span><span class="p">(</span><span class="s">"EpicPlugin"</span><span class="p">,</span> <span class="s">"Unknown"</span><span class="p">,</span> <span class="m">1.0</span><span class="p">)]</span>
-    <span class="p">[</span><span class="nf">Description</span><span class="p">(</span><span class="s">"This example illustrates how to use a GET WebRequest."</span><span class="p">)]</span>
+    <span class="p">[</span><span class="nf">Description</span><span class="p">(</span><span class="s">"This example illustrates how to use a GET WebRequest"</span><span class="p">)]</span>
 
-    <span class="k">class</span> <span class="nc">EpicPlugin</span> <span class="p">:</span> <span class="n">RustPlugin</span>
+    <span class="k">class</span> <span class="nc">EpicPlugin</span> <span class="p">:</span> <span class="n">CovalencePlugin</span>
     <span class="p">{</span>
-        <span class="p">[</span><span class="nf">ChatCommand</span><span class="p">(</span><span class="s">"getrequest"</span><span class="p">)]</span>
-        <span class="k">void</span> <span class="nf">GetRequest</span><span class="p">(</span><span class="n">BasePlayer</span> <span class="n">player</span><span class="p">,</span> <span class="kt">string</span> <span class="n">command</span><span class="p">,</span> <span class="kt">string</span><span class="p">[]</span> <span class="n">args</span><span class="p">)</span>
+        <span class="p">[</span><span class="nf">Command</span><span class="p">(</span><span class="s">"get"</span><span class="p">)]</span>
+        <span class="k">void</span> <span class="nf">GetRequest</span><span class="p">(</span><span class="n">IPlayer</span> <span class="n">player</span><span class="p">,</span> <span class="kt">string</span> <span class="n">command</span><span class="p">,</span> <span class="kt">string</span><span class="p">[]</span> <span class="n">args</span><span class="p">)</span>
         <span class="p">{</span>
             <span class="c1">// Set a custom timeout (in milliseconds)
 </span>            <span class="n">var</span> <span class="n">timeout</span> <span class="p">=</span> <span class="m">200f</span><span class="p">;</span>
@@ -962,15 +958,15 @@
             <span class="n">webrequest</span><span class="p">.</span><span class="nf">EnqueueGet</span><span class="p">(</span><span class="s">"http://www.google.com/search?q=oxide"</span><span class="p">,</span> <span class="p">(</span><span class="n">code</span><span class="p">,</span> <span class="n">response</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="nf">GetCallback</span><span class="p">(</span><span class="n">code</span><span class="p">,</span> <span class="n">response</span><span class="p">,</span> <span class="n">player</span><span class="p">),</span> <span class="k">this</span><span class="p">,</span> <span class="n">headers</span><span class="p">,</span> <span class="n">timeout</span><span class="p">);</span>
         <span class="p">}</span>
 
-        <span class="k">void</span> <span class="nf">GetCallback</span><span class="p">(</span><span class="kt">int</span> <span class="n">code</span><span class="p">,</span> <span class="kt">string</span> <span class="n">response</span><span class="p">,</span> <span class="n">BasePlayer</span> <span class="n">player</span><span class="p">)</span>
+        <span class="k">void</span> <span class="nf">GetCallback</span><span class="p">(</span><span class="kt">int</span> <span class="n">code</span><span class="p">,</span> <span class="kt">string</span> <span class="n">response</span><span class="p">,</span> <span class="n">IPlayer</span> <span class="n">player</span><span class="p">)</span>
         <span class="p">{</span>
             <span class="k">if</span> <span class="p">(</span><span class="n">response</span> <span class="p">==</span> <span class="k">null</span> <span class="p">||</span> <span class="n">code</span> <span class="p">!=</span> <span class="m">200</span><span class="p">)</span>
             <span class="p">{</span>
-                <span class="nf">Puts</span><span class="p">(</span><span class="err">$</span><span class="s">"Error: {code} - Couldn't get an answer from Google for {player.displayName}"</span><span class="p">);</span>
+                <span class="nf">Puts</span><span class="p">(</span><span class="err">$</span><span class="s">"Error: {code} - Couldn't get an answer from Google for {player.Nickname}"</span><span class="p">);</span>
                 <span class="k">return</span><span class="p">;</span>
             <span class="p">}</span>
 
-            <span class="nf">Puts</span><span class="p">(</span><span class="err">$</span><span class="s">"Google answered for {player.displayName}: {response}"</span><span class="p">);</span>
+            <span class="nf">Puts</span><span class="p">(</span><span class="err">$</span><span class="s">"Google answered for {player.Nickname}: {response}"</span><span class="p">);</span>
         <span class="p">}</span>
     <span class="p">}</span>
 <span class="p">}</span>
@@ -984,8 +980,6 @@
 <pre class="highlight python"><code><span class="n">We</span> <span class="n">need</span> <span class="n">a</span> <span class="n">Python</span> <span class="n">example</span> <span class="n">here</span>
 </code></pre>
 
-<p>Returns true/false</p>
-
 <h2 id="advanced-post-method">Advanced Post method</h2>
 <pre class="highlight csharp"><code><span class="k">using</span> <span class="nn">Oxide.Core</span><span class="p">;</span>
 <span class="k">using</span> <span class="nn">Oxide.Core.Libraries</span><span class="p">;</span>
@@ -993,11 +987,11 @@
 <span class="k">namespace</span> <span class="nn">Oxide.Plugins</span>
 <span class="p">{</span>
     <span class="p">[</span><span class="nf">Info</span><span class="p">(</span><span class="s">"EpicPlugin"</span><span class="p">,</span> <span class="s">"Unknown"</span><span class="p">,</span> <span class="m">1.0</span><span class="p">)]</span>
-    <span class="p">[</span><span class="nf">Description</span><span class="p">(</span><span class="s">"This example illustrates how to use a POST WebRequest."</span><span class="p">)]</span>
-    <span class="k">class</span> <span class="nc">EpicPlugin</span> <span class="p">:</span> <span class="n">RustPlugin</span>
+    <span class="p">[</span><span class="nf">Description</span><span class="p">(</span><span class="s">"This example illustrates how to use a POST WebRequest"</span><span class="p">)]</span>
+    <span class="k">class</span> <span class="nc">EpicPlugin</span> <span class="p">:</span> <span class="n">CovalencePlugin</span>
     <span class="p">{</span>
-        <span class="p">[</span><span class="nf">ChatCommand</span><span class="p">(</span><span class="s">"postrequest"</span><span class="p">)]</span>
-        <span class="k">void</span> <span class="nf">PostRequest</span><span class="p">(</span><span class="n">BasePlayer</span> <span class="n">player</span><span class="p">,</span> <span class="kt">string</span> <span class="n">command</span><span class="p">,</span> <span class="kt">string</span><span class="p">[]</span> <span class="n">args</span><span class="p">)</span>
+        <span class="p">[</span><span class="nf">Command</span><span class="p">(</span><span class="s">"post"</span><span class="p">)]</span>
+        <span class="k">void</span> <span class="nf">PostRequest</span><span class="p">(</span><span class="n">IPlayer</span> <span class="n">player</span><span class="p">,</span> <span class="kt">string</span> <span class="n">command</span><span class="p">,</span> <span class="kt">string</span><span class="p">[]</span> <span class="n">args</span><span class="p">)</span>
         <span class="p">{</span>
             <span class="c1">// Set a timeout (in milliseconds)
 </span>            <span class="n">var</span> <span class="n">timeout</span> <span class="p">=</span> <span class="m">200f</span><span class="p">;</span>
@@ -1008,14 +1002,14 @@
             <span class="n">webrequest</span><span class="p">.</span><span class="nf">EnqueuePost</span><span class="p">(</span><span class="s">"http://www.google.com/search?q=oxide"</span><span class="p">,</span> <span class="s">"param1=value1&amp;param2=value2"</span><span class="p">,</span> <span class="p">(</span><span class="n">code</span><span class="p">,</span> <span class="n">response</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="nf">PostCallback</span><span class="p">(</span><span class="n">code</span><span class="p">,</span> <span class="n">response</span><span class="p">,</span> <span class="n">player</span><span class="p">),</span> <span class="k">this</span><span class="p">,</span> <span class="n">headers</span><span class="p">,</span> <span class="n">timeout</span><span class="p">);</span>
         <span class="p">}</span>
 
-        <span class="k">void</span> <span class="nf">PostCallback</span><span class="p">(</span><span class="kt">int</span> <span class="n">code</span><span class="p">,</span> <span class="kt">string</span> <span class="n">response</span><span class="p">,</span> <span class="n">BasePlayer</span> <span class="n">player</span><span class="p">)</span>
+        <span class="k">void</span> <span class="nf">PostCallback</span><span class="p">(</span><span class="kt">int</span> <span class="n">code</span><span class="p">,</span> <span class="kt">string</span> <span class="n">response</span><span class="p">,</span> <span class="n">IPlayer</span> <span class="n">player</span><span class="p">)</span>
         <span class="p">{</span>
             <span class="k">if</span> <span class="p">(</span><span class="n">response</span> <span class="p">==</span> <span class="k">null</span> <span class="p">||</span> <span class="n">code</span> <span class="p">!=</span> <span class="m">200</span><span class="p">)</span>
             <span class="p">{</span>
-                <span class="nf">Puts</span><span class="p">(</span><span class="err">$</span><span class="s">"Error: {code} - Couldn't get an answer from Google for {player.displayName}"</span><span class="p">);</span>
+                <span class="nf">Puts</span><span class="p">(</span><span class="err">$</span><span class="s">"Error: {code} - Couldn't get an answer from Google for {player.Nickname}"</span><span class="p">);</span>
                 <span class="k">return</span><span class="p">;</span>
             <span class="p">}</span>
-            <span class="nf">Puts</span><span class="p">(</span><span class="s">"Google answered for "</span> <span class="p">+</span> <span class="n">player</span><span class="p">.</span><span class="n">displayName</span> <span class="p">+</span> <span class="s">": "</span> <span class="p">+</span> <span class="n">response</span><span class="p">);</span>
+            <span class="nf">Puts</span><span class="p">(</span><span class="s">"Google answered for "</span> <span class="p">+</span> <span class="n">player</span><span class="p">.</span><span class="n">Nickname</span> <span class="p">+</span> <span class="s">": "</span> <span class="p">+</span> <span class="n">response</span><span class="p">);</span>
         <span class="p">}</span>
     <span class="p">}</span>
 <span class="p">}</span>
@@ -1028,8 +1022,6 @@
 </code></pre>
 <pre class="highlight python"><code><span class="n">We</span> <span class="n">need</span> <span class="n">a</span> <span class="n">Python</span> <span class="n">example</span> <span class="n">here</span>
 </code></pre>
-
-<p>Returns true/false</p>
 
       </div>
       <div class="dark-box">
