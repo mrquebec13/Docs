@@ -65,14 +65,14 @@ version or oxide.version
 <pre class="highlight csharp"><code><span class="k">namespace</span> <span class="nn">Oxide.Plugins</span>
 <span class="p">{</span>
     <span class="p">[</span><span class="nf">Info</span><span class="p">(</span><span class="s">"EpicPlugin"</span><span class="p">,</span> <span class="s">"Unknown"</span><span class="p">,</span> <span class="s">"1.0.0"</span><span class="p">)]</span>
-    <span class="p">[</span><span class="nf">Description</span><span class="p">(</span><span class="s">"A basic chat command."</span><span class="p">)]</span>
+    <span class="p">[</span><span class="nf">Description</span><span class="p">(</span><span class="s">"A basic chat command"</span><span class="p">)]</span>
 
-    <span class="k">class</span> <span class="nc">EpicPlugin</span> <span class="p">:</span> <span class="n">RustPlugin</span>
+    <span class="k">class</span> <span class="nc">EpicPlugin</span> <span class="p">:</span> <span class="n">CovalencePlugin</span>
     <span class="p">{</span>
-        <span class="p">[</span><span class="nf">ChatCommand</span><span class="p">(</span><span class="s">"test"</span><span class="p">)]</span>
-        <span class="k">void</span> <span class="nf">TestCommand</span><span class="p">(</span><span class="n">BasePlayer</span> <span class="n">player</span><span class="p">,</span> <span class="kt">string</span> <span class="n">command</span><span class="p">,</span> <span class="kt">string</span><span class="p">[]</span> <span class="n">args</span><span class="p">)</span>
+        <span class="p">[</span><span class="nf">Command</span><span class="p">(</span><span class="s">"test"</span><span class="p">)]</span>
+        <span class="k">void</span> <span class="nf">TestCommand</span><span class="p">(</span><span class="n">IPlayer</span> <span class="n">player</span><span class="p">,</span> <span class="kt">string</span> <span class="n">command</span><span class="p">,</span> <span class="kt">string</span><span class="p">[]</span> <span class="n">args</span><span class="p">)</span>
         <span class="p">{</span>
-            <span class="nf">SendReply</span><span class="p">(</span><span class="n">player</span><span class="p">,</span> <span class="s">"Test successful!"</span><span class="p">);</span>
+            <span class="n">player</span><span class="p">.</span><span class="nf">Reply</span><span class="p">(</span><span class="s">"Test successful!"</span><span class="p">);</span>
         <span class="p">}</span>
     <span class="p">}</span>
 <span class="p">}</span>
@@ -85,7 +85,7 @@ version or oxide.version
   <span class="nl">Title</span> <span class="p">:</span> <span class="s2">"EpicPlugin"</span><span class="p">,</span>
   <span class="nx">Author</span> <span class="err">:</span> <span class="s2">"Unknown"</span><span class="p">,</span>
   <span class="nx">Version</span> <span class="err">:</span> <span class="nx">V</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span>
-  <span class="nx">Description</span> <span class="err">:</span> <span class="s2">"A basic chat command."</span><span class="p">,</span>
+  <span class="nx">Description</span> <span class="err">:</span> <span class="s2">"A basic chat command"</span><span class="p">,</span>
 
   <span class="nx">Init</span><span class="err">:</span> <span class="kd">function</span> <span class="p">()</span>
   <span class="p">{</span>
@@ -94,7 +94,7 @@ version or oxide.version
 
   <span class="nx">TestCommand</span><span class="err">:</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">player</span><span class="p">,</span> <span class="nx">cmd</span><span class="p">,</span> <span class="nx">arg</span><span class="p">)</span>
   <span class="p">{</span>
-      <span class="nx">rust</span><span class="p">.</span><span class="nx">SendChatMessage</span><span class="p">(</span><span class="nx">player</span><span class="p">.</span><span class="nx">ToPlayer</span><span class="p">(),</span> <span class="s1">'Test successful!'</span><span class="p">);</span>
+      <span class="nx">player</span><span class="p">.</span><span class="nx">Reply</span><span class="p">(</span><span class="s1">'Test successful!'</span><span class="p">);</span>
   <span class="p">}</span>
 <span class="p">}</span>
 </code></pre>
@@ -107,15 +107,14 @@ version or oxide.version
 <span class="k">namespace</span> <span class="nn">Oxide.Plugins</span>
 <span class="p">{</span>
     <span class="p">[</span><span class="nf">Info</span><span class="p">(</span><span class="s">"EpicPlugin"</span><span class="p">,</span> <span class="s">"Unknown"</span><span class="p">,</span> <span class="s">"1.0.0"</span><span class="p">)]</span>
-    <span class="p">[</span><span class="nf">Description</span><span class="p">(</span><span class="s">"A basic console command."</span><span class="p">)]</span>
+    <span class="p">[</span><span class="nf">Description</span><span class="p">(</span><span class="s">"A basic console command"</span><span class="p">)]</span>
 
-    <span class="k">class</span> <span class="nc">EpicPlugin</span> <span class="p">:</span> <span class="n">RustPlugin</span>
+    <span class="k">class</span> <span class="nc">EpicPlugin</span> <span class="p">:</span> <span class="n">CovalencePlugin</span>
     <span class="p">{</span>
-        <span class="p">[</span><span class="nf">ConsoleCommand</span><span class="p">(</span><span class="s">"global.test"</span><span class="p">)]</span>
-        <span class="k">void</span> <span class="nf">TestCommand</span><span class="p">(</span><span class="n">ConsoleSystem</span><span class="p">.</span><span class="n">Arg</span> <span class="n">arg</span><span class="p">)</span>
+        <span class="p">[</span><span class="nf">Command</span><span class="p">(</span><span class="s">"global.test"</span><span class="p">)]</span>
+        <span class="k">void</span> <span class="nf">TestCommand</span><span class="p">(</span><span class="n">IPlayer</span> <span class="n">player</span><span class="p">)</span>
         <span class="p">{</span>
-            <span class="k">if</span> <span class="p">(</span><span class="n">args</span><span class="p">.</span><span class="nf">Player</span><span class="p">()</span> <span class="p">==</span> <span class="k">null</span><span class="p">)</span> <span class="k">return</span><span class="p">;</span>
-            <span class="nf">SendReply</span><span class="p">(</span><span class="n">arg</span><span class="p">.</span><span class="nf">Player</span><span class="p">(),</span> <span class="s">"Test successful!"</span><span class="p">);</span>
+            <span class="nf">Puts</span><span class="p">(</span><span class="s">"Test successful!"</span><span class="p">);</span>
         <span class="p">}</span>
     <span class="p">}</span>
 <span class="p">}</span>
@@ -128,7 +127,7 @@ version or oxide.version
   <span class="nl">Title</span> <span class="p">:</span> <span class="s2">"EpicPlugin"</span><span class="p">,</span>
   <span class="nx">Author</span> <span class="err">:</span> <span class="s2">"Unknown"</span><span class="p">,</span>
   <span class="nx">Version</span> <span class="err">:</span> <span class="nx">V</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span>
-  <span class="nx">Description</span> <span class="err">:</span> <span class="s2">"A basic console command."</span><span class="p">,</span>
+  <span class="nx">Description</span> <span class="err">:</span> <span class="s2">"A basic console command"</span><span class="p">,</span>
 
   <span class="nx">Init</span><span class="err">:</span> <span class="kd">function</span> <span class="p">()</span>
   <span class="p">{</span>
@@ -137,8 +136,7 @@ version or oxide.version
 
   <span class="nx">TestCommand</span><span class="err">:</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">arg</span><span class="p">)</span>
   <span class="p">{</span>
-    <span class="k">if</span> <span class="p">(</span><span class="nx">arg</span><span class="p">.</span><span class="nx">Player</span><span class="p">()</span> <span class="o">==</span> <span class="kc">null</span><span class="p">)</span>
-    <span class="nx">SendReply</span><span class="p">(</span><span class="nx">arg</span><span class="p">.</span><span class="nx">Player</span><span class="p">(),</span> <span class="s1">'Test successful!'</span><span class="p">);</span>
+    <span class="nx">Puts</span><span class="p">(</span><span class="s1">'Test successful!'</span><span class="p">);</span>
   <span class="p">}</span>
 <span class="p">}</span>
 </code></pre>
