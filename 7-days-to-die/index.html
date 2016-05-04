@@ -121,6 +121,7 @@
 <p><a href="/7-days-to-die/"><img alt="7 Days to Die" src="../images/7-days-to-die/favicon-32x32.png" /></a>
 <a href="/beasts-of-prey/"><img alt="Beasts of Prey" src="../images/beasts-of-prey/favicon-32x32.png" /></a>
 <a href="/blockstorm/"><img alt="Blockstorm" src="../images/blockstorm/favicon-32x32.png" /></a>
+<a href="/hide-hold-out/"><img alt="Hide &amp; Hold Out" src="../images/hide-hold-out/favicon-32x32.png" /></a>
 <a href="/hurtworld/"><img alt="Hurtworld" src="../images/hurtworld/favicon-32x32.png" /></a>
 <a href="/reign-of-kings/"><img alt="Reign of Kings" src="../images/reign-of-kings/favicon-32x32.png" /></a>
 <a href="/rust/"><img alt="Rust" src="../images/rust/favicon-32x32.png" /></a>
@@ -150,9 +151,34 @@
 </code></pre>
 
 <ul>
-<li>Called when a plugin is being loaded</li>
+<li>Called when a plugin is being initialized</li>
 <li>Other plugins may or may not be present, dependant on load order</li>
-<li>Other plugins will have been executed though, so globals exposed by them will be present</li>
+</ul>
+
+<h2 id="loaded">Loaded</h2>
+<pre class="highlight csharp"><code><span class="k">void</span> <span class="nf">Loaded</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="nf">Puts</span><span class="p">(</span><span class="s">"Loaded works!"</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre>
+<pre class="highlight lua"><code><span class="k">function</span> <span class="nf">PLUGIN</span><span class="p">:</span><span class="n">Loaded</span><span class="p">()</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"Loaded works!"</span><span class="p">)</span>
+<span class="k">end</span>
+</code></pre>
+<pre class="highlight javascript"><code><span class="nx">Loaded</span><span class="err">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+  <span class="nx">print</span><span class="p">(</span><span class="s2">"Loaded works!"</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre>
+<pre class="highlight coffeescript"><code><span class="na">Loaded</span><span class="o">:</span> <span class="o">-&gt;</span>
+  <span class="nx">print</span> <span class="s">"Loaded works!"</span>
+</code></pre>
+<pre class="highlight python"><code><span class="k">def</span> <span class="nf">Loaded</span><span class="p">():</span>
+  <span class="k">print</span> <span class="s">"Loaded works!"</span>
+</code></pre>
+
+<ul>
+<li>Called when a plugin has finished loading</li>
+<li>Other plugins may or may not be present, dependant on load order</li>
 </ul>
 
 <h2 id="unload">Unload</h2>
