@@ -183,18 +183,18 @@
 <h2 id="unload">Unload</h2>
 <pre class="highlight csharp"><code><span class="k">void</span> <span class="nf">Unload</span><span class="p">()</span>
 <span class="p">{</span>
-    <span class="nf">Puts</span><span class="p">(</span><span class="s">"Save files, destroy timers, etc."</span><span class="p">);</span>
+    <span class="nf">Puts</span><span class="p">(</span><span class="s">"Save files, destroy timers, etc"</span><span class="p">);</span>
 <span class="p">}</span>
 </code></pre>
 <pre class="highlight lua"><code><span class="k">function</span> <span class="nf">PLUGIN</span><span class="p">:</span><span class="n">Unload</span><span class="p">()</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">"Save files, destroy timers, etc."</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"Save files, destroy timers, etc"</span><span class="p">)</span>
 <span class="k">end</span>
 </code></pre>
 <pre class="highlight coffeescript"><code><span class="na">Unload</span><span class="o">:</span> <span class="o">-&gt;</span>
   <span class="nx">print</span> <span class="s">"Save files, destroy timers, etc."</span>
 </code></pre>
 <pre class="highlight javascript"><code><span class="nx">Unload</span><span class="err">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
-  <span class="nx">print</span><span class="p">(</span><span class="s2">"Save files, destroy timers, etc."</span><span class="p">);</span>
+  <span class="nx">print</span><span class="p">(</span><span class="s2">"Save files, destroy timers, etc"</span><span class="p">);</span>
 <span class="p">}</span>
 </code></pre>
 <pre class="highlight python"><code><span class="k">def</span> <span class="nf">Unload</span><span class="p">():</span>
@@ -259,7 +259,7 @@
 <h2 id="onpluginloaded">OnPluginLoaded</h2>
 <pre class="highlight csharp"><code><span class="k">void</span> <span class="nf">OnPluginLoaded</span><span class="p">(</span><span class="n">Plugin</span> <span class="n">name</span><span class="p">)</span>
 <span class="p">{</span>
-    <span class="nf">Puts</span><span class="p">(</span><span class="s">"Plugin '"</span> <span class="p">+</span> <span class="n">name</span> <span class="p">+</span> <span class="s">"' has been loaded"</span><span class="p">);</span>
+    <span class="nf">Puts</span><span class="p">(</span><span class="err">$</span><span class="s">"Plugin '{name}' has been loaded"</span><span class="p">);</span>
 <span class="p">}</span>
 </code></pre>
 <pre class="highlight lua"><code><span class="k">function</span> <span class="nf">PLUGIN</span><span class="p">:</span><span class="n">OnPluginLoaded</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
@@ -284,7 +284,7 @@
 <h2 id="onpluginunloaded">OnPluginUnloaded</h2>
 <pre class="highlight csharp"><code><span class="k">void</span> <span class="nf">OnPluginUnloaded</span><span class="p">(</span><span class="n">Plugin</span> <span class="n">name</span><span class="p">)</span>
 <span class="p">{</span>
-    <span class="nf">Puts</span><span class="p">(</span><span class="s">"Plugin '"</span> <span class="p">+</span> <span class="n">name</span> <span class="p">+</span> <span class="s">"' has been unloaded"</span><span class="p">);</span>
+    <span class="nf">Puts</span><span class="p">(</span><span class="err">$</span><span class="s">"Plugin '{name}' has been unloaded"</span><span class="p">);</span>
 <span class="p">}</span>
 </code></pre>
 <pre class="highlight lua"><code><span class="k">function</span> <span class="nf">PLUGIN</span><span class="p">:</span><span class="n">OnPluginUnloaded</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
@@ -361,7 +361,7 @@
 <h2 id="onuserpermissiongranted">OnUserPermissionGranted</h2>
 <pre class="highlight csharp"><code><span class="k">void</span> <span class="nf">OnUserPermissionGranted</span><span class="p">(</span><span class="kt">string</span> <span class="n">name</span><span class="p">,</span> <span class="kt">string</span> <span class="n">perm</span><span class="p">)</span>
 <span class="p">{</span>
-    <span class="nf">Puts</span><span class="p">(</span><span class="s">"User '"</span> <span class="p">+</span> <span class="n">name</span> <span class="p">+</span> <span class="s">"' granted permission: "</span> <span class="p">+</span> <span class="n">perm</span><span class="p">);</span>
+    <span class="nf">Puts</span><span class="p">(</span><span class="err">$</span><span class="s">"User '{name}' granted permission: {perm}"</span><span class="p">);</span>
 <span class="p">}</span>
 </code></pre>
 <pre class="highlight lua"><code><span class="k">function</span> <span class="nf">PLUGIN</span><span class="p">:</span><span class="n">OnUserPermissionGranted</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">perm</span><span class="p">)</span>
@@ -386,7 +386,7 @@
 <h2 id="onuserpermissionrevoked">OnUserPermissionRevoked</h2>
 <pre class="highlight csharp"><code><span class="k">void</span> <span class="nf">OnUserPermissionRevoked</span><span class="p">(</span><span class="kt">string</span> <span class="n">name</span><span class="p">,</span> <span class="kt">string</span> <span class="n">perm</span><span class="p">)</span>
 <span class="p">{</span>
-    <span class="nf">Puts</span><span class="p">(</span><span class="s">"User '"</span> <span class="p">+</span> <span class="n">name</span> <span class="p">+</span> <span class="s">"' revoked permission: "</span> <span class="p">+</span> <span class="n">perm</span><span class="p">);</span>
+    <span class="nf">Puts</span><span class="p">(</span><span class="err">$</span><span class="s">"User '{name}' revoked permission: {perm}"</span><span class="p">);</span>
 <span class="p">}</span>
 </code></pre>
 <pre class="highlight lua"><code><span class="k">function</span> <span class="nf">PLUGIN</span><span class="p">:</span><span class="n">OnUserPermissionRevoked</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">perm</span><span class="p">)</span>
@@ -411,7 +411,7 @@
 <h2 id="ongrouppermissiongranted">OnGroupPermissionGranted</h2>
 <pre class="highlight csharp"><code><span class="k">void</span> <span class="nf">OnGroupPermissionGranted</span><span class="p">(</span><span class="kt">string</span> <span class="n">name</span><span class="p">,</span> <span class="kt">string</span> <span class="n">perm</span><span class="p">)</span>
 <span class="p">{</span>
-    <span class="nf">Puts</span><span class="p">(</span><span class="s">"Group '"</span> <span class="p">+</span> <span class="n">name</span> <span class="p">+</span> <span class="s">"' granted permission: "</span> <span class="p">+</span> <span class="n">perm</span><span class="p">);</span>
+    <span class="nf">Puts</span><span class="p">(</span><span class="err">$</span><span class="s">"Group '{name}' granted permission: {perm}"</span><span class="p">);</span>
 <span class="p">}</span>
 </code></pre>
 <pre class="highlight lua"><code><span class="k">function</span> <span class="nf">PLUGIN</span><span class="p">:</span><span class="n">OnGroupPermissionGranted</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">perm</span><span class="p">)</span>
@@ -436,7 +436,7 @@
 <h2 id="ongrouppermissionrevoked">OnGroupPermissionRevoked</h2>
 <pre class="highlight csharp"><code><span class="k">void</span> <span class="nf">OnGroupPermissionRevoked</span><span class="p">(</span><span class="kt">string</span> <span class="n">name</span><span class="p">,</span> <span class="kt">string</span> <span class="n">perm</span><span class="p">)</span>
 <span class="p">{</span>
-    <span class="nf">Puts</span><span class="p">(</span><span class="s">"Group '"</span> <span class="p">+</span> <span class="n">name</span> <span class="p">+</span> <span class="s">"' revoked permission: "</span> <span class="p">+</span> <span class="n">perm</span><span class="p">);</span>
+    <span class="nf">Puts</span><span class="p">(</span><span class="err">$</span><span class="s">"Group '{name}' revoked permission: {perm}"</span><span class="p">);</span>
 <span class="p">}</span>
 </code></pre>
 <pre class="highlight lua"><code><span class="k">function</span> <span class="nf">PLUGIN</span><span class="p">:</span><span class="n">OnGroupPermissionRevoked</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">perm</span><span class="p">)</span>
@@ -571,7 +571,7 @@
 </ul>
 
 <h2 id="onplayerconnected">OnPlayerConnected</h2>
-<pre class="highlight csharp"><code><span class="k">void</span> <span class="nf">OnPlayerConnected</span><span class="p">(</span><span class="n">NetUser</span> <span class="n">netuser</span><span class="p">)</span>
+<pre class="highlight csharp"><code><span class="k">void</span> <span class="nf">OnPlayerConnected</span><span class="p">(</span><span class="n">NetUser</span> <span class="n">netUser</span><span class="p">)</span>
 <span class="p">{</span>
     <span class="nf">Puts</span><span class="p">(</span><span class="s">"OnPlayerConnected works!"</span><span class="p">);</span>
 <span class="p">}</span>
@@ -631,7 +631,7 @@
 </ul>
 
 <h2 id="onplayerchat">OnPlayerChat</h2>
-<pre class="highlight csharp"><code><span class="k">void</span> <span class="nf">OnPlayerChat</span><span class="p">(</span><span class="n">NetUser</span> <span class="n">netuser</span><span class="p">,</span> <span class="kt">string</span> <span class="n">message</span><span class="p">)</span>
+<pre class="highlight csharp"><code><span class="k">void</span> <span class="nf">OnPlayerChat</span><span class="p">(</span><span class="n">NetUser</span> <span class="n">netUser</span><span class="p">,</span> <span class="kt">string</span> <span class="n">message</span><span class="p">)</span>
 <span class="p">{</span>
     <span class="nf">Puts</span><span class="p">(</span><span class="s">"OnPlayerChat works!"</span><span class="p">);</span>
 <span class="p">}</span>
@@ -651,7 +651,7 @@
 </ul>
 
 <h2 id="onplayervoice">OnPlayerVoice</h2>
-<pre class="highlight csharp"><code><span class="k">void</span> <span class="nf">OnPlayerVoice</span><span class="p">(</span><span class="n">NetUser</span> <span class="n">netuser</span><span class="p">,</span> <span class="n">List</span><span class="p">&lt;</span><span class="n">uLink</span><span class="p">.</span><span class="n">NetworkPlayer</span><span class="p">&gt;</span> <span class="n">players</span><span class="p">)</span>
+<pre class="highlight csharp"><code><span class="k">void</span> <span class="nf">OnPlayerVoice</span><span class="p">(</span><span class="n">NetUser</span> <span class="n">netUser</span><span class="p">,</span> <span class="n">List</span><span class="p">&lt;</span><span class="n">uLink</span><span class="p">.</span><span class="n">NetworkPlayer</span><span class="p">&gt;</span> <span class="n">players</span><span class="p">)</span>
 <span class="p">{</span>
     <span class="nf">Puts</span><span class="p">(</span><span class="s">"OnPlayerVoice works!"</span><span class="p">);</span>
 <span class="p">}</span>
@@ -968,24 +968,23 @@
 <p>There are a few functions that have been added to wrap Rust Legacy functions, creating aliases of sorts to make your life easier during initial coding as well as during upgrades.</p>
 
 <h2 id="broadcastchat">BroadcastChat</h2>
-<pre class="highlight csharp"><code><span class="k">void</span> <span class="nf">OnPlayerConnected</span><span class="p">(</span><span class="n">NetUser</span> <span class="n">netuser</span><span class="p">)</span>
+<pre class="highlight csharp"><code><span class="k">void</span> <span class="nf">OnPlayerConnected</span><span class="p">(</span><span class="n">NetUser</span> <span class="n">netUser</span><span class="p">)</span>
 <span class="p">{</span>
-    <span class="n">var</span> <span class="n">message</span> <span class="p">=</span> <span class="kt">string</span><span class="p">.</span><span class="nf">Format</span><span class="p">(</span><span class="s">"{0} has joined the server"</span><span class="p">,</span> <span class="n">netuser</span><span class="p">.</span><span class="n">displayName</span><span class="p">);</span>
-    <span class="n">rust</span><span class="p">.</span><span class="nf">BroadcastChat</span><span class="p">({</span> <span class="n">message</span> <span class="p">});</span>
+    <span class="nf">PrintToChat</span><span class="p">(</span><span class="err">$</span><span class="s">"{netUser.displayName} has joined the server"</span><span class="p">));</span>
 <span class="p">}</span>
 </code></pre>
-<pre class="highlight lua"><code><span class="k">function</span> <span class="nf">PLUGIN</span><span class="p">:</span><span class="n">OnPlayerConnected</span><span class="p">(</span><span class="n">netuser</span><span class="p">)</span>
-    <span class="n">rust</span><span class="p">.</span><span class="n">BroadcastChat</span><span class="p">(</span><span class="n">netuser</span><span class="p">.</span><span class="n">displayName</span> <span class="o">..</span> <span class="s2">" has joined the server"</span><span class="p">)</span>
+<pre class="highlight lua"><code><span class="k">function</span> <span class="nf">PLUGIN</span><span class="p">:</span><span class="n">OnPlayerConnected</span><span class="p">(</span><span class="n">netUser</span><span class="p">)</span>
+    <span class="n">rust</span><span class="p">.</span><span class="n">BroadcastChat</span><span class="p">(</span><span class="n">netUser</span><span class="p">.</span><span class="n">displayName</span> <span class="o">..</span> <span class="s2">" has joined the server"</span><span class="p">)</span>
 <span class="k">end</span>
 </code></pre>
 <pre class="highlight coffeescript"><code><span class="nx">We</span> <span class="nx">need</span> <span class="nx">a</span> <span class="nx">CoffeeScript</span> <span class="nx">example</span> <span class="nx">here</span>
 </code></pre>
-<pre class="highlight javascript"><code><span class="nx">OnPlayerConnected</span><span class="err">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">netuser</span><span class="p">)</span> <span class="p">{</span>
-    <span class="nx">rust</span><span class="p">.</span><span class="nx">BroadcastChat</span><span class="p">(</span><span class="nx">netuser</span><span class="p">.</span><span class="nx">displayName</span> <span class="o">+</span> <span class="s2">" has joined the server"</span><span class="p">);</span>
+<pre class="highlight javascript"><code><span class="nx">OnPlayerConnected</span><span class="err">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">netUser</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">rust</span><span class="p">.</span><span class="nx">BroadcastChat</span><span class="p">(</span><span class="nx">netUser</span><span class="p">.</span><span class="nx">displayName</span> <span class="o">+</span> <span class="s2">" has joined the server"</span><span class="p">);</span>
 <span class="p">}</span>
 </code></pre>
-<pre class="highlight python"><code><span class="k">def</span> <span class="nf">OnPlayerConnected</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">netuser</span><span class="p">):</span>
-    <span class="n">rust</span><span class="o">.</span><span class="n">BroadcastChat</span><span class="p">(</span><span class="n">netuser</span><span class="o">.</span><span class="n">displayName</span> <span class="o">+</span> <span class="s">" has joined the server"</span><span class="p">)</span>
+<pre class="highlight python"><code><span class="k">def</span> <span class="nf">OnPlayerConnected</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">netUser</span><span class="p">):</span>
+    <span class="n">rust</span><span class="o">.</span><span class="n">BroadcastChat</span><span class="p">(</span><span class="n">netUser</span><span class="o">.</span><span class="n">displayName</span> <span class="o">+</span> <span class="s">" has joined the server"</span><span class="p">)</span>
 </code></pre>
 
 <p>Sends a chat message to all players.</p>
@@ -993,24 +992,23 @@
 <p><code class="prettyprint">rust.BroadcastChat(string message, object[] args)</code></p>
 
 <h2 id="broadcastconsole">BroadcastConsole</h2>
-<pre class="highlight csharp"><code><span class="k">void</span> <span class="nf">OnPlayerConnected</span><span class="p">(</span><span class="n">NetUser</span> <span class="n">netuser</span><span class="p">)</span>
+<pre class="highlight csharp"><code><span class="k">void</span> <span class="nf">OnPlayerConnected</span><span class="p">(</span><span class="n">NetUser</span> <span class="n">netUser</span><span class="p">)</span>
 <span class="p">{</span>
-    <span class="n">var</span> <span class="n">message</span> <span class="p">=</span> <span class="kt">string</span><span class="p">.</span><span class="nf">Format</span><span class="p">(</span><span class="s">"{0} has joined the server"</span><span class="p">,</span> <span class="n">netuser</span><span class="p">.</span><span class="n">displayName</span><span class="p">);</span>
-    <span class="n">rust</span><span class="p">.</span><span class="nf">BroadcastConsole</span><span class="p">({</span> <span class="n">message</span> <span class="p">});</span>
+    <span class="nf">PrintToConsole</span><span class="p">(</span><span class="err">$</span><span class="s">"{netUser.displayName} has joined the server"</span><span class="p">);</span>
 <span class="p">}</span>
 </code></pre>
-<pre class="highlight lua"><code><span class="k">function</span> <span class="nf">PLUGIN</span><span class="p">:</span><span class="n">OnPlayerConnected</span><span class="p">(</span><span class="n">netuser</span><span class="p">)</span>
-    <span class="n">rust</span><span class="p">.</span><span class="n">BroadcastConsole</span><span class="p">(</span><span class="n">netuser</span><span class="p">.</span><span class="n">displayName</span> <span class="o">..</span> <span class="s2">" has joined the server"</span><span class="p">)</span>
+<pre class="highlight lua"><code><span class="k">function</span> <span class="nf">PLUGIN</span><span class="p">:</span><span class="n">OnPlayerConnected</span><span class="p">(</span><span class="n">netUser</span><span class="p">)</span>
+    <span class="n">rust</span><span class="p">.</span><span class="n">BroadcastConsole</span><span class="p">(</span><span class="n">netUser</span><span class="p">.</span><span class="n">displayName</span> <span class="o">..</span> <span class="s2">" has joined the server"</span><span class="p">)</span>
 <span class="k">end</span>
 </code></pre>
 <pre class="highlight coffeescript"><code><span class="nx">We</span> <span class="nx">need</span> <span class="nx">a</span> <span class="nx">CoffeeScript</span> <span class="nx">example</span> <span class="nx">here</span>
 </code></pre>
-<pre class="highlight javascript"><code><span class="nx">OnPlayerConnected</span><span class="err">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">netuser</span><span class="p">)</span> <span class="p">{</span>
-    <span class="nx">rust</span><span class="p">.</span><span class="nx">BroadcastConsole</span><span class="p">(</span><span class="nx">netuser</span><span class="p">.</span><span class="nx">displayName</span> <span class="o">+</span> <span class="s2">" has joined the server"</span><span class="p">);</span>
+<pre class="highlight javascript"><code><span class="nx">OnPlayerConnected</span><span class="err">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">netUser</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">rust</span><span class="p">.</span><span class="nx">BroadcastConsole</span><span class="p">(</span><span class="nx">netUser</span><span class="p">.</span><span class="nx">displayName</span> <span class="o">+</span> <span class="s2">" has joined the server"</span><span class="p">);</span>
 <span class="p">}</span>
 </code></pre>
-<pre class="highlight python"><code><span class="k">def</span> <span class="nf">OnPlayerConnected</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">netuser</span><span class="p">):</span>
-    <span class="n">rust</span><span class="o">.</span><span class="n">BroadcastConsole</span><span class="p">(</span><span class="n">netuser</span><span class="o">.</span><span class="n">displayName</span> <span class="o">+</span> <span class="s">" has joined the server"</span><span class="p">)</span>
+<pre class="highlight python"><code><span class="k">def</span> <span class="nf">OnPlayerConnected</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">netUser</span><span class="p">):</span>
+    <span class="n">rust</span><span class="o">.</span><span class="n">BroadcastConsole</span><span class="p">(</span><span class="n">netUser</span><span class="o">.</span><span class="n">displayName</span> <span class="o">+</span> <span class="s">" has joined the server"</span><span class="p">)</span>
 </code></pre>
 
 <p>Prints a message to all players&rsquo; in-game console</p>
@@ -1019,7 +1017,7 @@
 
 <h2 id="findplayer">FindPlayer</h2>
 <pre class="highlight csharp"><code><span class="p">[</span><span class="nf">ChatCommand</span><span class="p">(</span><span class="s">"ex"</span><span class="p">)</span>
-<span class="k">void</span> <span class="nf">Example</span><span class="p">(</span><span class="n">NetUser</span> <span class="n">netuser</span><span class="p">,</span> <span class="kt">string</span> <span class="n">command</span><span class="p">,</span> <span class="kt">string</span><span class="p">[]</span> <span class="n">args</span><span class="p">)</span>
+<span class="k">void</span> <span class="nf">Example</span><span class="p">(</span><span class="n">NetUser</span> <span class="n">netUser</span><span class="p">,</span> <span class="kt">string</span> <span class="n">command</span><span class="p">,</span> <span class="kt">string</span><span class="p">[]</span> <span class="n">args</span><span class="p">)</span>
 <span class="p">{</span>
     <span class="n">NetUser</span> <span class="n">target</span> <span class="p">=</span> <span class="n">rust</span><span class="p">.</span><span class="nf">FindPlayer</span><span class="p">(</span><span class="n">args</span><span class="p">[</span><span class="m">0</span><span class="p">]);</span>
 <span class="p">}</span>
@@ -1027,7 +1025,7 @@
 <pre class="highlight lua"><code><span class="k">function</span> <span class="nf">PLUGIN</span><span class="p">:</span><span class="n">Init</span><span class="p">()</span>
     <span class="n">cmd</span><span class="p">.</span><span class="n">AddChatCommand</span><span class="p">(</span><span class="s2">"ex"</span><span class="p">,</span>  <span class="n">self</span><span class="p">.</span><span class="n">Plugin</span><span class="p">,</span> <span class="s2">"Example"</span><span class="p">)</span>
 <span class="k">end</span>
-<span class="k">function</span> <span class="nf">PLUGIN</span><span class="p">:</span><span class="n">Example</span><span class="p">(</span><span class="n">netuser</span><span class="p">,</span> <span class="n">command</span><span class="p">,</span> <span class="n">args</span><span class="p">)</span>
+<span class="k">function</span> <span class="nf">PLUGIN</span><span class="p">:</span><span class="n">Example</span><span class="p">(</span><span class="n">netUser</span><span class="p">,</span> <span class="n">command</span><span class="p">,</span> <span class="n">args</span><span class="p">)</span>
     <span class="n">target</span> <span class="o">=</span> <span class="n">rust</span><span class="p">.</span><span class="n">FindPlayer</span><span class="p">(</span><span class="n">args</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
 <span class="k">end</span>
 </code></pre>
@@ -1036,17 +1034,17 @@
 <pre class="highlight javascript"><code><span class="nx">Init</span><span class="err">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
     <span class="nx">cmd</span><span class="p">.</span><span class="nx">AddChatCommand</span><span class="p">(</span><span class="s2">"ex"</span><span class="p">,</span>  <span class="nx">self</span><span class="p">.</span><span class="nx">Plugin</span><span class="p">,</span> <span class="s2">"Example"</span><span class="p">);</span>
 <span class="p">},</span>
-<span class="nx">Example</span><span class="err">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">netuser</span><span class="p">,</span> <span class="nx">command</span><span class="p">,</span> <span class="nx">args</span><span class="p">)</span> <span class="p">{</span>
+<span class="nx">Example</span><span class="err">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">netUser</span><span class="p">,</span> <span class="nx">command</span><span class="p">,</span> <span class="nx">args</span><span class="p">)</span> <span class="p">{</span>
     <span class="nx">target</span> <span class="o">=</span> <span class="nx">rust</span><span class="p">.</span><span class="nx">FindPlayer</span><span class="p">(</span><span class="nx">args</span><span class="p">[</span><span class="mi">0</span><span class="p">]);</span>
 <span class="p">}</span>
 </code></pre>
 <pre class="highlight python"><code><span class="k">def</span> <span class="nf">Init</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
     <span class="n">cmd</span><span class="o">.</span><span class="n">AddChatCommand</span><span class="p">(</span><span class="s">"ex"</span><span class="p">,</span>  <span class="bp">self</span><span class="o">.</span><span class="n">Plugin</span><span class="p">,</span> <span class="s">"Example"</span><span class="p">)</span>
-<span class="k">def</span> <span class="nf">Example</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">netuser</span><span class="p">,</span> <span class="n">command</span><span class="p">,</span> <span class="n">args</span><span class="p">):</span>
+<span class="k">def</span> <span class="nf">Example</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">netUser</span><span class="p">,</span> <span class="n">command</span><span class="p">,</span> <span class="n">args</span><span class="p">):</span>
     <span class="n">target</span> <span class="o">=</span> <span class="n">rust</span><span class="o">.</span><span class="n">FindPlayer</span><span class="p">(</span><span class="n">args</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
 </code></pre>
 
-<p>Searches for an online player by name, steam id or ip. Returns a netuser if a player is found, otherwise null is returned.</p>
+<p>Searches for an online player by name, steam id or ip. Returns a netUser if a player is found, otherwise null is returned.</p>
 
 <p><code class="prettyprint">rust.FindPlayer(string nameOrSteamIdOrIp)</code></p>
 
@@ -1084,103 +1082,103 @@
 <p><code class="prettyprint">rust.QuoteSafe(message)</code></p>
 
 <h2 id="sendchatmessage">SendChatMessage</h2>
-<pre class="highlight csharp"><code><span class="k">void</span> <span class="nf">OnPlayerSpawn</span><span class="p">(</span><span class="n">NetUser</span> <span class="n">netuser</span><span class="p">)</span>
+<pre class="highlight csharp"><code><span class="k">void</span> <span class="nf">OnPlayerSpawn</span><span class="p">(</span><span class="n">NetUser</span> <span class="n">netUser</span><span class="p">)</span>
 <span class="p">{</span>
     <span class="n">var</span> <span class="n">message</span> <span class="p">=</span> <span class="s">"You've respawned from a terrible death"</span><span class="p">;</span>
-    <span class="n">rust</span><span class="p">.</span><span class="nf">SendChatMessage</span><span class="p">({</span> <span class="n">netuser</span><span class="p">,</span> <span class="n">message</span> <span class="p">});</span>
+    <span class="n">rust</span><span class="p">.</span><span class="nf">SendChatMessage</span><span class="p">({</span> <span class="n">netUser</span><span class="p">,</span> <span class="n">message</span> <span class="p">});</span>
 <span class="p">}</span>
 </code></pre>
 <pre class="highlight lua"><code><span class="k">function</span> <span class="nf">PLUGIN</span><span class="p">:</span><span class="n">OnPlayerSpawn</span><span class="p">(</span><span class="n">player</span><span class="p">)</span>
-    <span class="n">rust</span><span class="p">.</span><span class="n">SendChatMessage</span><span class="p">(</span><span class="n">netuser</span><span class="p">,</span> <span class="s2">"You've respawned from a terrible death"</span><span class="p">)</span>
+    <span class="n">rust</span><span class="p">.</span><span class="n">SendChatMessage</span><span class="p">(</span><span class="n">netUser</span><span class="p">,</span> <span class="s2">"You've respawned from a terrible death"</span><span class="p">)</span>
 <span class="k">end</span>
 </code></pre>
 <pre class="highlight coffeescript"><code><span class="nx">We</span> <span class="nx">need</span> <span class="nx">a</span> <span class="nx">CoffeeScript</span> <span class="nx">example</span> <span class="nx">here</span>
 </code></pre>
-<pre class="highlight javascript"><code><span class="nx">OnPlayerSpawn</span><span class="err">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">netuser</span><span class="p">)</span> <span class="p">{</span>
-    <span class="nx">rust</span><span class="p">.</span><span class="nx">SendChatMessage</span><span class="p">(</span><span class="nx">netuser</span><span class="p">,</span> <span class="s2">"You've respawned from a terrible death"</span><span class="p">);</span>
+<pre class="highlight javascript"><code><span class="nx">OnPlayerSpawn</span><span class="err">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">netUser</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">rust</span><span class="p">.</span><span class="nx">SendChatMessage</span><span class="p">(</span><span class="nx">netUser</span><span class="p">,</span> <span class="s2">"You've respawned from a terrible death"</span><span class="p">);</span>
 <span class="p">}</span>
 </code></pre>
 <pre class="highlight python"><code><span class="k">def</span> <span class="nf">OnPlayerSpawn</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">player</span><span class="p">):</span>
-    <span class="n">rust</span><span class="o">.</span><span class="n">SendChatMessage</span><span class="p">(</span><span class="n">netuser</span><span class="p">,</span> <span class="s">"You've respawned from a terrible death"</span><span class="p">)</span>
+    <span class="n">rust</span><span class="o">.</span><span class="n">SendChatMessage</span><span class="p">(</span><span class="n">netUser</span><span class="p">,</span> <span class="s">"You've respawned from a terrible death"</span><span class="p">)</span>
 </code></pre>
 
 <p>Sends a chat message to specified player.</p>
 
-<p><code class="prettyprint">rust.SendChatMessage(NetUser netuser, string message, object[] args)</code></p>
+<p><code class="prettyprint">rust.SendChatMessage(NetUser netUser, string message, object[] args)</code></p>
 
 <h2 id="sendconsolemessage">SendConsoleMessage</h2>
-<pre class="highlight csharp"><code><span class="k">void</span> <span class="nf">OnPlayerSpawn</span><span class="p">(</span><span class="n">NetUser</span> <span class="n">netuser</span><span class="p">)</span>
+<pre class="highlight csharp"><code><span class="k">void</span> <span class="nf">OnPlayerSpawn</span><span class="p">(</span><span class="n">NetUser</span> <span class="n">netUser</span><span class="p">)</span>
 <span class="p">{</span>
     <span class="n">var</span> <span class="n">message</span> <span class="p">=</span> <span class="s">"You've respawned from a terrible death"</span><span class="p">;</span>
-    <span class="n">rust</span><span class="p">.</span><span class="nf">SendConsoleMessage</span><span class="p">({</span> <span class="n">netuser</span><span class="p">,</span> <span class="n">message</span> <span class="p">});</span>
+    <span class="n">rust</span><span class="p">.</span><span class="nf">SendConsoleMessage</span><span class="p">({</span> <span class="n">netUser</span><span class="p">,</span> <span class="n">message</span> <span class="p">});</span>
 <span class="p">}</span>
 </code></pre>
 <pre class="highlight lua"><code><span class="k">function</span> <span class="nf">PLUGIN</span><span class="p">:</span><span class="n">OnPlayerSpawn</span><span class="p">(</span><span class="n">player</span><span class="p">)</span>
-    <span class="n">rust</span><span class="p">.</span><span class="n">SendConsoleMessage</span><span class="p">(</span><span class="n">netuser</span><span class="p">,</span> <span class="s2">"You've respawned from a terrible death"</span><span class="p">)</span>
+    <span class="n">rust</span><span class="p">.</span><span class="n">SendConsoleMessage</span><span class="p">(</span><span class="n">netUser</span><span class="p">,</span> <span class="s2">"You've respawned from a terrible death"</span><span class="p">)</span>
 <span class="k">end</span>
 </code></pre>
 <pre class="highlight coffeescript"><code><span class="nx">We</span> <span class="nx">need</span> <span class="nx">a</span> <span class="nx">CoffeeScript</span> <span class="nx">example</span> <span class="nx">here</span>
 </code></pre>
-<pre class="highlight javascript"><code><span class="nx">OnPlayerSpawn</span><span class="err">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">netuser</span><span class="p">)</span> <span class="p">{</span>
-    <span class="nx">rust</span><span class="p">.</span><span class="nx">SendConsoleMessage</span><span class="p">(</span><span class="nx">netuser</span><span class="p">,</span> <span class="s2">"You've respawned from a terrible death"</span><span class="p">);</span>
+<pre class="highlight javascript"><code><span class="nx">OnPlayerSpawn</span><span class="err">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">netUser</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">rust</span><span class="p">.</span><span class="nx">SendConsoleMessage</span><span class="p">(</span><span class="nx">netUser</span><span class="p">,</span> <span class="s2">"You've respawned from a terrible death"</span><span class="p">);</span>
 <span class="p">}</span>
 </code></pre>
 <pre class="highlight python"><code><span class="k">def</span> <span class="nf">OnPlayerSpawn</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">player</span><span class="p">):</span>
-    <span class="n">rust</span><span class="o">.</span><span class="n">SendConsoleMessage</span><span class="p">(</span><span class="n">netuser</span><span class="p">,</span> <span class="s">"You've respawned from a terrible death"</span><span class="p">)</span>
+    <span class="n">rust</span><span class="o">.</span><span class="n">SendConsoleMessage</span><span class="p">(</span><span class="n">netUser</span><span class="p">,</span> <span class="s">"You've respawned from a terrible death"</span><span class="p">)</span>
 </code></pre>
 
 <p>Sends a console message to specified player&rsquo;s console.</p>
 
-<p><code class="prettyprint">rust.SendConsoleMessage(NetUser netuser, string message, object[] args)</code></p>
+<p><code class="prettyprint">rust.SendConsoleMessage(NetUser netUser, string message, object[] args)</code></p>
 
 <h2 id="useridfromplayer">UserIDFromPlayer</h2>
-<pre class="highlight csharp"><code><span class="na">[ChatCommand("steamid")]</span>
-<span class="k">void</span> <span class="nf">cmdChatSteamid</span><span class="p">(</span><span class="n">NetUser</span> <span class="n">netuser</span><span class="p">,</span> <span class="kt">string</span> <span class="n">command</span><span class="p">,</span> <span class="kt">string</span><span class="p">[]</span> <span class="n">args</span><span class="p">)</span>
+<pre class="highlight csharp"><code><span class="na">[ChatCommand("id")]</span>
+<span class="k">void</span> <span class="nf">ChatId</span><span class="p">(</span><span class="n">NetUser</span> <span class="n">netUser</span><span class="p">,</span> <span class="kt">string</span> <span class="n">command</span><span class="p">,</span> <span class="kt">string</span><span class="p">[]</span> <span class="n">args</span><span class="p">)</span>
 <span class="p">{</span>
-    <span class="nf">SendReply</span><span class="p">(</span><span class="n">netuser</span><span class="p">,</span> <span class="s">"Your SteamID is: "</span> <span class="p">+</span> <span class="n">netuser</span><span class="p">.</span><span class="n">userID</span><span class="p">.</span><span class="nf">ToString</span><span class="p">());</span>
+    <span class="nf">SendReply</span><span class="p">(</span><span class="n">netUser</span><span class="p">,</span> <span class="s">"Your ID is: "</span> <span class="p">+</span> <span class="n">netUser</span><span class="p">.</span><span class="n">userID</span><span class="p">.</span><span class="nf">ToString</span><span class="p">());</span>
 <span class="p">}</span>
 </code></pre>
 <pre class="highlight lua"><code><span class="k">function</span> <span class="nf">PLUGIN</span><span class="p">:</span><span class="n">Init</span><span class="p">()</span>
-    <span class="n">cmd</span><span class="p">.</span><span class="n">AddChatCommand</span><span class="p">(</span><span class="s2">"steamid"</span><span class="p">,</span>  <span class="n">self</span><span class="p">.</span><span class="n">Plugin</span><span class="p">,</span> <span class="s2">"cmdSteamId"</span><span class="p">)</span>
+    <span class="n">cmd</span><span class="p">.</span><span class="n">AddChatCommand</span><span class="p">(</span><span class="s2">"steamid"</span><span class="p">,</span>  <span class="n">self</span><span class="p">.</span><span class="n">Plugin</span><span class="p">,</span> <span class="s2">"ChatId"</span><span class="p">)</span>
 <span class="k">end</span>
-<span class="k">function</span> <span class="nf">PLUGIN</span><span class="p">:</span><span class="n">cmdSteamId</span><span class="p">(</span><span class="n">netuser</span><span class="p">,</span> <span class="n">command</span><span class="p">,</span> <span class="n">arg</span><span class="p">)</span>
-    <span class="n">rust</span><span class="p">.</span><span class="n">SendChatMessage</span><span class="p">(</span><span class="n">netuser</span><span class="p">,</span> <span class="s2">"Your Steam ID is: "</span> <span class="o">..</span> <span class="n">rust</span><span class="p">.</span><span class="n">UserIDFromPlayer</span><span class="p">(</span><span class="n">netuser</span><span class="p">))</span>
+<span class="k">function</span> <span class="nf">PLUGIN</span><span class="p">:</span><span class="n">ChatId</span><span class="p">(</span><span class="n">netUser</span><span class="p">,</span> <span class="n">command</span><span class="p">,</span> <span class="n">arg</span><span class="p">)</span>
+    <span class="n">rust</span><span class="p">.</span><span class="n">SendChatMessage</span><span class="p">(</span><span class="n">netUser</span><span class="p">,</span> <span class="s2">"Your ID is: "</span> <span class="o">..</span> <span class="n">rust</span><span class="p">.</span><span class="n">UserIDFromPlayer</span><span class="p">(</span><span class="n">netUser</span><span class="p">))</span>
 <span class="k">end</span>
 </code></pre>
 <pre class="highlight coffeescript"><code><span class="nx">We</span> <span class="nx">need</span> <span class="nx">a</span> <span class="nx">CoffeeScript</span> <span class="nx">example</span> <span class="nx">here</span>
 </code></pre>
 <pre class="highlight javascript"><code><span class="nx">Init</span><span class="err">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
-    <span class="nx">cmd</span><span class="p">.</span><span class="nx">AddChatCommand</span><span class="p">(</span><span class="s2">"steamid"</span><span class="p">,</span>  <span class="nx">self</span><span class="p">.</span><span class="nx">Plugin</span><span class="p">,</span> <span class="s2">"cmdSteamId"</span><span class="p">);</span>
+    <span class="nx">cmd</span><span class="p">.</span><span class="nx">AddChatCommand</span><span class="p">(</span><span class="s2">"steamid"</span><span class="p">,</span>  <span class="nx">self</span><span class="p">.</span><span class="nx">Plugin</span><span class="p">,</span> <span class="s2">"ChatId"</span><span class="p">);</span>
 <span class="p">},</span>
-<span class="nx">cmdSteamId</span><span class="err">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">netuser</span><span class="p">,</span> <span class="nx">command</span><span class="p">,</span> <span class="nx">arg</span><span class="p">)</span> <span class="p">{</span>
-    <span class="nx">rust</span><span class="p">.</span><span class="nx">SendChatMessage</span><span class="p">(</span><span class="nx">netuser</span><span class="p">,</span> <span class="s2">"Your Steam ID is: "</span> <span class="o">+</span> <span class="nx">rust</span><span class="p">.</span><span class="nx">UserIDFromPlayer</span><span class="p">(</span><span class="nx">netuser</span><span class="p">));</span>
+<span class="nx">ChatId</span><span class="err">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">netUser</span><span class="p">,</span> <span class="nx">command</span><span class="p">,</span> <span class="nx">arg</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">rust</span><span class="p">.</span><span class="nx">SendChatMessage</span><span class="p">(</span><span class="nx">netUser</span><span class="p">,</span> <span class="s2">"Your ID is: "</span> <span class="o">+</span> <span class="nx">rust</span><span class="p">.</span><span class="nx">UserIDFromPlayer</span><span class="p">(</span><span class="nx">netUser</span><span class="p">));</span>
 <span class="p">}</span>
 </code></pre>
 <pre class="highlight python"><code><span class="k">def</span> <span class="nf">Init</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
     <span class="n">cmd</span><span class="o">.</span><span class="n">AddChatCommand</span><span class="p">(</span><span class="s">"steamid"</span><span class="p">,</span>  <span class="bp">self</span><span class="o">.</span><span class="n">Plugin</span><span class="p">,</span> <span class="s">"cmdSteamId"</span><span class="p">)</span>
-<span class="k">def</span> <span class="nf">cmdSteamId</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">netuser</span><span class="p">,</span> <span class="n">command</span><span class="p">,</span> <span class="n">arg</span><span class="p">):</span>
-    <span class="n">rust</span><span class="o">.</span><span class="n">SendChatMessage</span><span class="p">(</span><span class="n">netuser</span><span class="p">,</span> <span class="s">"Your Steam ID is: "</span> <span class="o">+</span> <span class="n">rust</span><span class="o">.</span><span class="n">UserIDFromPlayer</span><span class="p">(</span><span class="n">netuser</span><span class="p">))</span>
+<span class="k">def</span> <span class="nf">cmdSteamId</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">netUser</span><span class="p">,</span> <span class="n">command</span><span class="p">,</span> <span class="n">arg</span><span class="p">):</span>
+    <span class="n">rust</span><span class="o">.</span><span class="n">SendChatMessage</span><span class="p">(</span><span class="n">netUser</span><span class="p">,</span> <span class="s">"Your Steam ID is: "</span> <span class="o">+</span> <span class="n">rust</span><span class="o">.</span><span class="n">UserIDFromPlayer</span><span class="p">(</span><span class="n">netUser</span><span class="p">))</span>
 </code></pre>
 
 <p>Gets the user ID (64-bit SteamID) as a string of an online player.</p>
 
-<p><code class="prettyprint">rust.UserIDFromPlayer(NetUser netuser)</code></p>
+<p><code class="prettyprint">rust.UserIDFromPlayer(NetUser netUser)</code></p>
 
 <h2 id="notice">Notice</h2>
 <pre class="highlight csharp"><code><span class="na">[ChatCommand("notice")]</span>
-<span class="k">void</span> <span class="nf">cmdNotice</span><span class="p">(</span><span class="n">NetUser</span> <span class="n">netuser</span><span class="p">,</span> <span class="kt">string</span> <span class="n">command</span><span class="p">,</span> <span class="kt">string</span><span class="p">[]</span> <span class="n">args</span><span class="p">)</span>
+<span class="k">void</span> <span class="nf">cmdNotice</span><span class="p">(</span><span class="n">NetUser</span> <span class="n">netUser</span><span class="p">,</span> <span class="kt">string</span> <span class="n">command</span><span class="p">,</span> <span class="kt">string</span><span class="p">[]</span> <span class="n">args</span><span class="p">)</span>
 <span class="p">{</span>
     <span class="n">var</span> <span class="n">message</span> <span class="p">=</span> <span class="s">"Notice Demo"</span><span class="p">;</span>
     <span class="n">var</span> <span class="n">icon</span> <span class="p">=</span> <span class="s">"!"</span><span class="p">;</span>
     <span class="n">var</span> <span class="n">duration</span> <span class="p">=</span> <span class="m">4f</span><span class="p">;</span>
-    <span class="n">rust</span><span class="p">.</span><span class="nf">Notice</span><span class="p">(</span><span class="n">netuser</span><span class="p">,</span> <span class="n">message</span><span class="p">,</span> <span class="n">icon</span><span class="p">,</span> <span class="n">duration</span><span class="p">);</span>
+    <span class="n">rust</span><span class="p">.</span><span class="nf">Notice</span><span class="p">(</span><span class="n">netUser</span><span class="p">,</span> <span class="n">message</span><span class="p">,</span> <span class="n">icon</span><span class="p">,</span> <span class="n">duration</span><span class="p">);</span>
 <span class="p">}</span>
 </code></pre>
 <pre class="highlight lua"><code><span class="k">function</span> <span class="nf">PLUGIN</span><span class="p">:</span><span class="n">Init</span><span class="p">()</span>
     <span class="n">cmd</span><span class="p">.</span><span class="n">AddChatCommand</span><span class="p">(</span><span class="s2">"notice"</span><span class="p">,</span>  <span class="n">self</span><span class="p">.</span><span class="n">Plugin</span><span class="p">,</span> <span class="s2">"cmdNotice"</span><span class="p">)</span>
 <span class="k">end</span>
-<span class="k">function</span> <span class="nf">PLUGIN</span><span class="p">:</span><span class="n">cmdNotice</span><span class="p">(</span><span class="n">netuser</span><span class="p">,</span> <span class="n">command</span><span class="p">,</span> <span class="n">arg</span><span class="p">)</span>
-    <span class="n">rust</span><span class="p">.</span><span class="n">Notice</span><span class="p">(</span><span class="n">netuser</span><span class="p">,</span> <span class="s2">"Notice Demo"</span><span class="p">,</span> <span class="s2">"!"</span><span class="p">,</span> <span class="mi">4</span><span class="p">);</span>
+<span class="k">function</span> <span class="nf">PLUGIN</span><span class="p">:</span><span class="n">cmdNotice</span><span class="p">(</span><span class="n">netUser</span><span class="p">,</span> <span class="n">command</span><span class="p">,</span> <span class="n">arg</span><span class="p">)</span>
+    <span class="n">rust</span><span class="p">.</span><span class="n">Notice</span><span class="p">(</span><span class="n">netUser</span><span class="p">,</span> <span class="s2">"Notice Demo"</span><span class="p">,</span> <span class="s2">"!"</span><span class="p">,</span> <span class="mi">4</span><span class="p">);</span>
 <span class="k">end</span>
 </code></pre>
 <pre class="highlight coffeescript"><code><span class="nx">We</span> <span class="nx">need</span> <span class="nx">a</span> <span class="nx">CoffeeScript</span> <span class="nx">example</span> <span class="nx">here</span>
@@ -1188,33 +1186,33 @@
 <pre class="highlight javascript"><code><span class="nx">Init</span><span class="err">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
     <span class="nx">cmd</span><span class="p">.</span><span class="nx">AddChatCommand</span><span class="p">(</span><span class="s2">"notice"</span><span class="p">,</span>  <span class="nx">self</span><span class="p">.</span><span class="nx">Plugin</span><span class="p">,</span> <span class="s2">"cmdNotice"</span><span class="p">);</span>
 <span class="p">},</span>
-<span class="nx">cmdNotice</span><span class="err">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">netuser</span><span class="p">,</span> <span class="nx">command</span><span class="p">,</span> <span class="nx">arg</span><span class="p">)</span> <span class="p">{</span>
-    <span class="nx">rust</span><span class="p">.</span><span class="nx">Notice</span><span class="p">(</span><span class="nx">netuser</span><span class="p">,</span> <span class="s2">"Notice Demo"</span><span class="p">,</span> <span class="s2">"!"</span><span class="p">,</span> <span class="mi">4</span><span class="p">);</span>
+<span class="nx">cmdNotice</span><span class="err">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">netUser</span><span class="p">,</span> <span class="nx">command</span><span class="p">,</span> <span class="nx">arg</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">rust</span><span class="p">.</span><span class="nx">Notice</span><span class="p">(</span><span class="nx">netUser</span><span class="p">,</span> <span class="s2">"Notice Demo"</span><span class="p">,</span> <span class="s2">"!"</span><span class="p">,</span> <span class="mi">4</span><span class="p">);</span>
 <span class="p">}</span>
 </code></pre>
 <pre class="highlight python"><code><span class="k">def</span> <span class="nf">Init</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
     <span class="n">cmd</span><span class="o">.</span><span class="n">AddChatCommand</span><span class="p">(</span><span class="s">"notice"</span><span class="p">,</span>  <span class="bp">self</span><span class="o">.</span><span class="n">Plugin</span><span class="p">,</span> <span class="s">"cmdNotice"</span><span class="p">)</span>
-<span class="k">def</span> <span class="nf">cmdNotice</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">netuser</span><span class="p">,</span> <span class="n">command</span><span class="p">,</span> <span class="n">arg</span><span class="p">):</span>
-    <span class="n">rust</span><span class="o">.</span><span class="n">Notice</span><span class="p">(</span><span class="n">netuser</span><span class="p">,</span> <span class="s">"Notice Demo"</span><span class="p">,</span> <span class="s">"!"</span><span class="p">,</span> <span class="mi">4</span><span class="p">);</span>
+<span class="k">def</span> <span class="nf">cmdNotice</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">netUser</span><span class="p">,</span> <span class="n">command</span><span class="p">,</span> <span class="n">arg</span><span class="p">):</span>
+    <span class="n">rust</span><span class="o">.</span><span class="n">Notice</span><span class="p">(</span><span class="n">netUser</span><span class="p">,</span> <span class="s">"Notice Demo"</span><span class="p">,</span> <span class="s">"!"</span><span class="p">,</span> <span class="mi">4</span><span class="p">);</span>
 </code></pre>
 
 <p>Sends a notice to the player at the top of the screen.</p>
 
-<p><code class="prettyprint">rust.Notice(NetUser netuser, string message, string icon, float duration)</code></p>
+<p><code class="prettyprint">rust.Notice(NetUser netUser, string message, string icon, float duration)</code></p>
 
 <h2 id="inventorynotice">InventoryNotice</h2>
 <pre class="highlight csharp"><code><span class="na">[ChatCommand("notice")]</span>
-<span class="k">void</span> <span class="nf">cmdNotice</span><span class="p">(</span><span class="n">NetUser</span> <span class="n">netuser</span><span class="p">,</span> <span class="kt">string</span> <span class="n">command</span><span class="p">,</span> <span class="kt">string</span><span class="p">[]</span> <span class="n">args</span><span class="p">)</span>
+<span class="k">void</span> <span class="nf">cmdNotice</span><span class="p">(</span><span class="n">NetUser</span> <span class="n">netUser</span><span class="p">,</span> <span class="kt">string</span> <span class="n">command</span><span class="p">,</span> <span class="kt">string</span><span class="p">[]</span> <span class="n">args</span><span class="p">)</span>
 <span class="p">{</span>
     <span class="n">var</span> <span class="n">message</span> <span class="p">=</span> <span class="s">"InventoryNotice Demo"</span><span class="p">;</span>
-    <span class="n">rust</span><span class="p">.</span><span class="nf">InventoryNotice</span><span class="p">(</span><span class="n">netuser</span><span class="p">,</span> <span class="n">message</span><span class="p">);</span>
+    <span class="n">rust</span><span class="p">.</span><span class="nf">InventoryNotice</span><span class="p">(</span><span class="n">netUser</span><span class="p">,</span> <span class="n">message</span><span class="p">);</span>
 <span class="p">}</span>
 </code></pre>
 <pre class="highlight lua"><code><span class="k">function</span> <span class="nf">PLUGIN</span><span class="p">:</span><span class="n">Init</span><span class="p">()</span>
     <span class="n">cmd</span><span class="p">.</span><span class="n">AddChatCommand</span><span class="p">(</span><span class="s2">"notice"</span><span class="p">,</span>  <span class="n">self</span><span class="p">.</span><span class="n">Plugin</span><span class="p">,</span> <span class="s2">"cmdNotice"</span><span class="p">)</span>
 <span class="k">end</span>
-<span class="k">function</span> <span class="nf">PLUGIN</span><span class="p">:</span><span class="n">cmdNotice</span><span class="p">(</span><span class="n">netuser</span><span class="p">,</span> <span class="n">command</span><span class="p">,</span> <span class="n">arg</span><span class="p">)</span>
-    <span class="n">rust</span><span class="p">.</span><span class="n">InventoryNotice</span><span class="p">(</span><span class="n">netuser</span><span class="p">,</span> <span class="s2">"InventoryNotice Demo"</span><span class="p">);</span>
+<span class="k">function</span> <span class="nf">PLUGIN</span><span class="p">:</span><span class="n">cmdNotice</span><span class="p">(</span><span class="n">netUser</span><span class="p">,</span> <span class="n">command</span><span class="p">,</span> <span class="n">arg</span><span class="p">)</span>
+    <span class="n">rust</span><span class="p">.</span><span class="n">InventoryNotice</span><span class="p">(</span><span class="n">netUser</span><span class="p">,</span> <span class="s2">"InventoryNotice Demo"</span><span class="p">);</span>
 <span class="k">end</span>
 </code></pre>
 <pre class="highlight coffeescript"><code><span class="nx">We</span> <span class="nx">need</span> <span class="nx">a</span> <span class="nx">CoffeeScript</span> <span class="nx">example</span> <span class="nx">here</span>
@@ -1222,19 +1220,19 @@
 <pre class="highlight javascript"><code><span class="nx">Init</span><span class="err">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
     <span class="nx">cmd</span><span class="p">.</span><span class="nx">AddChatCommand</span><span class="p">(</span><span class="s2">"notice"</span><span class="p">,</span>  <span class="nx">self</span><span class="p">.</span><span class="nx">Plugin</span><span class="p">,</span> <span class="s2">"cmdNotice"</span><span class="p">);</span>
 <span class="p">},</span>
-<span class="nx">cmdNotice</span><span class="err">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">netuser</span><span class="p">,</span> <span class="nx">command</span><span class="p">,</span> <span class="nx">arg</span><span class="p">)</span> <span class="p">{</span>
-    <span class="nx">rust</span><span class="p">.</span><span class="nx">InventoryNotice</span><span class="p">(</span><span class="nx">netuser</span><span class="p">,</span> <span class="s2">"InventoryNotice Demo"</span><span class="p">);</span>
+<span class="nx">cmdNotice</span><span class="err">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">netUser</span><span class="p">,</span> <span class="nx">command</span><span class="p">,</span> <span class="nx">arg</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">rust</span><span class="p">.</span><span class="nx">InventoryNotice</span><span class="p">(</span><span class="nx">netUser</span><span class="p">,</span> <span class="s2">"InventoryNotice Demo"</span><span class="p">);</span>
 <span class="p">}</span>
 </code></pre>
 <pre class="highlight python"><code><span class="k">def</span> <span class="nf">Init</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
     <span class="n">cmd</span><span class="o">.</span><span class="n">AddChatCommand</span><span class="p">(</span><span class="s">"notice"</span><span class="p">,</span>  <span class="bp">self</span><span class="o">.</span><span class="n">Plugin</span><span class="p">,</span> <span class="s">"cmdNotice"</span><span class="p">)</span>
-<span class="k">def</span> <span class="nf">cmdNotice</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">netuser</span><span class="p">,</span> <span class="n">command</span><span class="p">,</span> <span class="n">arg</span><span class="p">):</span>
-    <span class="n">rust</span><span class="o">.</span><span class="n">InventoryNotice</span><span class="p">(</span><span class="n">netuser</span><span class="p">,</span> <span class="s">"InventoryNotice Demo"</span><span class="p">);</span>
+<span class="k">def</span> <span class="nf">cmdNotice</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">netUser</span><span class="p">,</span> <span class="n">command</span><span class="p">,</span> <span class="n">arg</span><span class="p">):</span>
+    <span class="n">rust</span><span class="o">.</span><span class="n">InventoryNotice</span><span class="p">(</span><span class="n">netUser</span><span class="p">,</span> <span class="s">"InventoryNotice Demo"</span><span class="p">);</span>
 </code></pre>
 
 <p>Sends a notice to the player on the right side of the screen right above the player&rsquo;s health bar.</p>
 
-<p><code class="prettyprint">rust.InventoryNotice(NetUser netuser, string message)</code></p>
+<p><code class="prettyprint">rust.InventoryNotice(NetUser netUser, string message)</code></p>
 
           <h1 id="timers-basic">Timers (Basic)</h1>
 
@@ -1324,8 +1322,7 @@
 <p>The request will return true if the web request was sent, false if not. The callback is called with 2 parameters - an integer HTTP response code and a string response.</p>
 
 <h2 id="basic-get-method">Basic Get method</h2>
-<pre class="highlight csharp"><code><span class="k">using</span> <span class="nn">Oxide.Core</span><span class="p">;</span>
-<span class="k">using</span> <span class="nn">Oxide.Core.Libraries</span><span class="p">;</span>
+<pre class="highlight csharp"><code><span class="k">using</span> <span class="nn">Oxide.Core.Libraries.Covalence</span><span class="p">;</span>
 
 <span class="k">namespace</span> <span class="nn">Oxide.Plugins</span>
 <span class="p">{</span>
@@ -1382,14 +1379,14 @@
 
 <p>This uses the raw connection to a web page as you would on your browser.</p>
 
-<h2 id="basic-post-method">Basic Post method</h2>
-<pre class="highlight csharp"><code><span class="k">using</span> <span class="nn">Oxide.Core</span><span class="p">;</span>
-<span class="k">using</span> <span class="nn">Oxide.Core.Libraries</span><span class="p">;</span>
+<h2 id="basic-post-method">Basic POST method</h2>
+<pre class="highlight csharp"><code><span class="k">using</span> <span class="nn">Oxide.Core.Libraries.Covalence</span><span class="p">;</span>
 
 <span class="k">namespace</span> <span class="nn">Oxide.Plugins</span>
 <span class="p">{</span>
     <span class="p">[</span><span class="nf">Info</span><span class="p">(</span><span class="s">"EpicPlugin"</span><span class="p">,</span> <span class="s">"Unknown"</span><span class="p">,</span> <span class="m">1.0</span><span class="p">)]</span>
     <span class="p">[</span><span class="nf">Description</span><span class="p">(</span><span class="s">"This example illustrates how to use a POST WebRequest"</span><span class="p">)]</span>
+
     <span class="k">class</span> <span class="nc">EpicPlugin</span> <span class="p">:</span> <span class="n">CovalencePlugin</span>
     <span class="p">{</span>
         <span class="p">[</span><span class="nf">Command</span><span class="p">(</span><span class="s">"post"</span><span class="p">)]</span>
@@ -1419,9 +1416,8 @@
 <pre class="highlight python"><code><span class="n">We</span> <span class="n">need</span> <span class="n">a</span> <span class="n">Python</span> <span class="n">example</span> <span class="n">here</span>
 </code></pre>
 
-<h2 id="advanced-get-method">Advanced Get method</h2>
-<pre class="highlight csharp"><code><span class="k">using</span> <span class="nn">Oxide.Core</span><span class="p">;</span>
-<span class="k">using</span> <span class="nn">Oxide.Core.Libraries</span><span class="p">;</span>
+<h2 id="advanced-get-method">Advanced GET method</h2>
+<pre class="highlight csharp"><code><span class="k">using</span> <span class="nn">Oxide.Core.Libraries.Covalence</span><span class="p">;</span>
 
 <span class="k">namespace</span> <span class="nn">Oxide.Plugins</span>
 <span class="p">{</span>
@@ -1464,14 +1460,14 @@
 <pre class="highlight python"><code><span class="n">We</span> <span class="n">need</span> <span class="n">a</span> <span class="n">Python</span> <span class="n">example</span> <span class="n">here</span>
 </code></pre>
 
-<h2 id="advanced-post-method">Advanced Post method</h2>
-<pre class="highlight csharp"><code><span class="k">using</span> <span class="nn">Oxide.Core</span><span class="p">;</span>
-<span class="k">using</span> <span class="nn">Oxide.Core.Libraries</span><span class="p">;</span>
+<h2 id="advanced-post-method">Advanced POST method</h2>
+<pre class="highlight csharp"><code><span class="k">using</span> <span class="nn">Oxide.Core.Libraries.Covalence</span><span class="p">;</span>
 
 <span class="k">namespace</span> <span class="nn">Oxide.Plugins</span>
 <span class="p">{</span>
     <span class="p">[</span><span class="nf">Info</span><span class="p">(</span><span class="s">"EpicPlugin"</span><span class="p">,</span> <span class="s">"Unknown"</span><span class="p">,</span> <span class="m">1.0</span><span class="p">)]</span>
     <span class="p">[</span><span class="nf">Description</span><span class="p">(</span><span class="s">"This example illustrates how to use a POST WebRequest"</span><span class="p">)]</span>
+
     <span class="k">class</span> <span class="nc">EpicPlugin</span> <span class="p">:</span> <span class="n">CovalencePlugin</span>
     <span class="p">{</span>
         <span class="p">[</span><span class="nf">Command</span><span class="p">(</span><span class="s">"post"</span><span class="p">)]</span>

@@ -51,7 +51,7 @@
 <h2 id="broadcastchat">BroadcastChat</h2>
 <pre class="highlight csharp"><code><span class="k">void</span> <span class="nf">OnPlayerConnected</span><span class="p">(</span><span class="n">ClientInfo</span> <span class="n">client</span><span class="p">)</span>
 <span class="p">{</span>
-    <span class="nf">PrintToChat</span><span class="p">(</span><span class="kt">string</span><span class="p">.</span><span class="nf">Format</span><span class="p">(</span><span class="s">"{0} has joined the server"</span><span class="p">,</span> <span class="n">client</span><span class="p">.</span><span class="n">playerName</span><span class="p">));</span>
+    <span class="nf">PrintToChat</span><span class="p">(</span><span class="err">$</span><span class="s">"{client.playerName} has joined the server"</span><span class="p">);</span>
 <span class="p">}</span>
 </code></pre>
 <pre class="highlight coffeescript"><code><span class="nx">We</span> <span class="nx">need</span> <span class="nx">a</span> <span class="nx">CoffeeScript</span> <span class="nx">example</span> <span class="nx">here</span>
