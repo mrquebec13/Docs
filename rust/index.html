@@ -3319,14 +3319,14 @@ version or oxide.version
         <span class="c1">// The HookMethod parameter is the name of the hook exposed
 </span>        <span class="c1">// In this case, our hook is called "GetReturn"
 </span>        <span class="p">[</span><span class="nf">HookMethod</span><span class="p">(</span><span class="s">"GetReturn"</span><span class="p">)]</span>
-        <span class="k">private</span> <span class="kt">bool</span> <span class="nf">GetReturn</span><span class="p">()</span>
+        <span class="kt">bool</span> <span class="nf">GetReturn</span><span class="p">()</span>
         <span class="p">{</span>
             <span class="k">return</span> <span class="k">true</span><span class="p">;</span>
         <span class="p">}</span>
 
         <span class="c1">// Hooks can take parameters and return simple types
 </span>        <span class="p">[</span><span class="nf">HookMethod</span><span class="p">(</span><span class="s">"TakeParam"</span><span class="p">)]</span>
-        <span class="k">private</span> <span class="kt">string</span> <span class="nf">TakeParam</span><span class="p">(</span><span class="kt">string</span> <span class="n">param</span><span class="p">,</span> <span class="kt">int</span> <span class="n">secondParam</span><span class="p">)</span>
+        <span class="kt">string</span> <span class="nf">TakeParam</span><span class="p">(</span><span class="kt">string</span> <span class="n">param</span><span class="p">,</span> <span class="kt">int</span> <span class="n">secondParam</span><span class="p">)</span>
         <span class="p">{</span>
             <span class="k">if</span> <span class="p">(</span><span class="n">param</span> <span class="p">==</span> <span class="s">"first parameter"</span><span class="p">)</span> <span class="k">return</span> <span class="n">param</span><span class="p">;</span>
             <span class="k">else</span> <span class="k">return</span> <span class="s">"First parameter didn't match!"</span><span class="p">;</span>
@@ -3335,7 +3335,7 @@ version or oxide.version
         <span class="c1">// To return complex types, they need to first be converted
 </span>        <span class="c1">// into JSON.net types (JObject, JArray, etc)
 </span>        <span class="p">[</span><span class="nf">HookMethod</span><span class="p">(</span><span class="s">"ReturnObject"</span><span class="p">)]</span>
-        <span class="k">private</span> <span class="n">JObject</span> <span class="nf">ReturnObject</span><span class="p">()</span>
+        <span class="n">JObject</span> <span class="nf">ReturnObject</span><span class="p">()</span>
         <span class="p">{</span>
             <span class="n">var</span> <span class="n">myObject</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">JObject</span><span class="p">();</span>
             <span class="n">myObject</span><span class="p">[</span><span class="s">"key"</span><span class="p">]</span> <span class="p">=</span> <span class="s">"value"</span><span class="p">;</span>
@@ -3345,9 +3345,9 @@ version or oxide.version
 
         <span class="c1">// Hooks don't have to return anything
 </span>        <span class="p">[</span><span class="nf">HookMethod</span><span class="p">(</span><span class="s">"SendMessage"</span><span class="p">)]</span>
-        <span class="k">private</span> <span class="k">void</span> <span class="nf">SendMessage</span><span class="p">(</span><span class="n">BasePlayer</span> <span class="n">player</span><span class="p">)</span>
+        <span class="k">void</span> <span class="nf">SendMessage</span><span class="p">(</span><span class="n">BasePlayer</span> <span class="n">player</span><span class="p">)</span>
         <span class="p">{</span>
-            <span class="nf">SendReply</span><span class="p">(</span><span class="n">player</span><span class="p">,</span> <span class="s">"You just called the 'SendMessage' hook!"</span><span class="p">);</span>
+            <span class="nf">PrintToChat</span><span class="p">(</span><span class="n">player</span><span class="p">,</span> <span class="s">"You just called the 'SendMessage' hook!"</span><span class="p">);</span>
         <span class="p">}</span>
     <span class="p">}</span>
 <span class="p">}</span>
@@ -3369,19 +3369,18 @@ version or oxide.version
 <pre class="highlight csharp"><code><span class="k">namespace</span> <span class="nn">Oxide.Plugins</span>
 <span class="p">{</span>
     <span class="p">[</span><span class="nf">Info</span><span class="p">(</span><span class="s">"SecondEpicPlugin"</span><span class="p">,</span> <span class="s">"Unknown"</span><span class="p">,</span> <span class="m">0.1</span><span class="p">)]</span>
-    <span class="p">[</span><span class="nf">Description</span><span class="p">(</span><span class="s">"Makes epic stuff happen"</span><span class="p">)]</span>
+    <span class="p">[</span><span class="nf">Description</span><span class="p">(</span><span class="s">"Makes more epic stuff happen"</span><span class="p">)]</span>
 
     <span class="k">class</span> <span class="nc">SecondEpicPlugin</span> <span class="p">:</span> <span class="n">RustPlugin</span>
     <span class="p">{</span>
         <span class="c1">// First, add a reference to the plugin you are trying to hook into
 </span>        <span class="c1">// The name of this field needs to be the exact name of the desired plugin
 </span>        <span class="c1">// eg. We are referencing the example plugin above which is called 'EpicPlugin'
-</span>        <span class="p">[</span><span class="n">PluginReference</span><span class="p">]</span>
-        <span class="k">private</span> <span class="n">Plugin</span> <span class="n">EpicPlugin</span><span class="p">;</span>
+</span>        <span class="p">[</span><span class="n">PluginReference</span><span class="p">]</span> <span class="n">EpicPlugin</span><span class="p">;</span>
 
         <span class="c1">// It's a good idea to check if the plugin you're trying to hook into
 </span>        <span class="c1">// has been loaded by oxide (otherwise you can't call the hook)
-</span>        <span class="k">private</span> <span class="k">void</span> <span class="nf">OnServerInitialized</span><span class="p">()</span>
+</span>        <span class="k">void</span> <span class="nf">OnServerInitialized</span><span class="p">()</span>
         <span class="p">{</span>
             <span class="c1">// Note: Trying to do this check in the plugin Init() method may
 </span>            <span class="c1">// fail, as the plugin load order may be different each time
@@ -3391,17 +3390,17 @@ version or oxide.version
             <span class="p">}</span>
         <span class="p">}</span>
 
-        <span class="k">private</span> <span class="k">void</span> <span class="nf">CallApi</span><span class="p">()</span>
+        <span class="k">void</span> <span class="nf">CallApi</span><span class="p">()</span>
         <span class="p">{</span>
             <span class="c1">// Plugin hooks return objects, so cast the API call to the type
 </span>            <span class="c1">// you're expecting
-</span>            <span class="kt">bool</span> <span class="n">getTypedReturn</span> <span class="p">=</span> <span class="p">(</span><span class="kt">bool</span><span class="p">)</span><span class="n">EpicPlugin</span><span class="p">?.</span><span class="nf">Call</span><span class="p">(</span><span class="s">"GetReturn"</span><span class="p">);</span>
+</span>            <span class="n">var</span> <span class="n">getTypedReturn</span> <span class="p">=</span> <span class="p">(</span><span class="kt">bool</span><span class="p">)</span><span class="n">EpicPlugin</span><span class="p">?.</span><span class="nf">Call</span><span class="p">(</span><span class="s">"GetReturn"</span><span class="p">);</span>
 
             <span class="c1">// Send parameters through as variables after the hook name
-</span>            <span class="kt">string</span> <span class="n">takeParam</span> <span class="p">=</span> <span class="p">(</span><span class="kt">string</span><span class="p">)</span><span class="n">EpicPlugin</span><span class="p">?.</span><span class="nf">Call</span><span class="p">(</span><span class="s">"TakeParam"</span><span class="p">,</span> <span class="s">"param1"</span><span class="p">,</span> <span class="m">1024</span><span class="p">);</span>
+</span>            <span class="n">var</span> <span class="n">takeParam</span> <span class="p">=</span> <span class="p">(</span><span class="kt">string</span><span class="p">)</span><span class="n">EpicPlugin</span><span class="p">?.</span><span class="nf">Call</span><span class="p">(</span><span class="s">"TakeParam"</span><span class="p">,</span> <span class="s">"param1"</span><span class="p">,</span> <span class="m">1024</span><span class="p">);</span>
 
             <span class="c1">// Use JSON.net to process the returned object
-</span>            <span class="kt">object</span> <span class="n">returnedObject</span> <span class="p">=</span> <span class="n">EpicPlugin</span><span class="p">?.</span><span class="nf">Call</span><span class="p">(</span><span class="s">"ReturnObject"</span><span class="p">);</span>
+</span>            <span class="n">var</span> <span class="n">returnedObject</span> <span class="p">=</span> <span class="n">EpicPlugin</span><span class="p">?.</span><span class="nf">Call</span><span class="p">(</span><span class="s">"ReturnObject"</span><span class="p">);</span>
 
             <span class="c1">// Call a plugin to do some work without returning anything
 </span>            <span class="n">EpicPlugin</span><span class="p">?.</span><span class="nf">Call</span><span class="p">(</span><span class="s">"SendMessage"</span><span class="p">,</span> <span class="n">player</span><span class="p">);</span>
@@ -3418,7 +3417,7 @@ version or oxide.version
 <pre class="highlight python"><code><span class="n">We</span> <span class="n">need</span> <span class="n">a</span> <span class="n">Python</span> <span class="n">example</span> <span class="n">here</span>
 </code></pre>
 
-<p>Calling an API hook allows you to access results from another plugin</p>
+<p>Calling an API hook allows you to access results from another plugin.</p>
 
           <h1 id="item-list">Item List</h1>
 
