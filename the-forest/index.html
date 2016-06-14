@@ -727,6 +727,173 @@
 <pre class="highlight python"><code><span class="n">We</span> <span class="n">need</span> <span class="n">a</span> <span class="n">Python</span> <span class="n">example</span> <span class="n">here</span>
 </code></pre>
 
+          <h1 id="plugin-api">Plugin API</h1>
+
+<p>Oxide allows you to expose methods in your plugin and make them available to other plugins. This allows you to access objects or properties from other plugins without having to replicate functionality yourself.</p>
+
+<h2 id="exposing-an-api-method">Exposing an API method</h2>
+<pre class="highlight csharp"><code><span class="k">namespace</span> <span class="nn">Oxide.Plugins</span>
+<span class="p">{</span>
+    <span class="p">[</span><span class="nf">Info</span><span class="p">(</span><span class="s">"EpicPlugin"</span><span class="p">,</span> <span class="s">"Unknown"</span><span class="p">,</span> <span class="m">0.1</span><span class="p">)]</span>
+    <span class="p">[</span><span class="nf">Description</span><span class="p">(</span><span class="s">"Makes epic stuff happen"</span><span class="p">)]</span>
+
+    <span class="k">class</span> <span class="nc">EpicPlugin</span> <span class="p">:</span> <span class="n">CovalencePlugin</span>
+    <span class="p">{</span>
+        <span class="c1">// Plugin methods can be a simple bool that is returned
+</span>        <span class="k">public</span> <span class="kt">bool</span> <span class="nf">GetReturn</span><span class="p">()</span>
+        <span class="p">{</span>
+            <span class="k">return</span> <span class="k">true</span><span class="p">;</span>
+        <span class="p">}</span>
+
+        <span class="c1">// Plugin methods can take parameters and return simple types
+</span>        <span class="k">public</span> <span class="kt">string</span> <span class="nf">TakeParam</span><span class="p">(</span><span class="kt">string</span> <span class="n">param</span><span class="p">,</span> <span class="kt">int</span> <span class="n">secondParam</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">param</span> <span class="p">==</span> <span class="s">"first parameter"</span><span class="p">)</span> <span class="k">return</span> <span class="n">param</span><span class="p">;</span>
+            <span class="k">else</span> <span class="k">return</span> <span class="s">"First parameter didn't match!"</span><span class="p">;</span>
+        <span class="p">}</span>
+
+        <span class="c1">// To return complex types, they should first be converted
+</span>        <span class="c1">// into builtin types (e.g. JSON.net types like JObject, JArray, etc. or builtin
+</span>        <span class="c1">// collections like System.Collections.Generic.Dictionary)
+</span>        <span class="k">public</span> <span class="n">JObject</span> <span class="nf">ReturnObject</span><span class="p">()</span>
+        <span class="p">{</span>
+            <span class="n">var</span> <span class="n">myObject</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">JObject</span><span class="p">();</span>
+            <span class="n">myObject</span><span class="p">[</span><span class="s">"key"</span><span class="p">]</span> <span class="p">=</span> <span class="s">"value"</span><span class="p">;</span>
+            <span class="n">myObject</span><span class="p">[</span><span class="s">"array"</span><span class="p">]</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">JArray</span><span class="p">();</span>
+            <span class="k">return</span> <span class="n">myObject</span><span class="p">;</span>
+        <span class="p">}</span>
+
+        <span class="c1">// Plugin methods don't have to return something
+</span>        <span class="k">public</span> <span class="k">void</span> <span class="nf">SendMessage</span><span class="p">()</span>
+        <span class="p">{</span>
+            <span class="nf">Puts</span><span class="p">(</span><span class="s">"You just called the 'SendMessage' method!"</span><span class="p">);</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre>
+<pre class="highlight lua"><code><span class="n">We</span> <span class="n">need</span> <span class="n">a</span> <span class="n">Lua</span> <span class="n">example</span> <span class="n">here</span>
+</code></pre>
+<pre class="highlight coffeescript"><code><span class="nx">We</span> <span class="nx">need</span> <span class="nx">a</span> <span class="nx">CoffeeScript</span> <span class="nx">example</span> <span class="nx">here</span>
+</code></pre>
+<pre class="highlight javascript"><code><span class="nx">We</span> <span class="nx">need</span> <span class="nx">a</span> <span class="nx">javascript</span> <span class="nx">example</span> <span class="nx">here</span>
+</code></pre>
+<pre class="highlight python"><code><span class="kn">from</span> <span class="nn">System.Collections.Generic</span> <span class="kn">import</span> <span class="n">Dictionary</span>
+<span class="kn">from</span> <span class="nn">System.Collections.Generic</span> <span class="kn">import</span> <span class="n">List</span>
+
+<span class="k">class</span> <span class="nc">EpicPlugin</span><span class="p">:</span>
+  <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">Title</span> <span class="o">=</span> <span class="s">"EpicPlugin"</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">Description</span> <span class="o">=</span> <span class="s">"Makes epic stuff happen"</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">Author</span> <span class="o">=</span> <span class="s">"Unknown"</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">Version</span> <span class="o">=</span> <span class="n">V</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+
+  <span class="c"># Plugin methods can be a simple bool that is returned</span>
+  <span class="k">def</span> <span class="nf">GetReturn</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">return</span> <span class="bp">True</span>
+
+  <span class="c"># Plugin methods can take parameters and return simple types</span>
+  <span class="k">def</span> <span class="nf">TakeParam</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">param</span><span class="p">,</span> <span class="n">secondParam</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">param</span> <span class="o">==</span> <span class="s">"first parameter"</span><span class="p">:</span>
+      <span class="k">return</span> <span class="n">param</span>
+    <span class="k">else</span><span class="p">:</span>
+      <span class="k">return</span> <span class="s">"First parameter didn't match!"</span>
+
+  <span class="c"># To return complex types, they should first be converted</span>
+  <span class="c"># into C# builtin types (e.g. System.Collections.Generic.Dictionary)</span>
+  <span class="k">def</span> <span class="nf">ReturnObject</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="n">myObject</span> <span class="o">=</span> <span class="n">Dictionary</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">object</span><span class="p">]()</span>
+    <span class="n">myObject</span><span class="p">[</span><span class="s">"key"</span><span class="p">]</span> <span class="o">=</span> <span class="s">"value"</span>
+    <span class="n">myObject</span><span class="p">[</span><span class="s">"array"</span><span class="p">]</span> <span class="o">=</span> <span class="n">List</span><span class="p">[</span><span class="nb">object</span><span class="p">]()</span>
+    <span class="k">return</span> <span class="n">myObject</span>
+
+  <span class="c"># Plugin methods don't have to return something</span>
+  <span class="k">def</span> <span class="nf">SendMessage</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">"You just called the 'SendMessage' method!"</span><span class="p">)</span>
+</code></pre>
+
+<p>Exposing an API method allows other plugins to call that method.</p>
+
+<p>For example, you could write a plugin that does some player management, then allow other plugins to &ldquo;query&rdquo; it via an API method to get a list of players who have certain privileges set in the original plugin.</p>
+
+<h2 id="calling-an-api-method">Calling an API method</h2>
+<pre class="highlight csharp"><code><span class="k">namespace</span> <span class="nn">Oxide.Plugins</span>
+<span class="p">{</span>
+    <span class="p">[</span><span class="nf">Info</span><span class="p">(</span><span class="s">"SecondEpicPlugin"</span><span class="p">,</span> <span class="s">"Unknown"</span><span class="p">,</span> <span class="m">0.1</span><span class="p">)]</span>
+    <span class="p">[</span><span class="nf">Description</span><span class="p">(</span><span class="s">"Makes more epic stuff happen"</span><span class="p">)]</span>
+
+    <span class="k">class</span> <span class="nc">SecondEpicPlugin</span> <span class="p">:</span> <span class="n">CovalencePlugin</span>
+    <span class="p">{</span>
+        <span class="c1">// First, add a reference to the plugin you are trying to call
+</span>        <span class="c1">// The name of this field needs to be the exact name of the desired plugin
+</span>        <span class="c1">// eg. We are referencing the example plugin above which is called 'EpicPlugin'
+</span>        <span class="p">[</span><span class="n">PluginReference</span><span class="p">]</span> <span class="n">EpicPlugin</span><span class="p">;</span>
+
+        <span class="c1">// It's a good idea to check if the plugin you're trying to call
+</span>        <span class="c1">// has been loaded by oxide (otherwise you can't call the method)
+</span>        <span class="k">void</span> <span class="nf">OnServerInitialized</span><span class="p">()</span>
+        <span class="p">{</span>
+            <span class="c1">// Note: Trying to do this check in the plugin Init() method may
+</span>            <span class="c1">// fail, as the plugin load order may be different each time
+</span>            <span class="k">if</span> <span class="p">(</span><span class="n">EpicPlugin</span> <span class="p">==</span> <span class="k">null</span><span class="p">)</span>
+            <span class="p">{</span>
+                <span class="nf">PrintWarning</span><span class="p">(</span><span class="s">"Plugin 'EpicPlugin' was not found!"</span><span class="p">);</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+
+        <span class="k">void</span> <span class="nf">CallApi</span><span class="p">()</span>
+        <span class="p">{</span>
+            <span class="c1">// Plugin methods return objects, so cast the API call to the type
+</span>            <span class="c1">// you're expecting
+</span>            <span class="n">var</span> <span class="n">getTypedReturn</span> <span class="p">=</span> <span class="p">(</span><span class="kt">bool</span><span class="p">)</span><span class="n">EpicPlugin</span><span class="p">?.</span><span class="nf">Call</span><span class="p">(</span><span class="s">"GetReturn"</span><span class="p">);</span>
+
+            <span class="c1">// Send parameters through as variables after the method name
+</span>            <span class="n">var</span> <span class="n">takeParam</span> <span class="p">=</span> <span class="p">(</span><span class="kt">string</span><span class="p">)</span><span class="n">EpicPlugin</span><span class="p">?.</span><span class="nf">Call</span><span class="p">(</span><span class="s">"TakeParam"</span><span class="p">,</span> <span class="s">"param1"</span><span class="p">,</span> <span class="m">1024</span><span class="p">);</span>
+
+            <span class="c1">// Use JSON.net to process the returned object
+</span>            <span class="n">var</span> <span class="n">returnedObject</span> <span class="p">=</span> <span class="n">EpicPlugin</span><span class="p">?.</span><span class="nf">Call</span><span class="p">(</span><span class="s">"ReturnObject"</span><span class="p">);</span>
+
+            <span class="c1">// Call a plugin to do some work without returning anything
+</span>            <span class="n">EpicPlugin</span><span class="p">?.</span><span class="nf">Call</span><span class="p">(</span><span class="s">"SendMessage"</span><span class="p">);</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre>
+<pre class="highlight lua"><code><span class="n">We</span> <span class="n">need</span> <span class="n">a</span> <span class="n">Lua</span> <span class="n">example</span> <span class="n">here</span>
+</code></pre>
+<pre class="highlight coffeescript"><code><span class="nx">We</span> <span class="nx">need</span> <span class="nx">a</span> <span class="nx">CoffeeScript</span> <span class="nx">example</span> <span class="nx">here</span>
+</code></pre>
+<pre class="highlight javascript"><code><span class="nx">We</span> <span class="nx">need</span> <span class="nx">a</span> <span class="nx">javascript</span> <span class="nx">example</span> <span class="nx">here</span>
+</code></pre>
+<pre class="highlight python"><code><span class="k">class</span> <span class="nc">SecondEpicPlugin</span><span class="p">:</span>
+  <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">Title</span> <span class="o">=</span> <span class="s">"SecondEpicPlugin"</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">Description</span> <span class="o">=</span> <span class="s">"Makes more epic stuff happen"</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">Author</span> <span class="o">=</span> <span class="s">"Unknown"</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">Version</span> <span class="o">=</span> <span class="n">V</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+
+  <span class="k">def</span> <span class="nf">Init</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">EpicPlugin</span> <span class="o">=</span> <span class="n">plugins</span><span class="o">.</span><span class="n">Find</span><span class="p">(</span><span class="s">"EpicPlugin"</span><span class="p">)</span>
+
+  <span class="k">def</span> <span class="nf">CallApi</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">EpicPlugin</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
+      <span class="k">return</span>
+
+    <span class="c"># Python is dynamically typed, so casting is not necessary:</span>
+    <span class="c"># the structure of the type matters, not the name</span>
+    <span class="n">getReturn</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">EpicPlugin</span><span class="o">.</span><span class="n">Call</span><span class="p">(</span><span class="s">"GetReturn"</span><span class="p">)</span>
+
+    <span class="c"># Send parameters through as variables after the method name</span>
+    <span class="n">takeParam</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">EpicPlugin</span><span class="o">.</span><span class="n">Call</span><span class="p">(</span><span class="s">"TakeParam"</span><span class="p">,</span> <span class="s">"param1"</span><span class="p">,</span> <span class="mi">1024</span><span class="p">)</span>
+
+    <span class="c"># Access returned object like dictionary</span>
+    <span class="n">returnedObject</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">EpicPlugin</span><span class="o">.</span><span class="n">Call</span><span class="p">(</span><span class="s">"ReturnObject"</span><span class="p">)</span>
+
+    <span class="c"># Call a plugin to do some work without returning anything</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">EpicPlugin</span><span class="o">.</span><span class="n">Call</span><span class="p">(</span><span class="s">"SendMessage"</span><span class="p">)</span>
+</code></pre>
+
+<p>Calling an API method allows you to access results from another plugin.</p>
+
       </div>
       <div class="dark-box">
           <div class="lang-selector">
