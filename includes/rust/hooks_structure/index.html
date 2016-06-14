@@ -57,18 +57,18 @@
 <span class="k">end</span>
 </code></pre>
 <pre class="highlight coffeescript"><code><span class="na">CanBuild</span><span class="o">:</span> <span class="p">(</span><span class="nx">player</span><span class="p">,</span> <span class="nx">door</span><span class="p">)</span> <span class="o">=&gt;</span>
-  <span class="nx">print</span> <span class="s">"CanBuild works!"</span>
+    <span class="nx">print</span> <span class="s">"CanBuild works!"</span>
 </code></pre>
 <pre class="highlight javascript"><code><span class="nx">CanBuild</span><span class="err">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">player</span><span class="p">,</span> <span class="nx">door</span><span class="p">)</span> <span class="p">{</span>
-  <span class="nx">print</span><span class="p">(</span><span class="s2">"CanBuild works!"</span><span class="p">);</span>
+    <span class="nx">print</span><span class="p">(</span><span class="s2">"CanBuild works!"</span><span class="p">);</span>
 <span class="p">}</span>
 </code></pre>
 <pre class="highlight python"><code><span class="k">def</span> <span class="nf">CanBuild</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">player</span><span class="p">,</span> <span class="n">door</span><span class="p">):</span>
-  <span class="k">print</span> <span class="s">"CanBuild works!"</span>
+    <span class="k">print</span> <span class="s">"CanBuild works!"</span>
 </code></pre>
 
 <ul>
-<li>Called when a player tries to use a locked door</li>
+<li>Called when the player tries to use a locked door</li>
 <li>Returning true overrides default behavior</li>
 </ul>
 
@@ -83,18 +83,18 @@
 <span class="k">end</span>
 </code></pre>
 <pre class="highlight coffeescript"><code><span class="na">CanUseDoor</span><span class="o">:</span> <span class="p">(</span><span class="nx">player</span><span class="p">,</span> <span class="nx">door</span><span class="p">)</span> <span class="o">=&gt;</span>
-  <span class="nx">print</span> <span class="s">"CanUseDoor works!"</span>
+    <span class="nx">print</span> <span class="s">"CanUseDoor works!"</span>
 </code></pre>
 <pre class="highlight javascript"><code><span class="nx">CanUseDoor</span><span class="err">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">player</span><span class="p">,</span> <span class="nx">door</span><span class="p">)</span> <span class="p">{</span>
-  <span class="nx">print</span><span class="p">(</span><span class="s2">"CanUseDoor works!"</span><span class="p">);</span>
+    <span class="nx">print</span><span class="p">(</span><span class="s2">"CanUseDoor works!"</span><span class="p">);</span>
 <span class="p">}</span>
 </code></pre>
 <pre class="highlight python"><code><span class="k">def</span> <span class="nf">CanUseDoor</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">player</span><span class="p">,</span> <span class="n">door</span><span class="p">):</span>
-  <span class="k">print</span> <span class="s">"CanUseDoor works!"</span>
+    <span class="k">print</span> <span class="s">"CanUseDoor works!"</span>
 </code></pre>
 
 <ul>
-<li>Called when a player tries to use a locked door</li>
+<li>Called when the player tries to use a locked door</li>
 <li>Returning true allows door usage, nothing will by default will allow door usage, returning anything else will reject door usage</li>
 </ul>
 
@@ -119,7 +119,7 @@
 </code></pre>
 
 <ul>
-<li>Called when a player tries to use a door with a code lock</li>
+<li>Called when the player tries to use a door with a code lock</li>
 <li>Returning true allows door usage, nothing will by default will allow door usage, returning anything else will reject door usage</li>
 </ul>
 
@@ -144,7 +144,7 @@
 </code></pre>
 
 <ul>
-<li>Called when a player tries to use a door with a key lock</li>
+<li>Called when the player tries to use a door with a key lock</li>
 <li>Returning true allows door usage, nothing will by default will allow door usage, returning anything else will reject door usage</li>
 </ul>
 
@@ -194,7 +194,7 @@
 </code></pre>
 
 <ul>
-<li>Called when a player closed a door</li>
+<li>Called when the player closed a door</li>
 <li>No return behavior</li>
 </ul>
 
@@ -219,7 +219,7 @@
 </code></pre>
 
 <ul>
-<li>Called when a player opened a door</li>
+<li>Called when the player opened a door</li>
 <li>No return behavior</li>
 </ul>
 
@@ -344,7 +344,7 @@
 </code></pre>
 
 <ul>
-<li>Called when a player selects DemolishImmediate from the BuildingBlock menu</li>
+<li>Called when the player selects DemolishImmediate from the BuildingBlock menu</li>
 <li>Returning true overrides the demolition</li>
 </ul>
 
@@ -369,7 +369,7 @@
 </code></pre>
 
 <ul>
-<li>Called when a player repairs a BuildingBlock</li>
+<li>Called when the player repairs a BuildingBlock</li>
 <li>No return behavior</li>
 </ul>
 
@@ -394,7 +394,7 @@
 </code></pre>
 
 <ul>
-<li>Called when a player rotates a BuildingBlock</li>
+<li>Called when the player rotates a BuildingBlock</li>
 <li>No return behavior</li>
 </ul>
 
@@ -419,7 +419,7 @@
 </code></pre>
 
 <ul>
-<li>Called when a player upgrades the grade of a BuildingBlock</li>
+<li>Called when the player upgrades the grade of a BuildingBlock</li>
 <li>Returning true overrides the upgrade</li>
 </ul>
 

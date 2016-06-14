@@ -83,35 +83,35 @@
 <pre class="highlight coffeescript"><code><span class="nx">We</span> <span class="nx">need</span> <span class="nx">a</span> <span class="nx">CoffeeScript</span> <span class="nx">example</span> <span class="nx">here</span>
 </code></pre>
 <pre class="highlight javascript"><code><span class="kd">var</span> <span class="nx">EpicPlugin</span> <span class="o">=</span> <span class="p">{</span>
-  <span class="na">Init</span><span class="p">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
-    <span class="k">this</span><span class="p">.</span><span class="nx">LoadDefaultConfig</span><span class="p">();</span>
-  <span class="p">},</span>
+    <span class="na">Init</span><span class="p">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">LoadDefaultConfig</span><span class="p">();</span>
+    <span class="p">},</span>
 
-  <span class="na">LoadDefaultConfig</span><span class="p">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
-    <span class="k">this</span><span class="p">.</span><span class="nx">Config</span><span class="p">.</span><span class="nx">ShowJoinMessage</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">Config</span><span class="p">.</span><span class="nx">ShowJoinMessage</span> <span class="o">||</span> <span class="s2">"true"</span><span class="p">;</span>
-    <span class="k">this</span><span class="p">.</span><span class="nx">Config</span><span class="p">.</span><span class="nx">ShowLeaveMessage</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">Config</span><span class="p">.</span><span class="nx">ShowLeaveMessage</span> <span class="o">||</span> <span class="s2">"true"</span><span class="p">;</span>
-    <span class="k">this</span><span class="p">.</span><span class="nx">Config</span><span class="p">.</span><span class="nx">Messages</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">Config</span><span class="p">.</span><span class="nx">Messages</span> <span class="o">||</span> <span class="p">{};</span>
-    <span class="k">this</span><span class="p">.</span><span class="nx">Config</span><span class="p">.</span><span class="nx">Messages</span><span class="p">.</span><span class="nx">Join</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">Config</span><span class="p">.</span><span class="nx">Messages</span><span class="p">.</span><span class="nx">Join</span> <span class="o">||</span> <span class="s2">"Welcome to this server"</span><span class="p">;</span>
-    <span class="k">this</span><span class="p">.</span><span class="nx">Config</span><span class="p">.</span><span class="nx">Messages</span><span class="p">.</span><span class="nx">Leave</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">Config</span><span class="p">.</span><span class="nx">Messages</span><span class="p">.</span><span class="nx">Leave</span> <span class="o">||</span> <span class="s2">"Goodbye"</span><span class="p">;</span>
-    <span class="nl">this</span><span class="p">:</span><span class="nx">SaveConfig</span><span class="p">();</span>
-  <span class="p">}</span>
+    <span class="na">LoadDefaultConfig</span><span class="p">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">Config</span><span class="p">.</span><span class="nx">ShowJoinMessage</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">Config</span><span class="p">.</span><span class="nx">ShowJoinMessage</span> <span class="o">||</span> <span class="s2">"true"</span><span class="p">;</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">Config</span><span class="p">.</span><span class="nx">ShowLeaveMessage</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">Config</span><span class="p">.</span><span class="nx">ShowLeaveMessage</span> <span class="o">||</span> <span class="s2">"true"</span><span class="p">;</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">Config</span><span class="p">.</span><span class="nx">Messages</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">Config</span><span class="p">.</span><span class="nx">Messages</span> <span class="o">||</span> <span class="p">{};</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">Config</span><span class="p">.</span><span class="nx">Messages</span><span class="p">.</span><span class="nx">Join</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">Config</span><span class="p">.</span><span class="nx">Messages</span><span class="p">.</span><span class="nx">Join</span> <span class="o">||</span> <span class="s2">"Welcome to this server"</span><span class="p">;</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">Config</span><span class="p">.</span><span class="nx">Messages</span><span class="p">.</span><span class="nx">Leave</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">Config</span><span class="p">.</span><span class="nx">Messages</span><span class="p">.</span><span class="nx">Leave</span> <span class="o">||</span> <span class="s2">"Goodbye"</span><span class="p">;</span>
+        <span class="nl">this</span><span class="p">:</span><span class="nx">SaveConfig</span><span class="p">();</span>
+    <span class="p">}</span>
 <span class="p">}</span>
 </code></pre>
 <pre class="highlight python"><code><span class="k">class</span> <span class="nc">EpicPlugin</span><span class="p">:</span>
-  <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-    <span class="bp">self</span><span class="o">.</span><span class="n">Title</span> <span class="o">=</span> <span class="s">"EpicPlugin"</span>
-    <span class="bp">self</span><span class="o">.</span><span class="n">Description</span> <span class="o">=</span> <span class="s">"This example illustrates how to use a basic configuration file"</span>
-    <span class="bp">self</span><span class="o">.</span><span class="n">Author</span> <span class="o">=</span> <span class="s">"Unknown"</span>
-    <span class="bp">self</span><span class="o">.</span><span class="n">Version</span> <span class="o">=</span> <span class="n">V</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">Title</span> <span class="o">=</span> <span class="s">"EpicPlugin"</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">Description</span> <span class="o">=</span> <span class="s">"This example illustrates how to use a basic configuration file"</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">Author</span> <span class="o">=</span> <span class="s">"Unknown"</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">Version</span> <span class="o">=</span> <span class="n">V</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
 
-  <span class="k">def</span> <span class="nf">LoadDefaultConfig</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-    <span class="n">default_cfg</span> <span class="o">=</span> <span class="p">{</span>
-      <span class="s">"ShowJoinMessage"</span><span class="p">:</span> <span class="bp">True</span><span class="p">,</span>
-      <span class="s">"ShowLeaveMessage"</span><span class="p">:</span> <span class="bp">True</span><span class="p">,</span>
-      <span class="s">"Messages"</span><span class="p">:</span> <span class="p">(</span><span class="s">"Hello"</span><span class="p">,</span> <span class="s">"World"</span><span class="p">)</span>
-    <span class="p">}</span>
-    <span class="bp">self</span><span class="o">.</span><span class="n">Config</span> <span class="o">=</span> <span class="n">default_cfg</span>
-    <span class="bp">self</span><span class="o">.</span><span class="n">SaveConfig</span><span class="p">()</span>
+    <span class="k">def</span> <span class="nf">LoadDefaultConfig</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">default_cfg</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="s">"ShowJoinMessage"</span><span class="p">:</span> <span class="bp">True</span><span class="p">,</span>
+            <span class="s">"ShowLeaveMessage"</span><span class="p">:</span> <span class="bp">True</span><span class="p">,</span>
+            <span class="s">"Messages"</span><span class="p">:</span> <span class="p">(</span><span class="s">"Hello"</span><span class="p">,</span> <span class="s">"World"</span><span class="p">)</span>
+        <span class="p">}</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">Config</span> <span class="o">=</span> <span class="n">default_cfg</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">SaveConfig</span><span class="p">()</span>
 </code></pre>
 
 <p>Since many users won&rsquo;t want to (or can&rsquo;t) edit the plugin directly to change the default configuration, it&rsquo;s best to offer to offer them a configuration file that can easily be edited without worrying about messing up the plugin.</p>
@@ -148,24 +148,24 @@
 <pre class="highlight coffeescript"><code><span class="nx">We</span> <span class="nx">need</span> <span class="nx">a</span> <span class="nx">CoffeeScript</span> <span class="nx">example</span> <span class="nx">here</span>
 </code></pre>
 <pre class="highlight javascript"><code><span class="nx">cmdTest</span><span class="err">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">player</span><span class="p">,</span> <span class="nx">cmd</span><span class="p">,</span> <span class="nx">args</span><span class="p">)</span> <span class="p">{</span>
-  <span class="k">if</span> <span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">Config</span><span class="p">.</span><span class="nx">ShowJoinMessage</span> <span class="o">==</span> <span class="s2">"true"</span><span class="p">)</span> <span class="p">{</span>
-    <span class="k">this</span><span class="p">.</span><span class="nx">Config</span><span class="p">.</span><span class="nx">ShowJoinMessage</span> <span class="o">=</span> <span class="s2">"false"</span><span class="p">;</span>
-  <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-    <span class="k">this</span><span class="p">.</span><span class="nx">Config</span><span class="p">.</span><span class="nx">ShowJoinMessage</span> <span class="o">=</span> <span class="s2">"true"</span><span class="p">;</span>
-  <span class="p">}</span>
-  <span class="nl">this</span><span class="p">:</span><span class="nx">SaveConfig</span><span class="p">();</span>
+    <span class="k">if</span> <span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">Config</span><span class="p">.</span><span class="nx">ShowJoinMessage</span> <span class="o">==</span> <span class="s2">"true"</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">Config</span><span class="p">.</span><span class="nx">ShowJoinMessage</span> <span class="o">=</span> <span class="s2">"false"</span><span class="p">;</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">Config</span><span class="p">.</span><span class="nx">ShowJoinMessage</span> <span class="o">=</span> <span class="s2">"true"</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="nl">this</span><span class="p">:</span><span class="nx">SaveConfig</span><span class="p">();</span>
 <span class="p">}</span>
 </code></pre>
 <pre class="highlight python"><code><span class="k">class</span> <span class="nc">EpicPlugin</span><span class="p">:</span>
-  <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-    <span class="bp">self</span><span class="o">.</span><span class="n">Title</span> <span class="o">=</span> <span class="s">"EpicPlugin"</span>
-    <span class="bp">self</span><span class="o">.</span><span class="n">Description</span> <span class="o">=</span> <span class="s">"This example illustrates how to update a value in a configuration file"</span>
-    <span class="bp">self</span><span class="o">.</span><span class="n">Author</span> <span class="o">=</span> <span class="s">"Unknown"</span>
-    <span class="bp">self</span><span class="o">.</span><span class="n">Version</span> <span class="o">=</span> <span class="n">V</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">Title</span> <span class="o">=</span> <span class="s">"EpicPlugin"</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">Description</span> <span class="o">=</span> <span class="s">"This example illustrates how to update a value in a configuration file"</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">Author</span> <span class="o">=</span> <span class="s">"Unknown"</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">Version</span> <span class="o">=</span> <span class="n">V</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
 
-  <span class="k">def</span> <span class="nf">Test</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">player</span><span class="p">,</span> <span class="n">cmd</span><span class="p">,</span> <span class="n">args</span><span class="p">):</span>
-    <span class="bp">self</span><span class="o">.</span><span class="n">Config</span><span class="p">[</span><span class="s">"ShowJoinMessage"</span><span class="p">]</span> <span class="o">=</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">Config</span><span class="p">[</span><span class="s">"ShowJoinMessage"</span><span class="p">]</span>
-    <span class="bp">self</span><span class="o">.</span><span class="n">SaveConfig</span><span class="p">()</span>
+    <span class="k">def</span> <span class="nf">Test</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">player</span><span class="p">,</span> <span class="n">cmd</span><span class="p">,</span> <span class="n">args</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">Config</span><span class="p">[</span><span class="s">"ShowJoinMessage"</span><span class="p">]</span> <span class="o">=</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">Config</span><span class="p">[</span><span class="s">"ShowJoinMessage"</span><span class="p">]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">SaveConfig</span><span class="p">()</span>
 </code></pre>
 
 <p>You can change and save configuration entries by simply assigning the new values and calling the save function.</p>
