@@ -1,0 +1,1427 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <title>API Documentation</title>
+
+    <link rel="canonical" href="http://docs.oxidemod.org"/>
+
+    <link href="../../../stylesheets/screen.css" rel="stylesheet" type="text/css" media="screen" />
+    <link href="../../../stylesheets/print.css" rel="stylesheet" type="text/css" media="print" />
+
+    <link href="../../../favicon.ico" rel="icon" type="image/ico" />
+    <link sizes="16x16" href="../../../favicon-16x16.png" rel="icon" type="image/png" />
+    <link sizes="32x32" href="../../../favicon-32x32.png" rel="icon" type="image/png" />
+    <link sizes="96x96" href="../../../favicon-96x96.png" rel="icon" type="image/png" />
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+      <script src="../../../javascripts/all_nosearch.js" type="text/javascript"></script>
+
+  </head>
+
+  <body class="includes includes_rust includes_rust_item_list includes_rust_item_list_index">
+    <a href="#" id="nav-button">
+      <span>
+        NAV
+        <img src="../../../images/navbar.png" />
+      </span>
+    </a>
+    <div class="tocify-wrapper">
+      <a href="/" id="logo-button">
+        <img src="../../../images/logo.png" />
+      </a>
+      <div id="toc"></div>
+      <ul class="toc-footer">
+  <li><a href='http://oxidemod.org'>Get help on our forums</a></li>
+  <li><a href='https://github.com/OxideMod/Oxide'>View the source on GitHub</a></li>
+  <li><a href='https://github.com/OxideMod/Docs'>Contribute to the Docs on GitHub</a></li>
+</ul>
+
+    </div>
+    <div class="page-wrapper">
+      <div class="dark-box"></div>
+      <div class="content">
+        <h1 id="item-list">Item List</h1>
+
+<table><thead>
+<tr>
+<th>Item Id</th>
+<th>Item Name</th>
+<th>Item Shortname</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>2115555558</td>
+<td>Handmade Shell</td>
+<td>ammo.handmade.shell</td>
+</tr>
+<tr>
+<td>-533875561</td>
+<td>Pistol Bullet</td>
+<td>ammo.pistol</td>
+</tr>
+<tr>
+<td>1621541165</td>
+<td>Incendiary Pistol Bullet</td>
+<td>ammo.pistol.fire</td>
+</tr>
+<tr>
+<td>-422893115</td>
+<td>HV Pistol Ammo</td>
+<td>ammo.pistol.hv</td>
+</tr>
+<tr>
+<td>815896488</td>
+<td>5.56 Rifle Ammo</td>
+<td>ammo.rifle</td>
+</tr>
+<tr>
+<td>805088543</td>
+<td>Explosive 5.56 Rifle Ammo</td>
+<td>ammo.rifle.explosive</td>
+</tr>
+<tr>
+<td>1152393492</td>
+<td>HV 5.56 Rifle Ammo</td>
+<td>ammo.rifle.hv</td>
+</tr>
+<tr>
+<td>449771810</td>
+<td>Incendiary 5.56 Rifle Ammo</td>
+<td>ammo.rifle.incendiary</td>
+</tr>
+<tr>
+<td>1578894260</td>
+<td>Rocket</td>
+<td>ammo.rocket.basic</td>
+</tr>
+<tr>
+<td>1436532208</td>
+<td>Incendiary Rocket</td>
+<td>ammo.rocket.fire</td>
+</tr>
+<tr>
+<td>542276424</td>
+<td>High Velocity Rocket</td>
+<td>ammo.rocket.hv</td>
+</tr>
+<tr>
+<td>1594947829</td>
+<td>Smoke Rocket WIP!!!!</td>
+<td>ammo.rocket.smoke</td>
+</tr>
+<tr>
+<td>-1035059994</td>
+<td>12 Gauge Buckshot</td>
+<td>ammo.shotgun</td>
+</tr>
+<tr>
+<td>1819281075</td>
+<td>12 Gauge Slug</td>
+<td>ammo.shotgun.slug</td>
+</tr>
+<tr>
+<td>1685058759</td>
+<td>Anti-Radiation Pills</td>
+<td>antiradpills</td>
+</tr>
+<tr>
+<td>93029210</td>
+<td>Apple</td>
+<td>apple</td>
+</tr>
+<tr>
+<td>-1565095136</td>
+<td>Rotten Apple</td>
+<td>apple.spoiled</td>
+</tr>
+<tr>
+<td>-1280058093</td>
+<td>High Velocity Arrow</td>
+<td>arrow.hv</td>
+</tr>
+<tr>
+<td>-420273765</td>
+<td>Wooden Arrow</td>
+<td>arrow.wooden</td>
+</tr>
+<tr>
+<td>-148163128</td>
+<td>Hide Boots</td>
+<td>attire.hide.boots</td>
+</tr>
+<tr>
+<td>936777834</td>
+<td>Hide Halterneck</td>
+<td>attire.hide.helterneck</td>
+</tr>
+<tr>
+<td>-135651869</td>
+<td>Hide Pants</td>
+<td>attire.hide.pants</td>
+</tr>
+<tr>
+<td>102672084</td>
+<td>Hide Poncho</td>
+<td>attire.hide.poncho</td>
+</tr>
+<tr>
+<td>-132588262</td>
+<td>Hide Skirt</td>
+<td>attire.hide.skirt</td>
+</tr>
+<tr>
+<td>-1666761111</td>
+<td>Hide Vest</td>
+<td>attire.hide.vest</td>
+</tr>
+<tr>
+<td>563023711</td>
+<td>Auto Turret</td>
+<td>autoturret</td>
+</tr>
+<tr>
+<td>790921853</td>
+<td>Salvaged Axe</td>
+<td>axe.salvaged</td>
+</tr>
+<tr>
+<td>-337261910</td>
+<td>Bandage</td>
+<td>bandage</td>
+</tr>
+<tr>
+<td>498312426</td>
+<td>Concrete Barricade</td>
+<td>barricade.concrete</td>
+</tr>
+<tr>
+<td>504904386</td>
+<td>Metal Barricade</td>
+<td>barricade.metal</td>
+</tr>
+<tr>
+<td>-1221200300</td>
+<td>Sandbag Barricade</td>
+<td>barricade.sandbags</td>
+</tr>
+<tr>
+<td>510887968</td>
+<td>Stone Barricade</td>
+<td>barricade.stone</td>
+</tr>
+<tr>
+<td>-814689390</td>
+<td>Wooden Barricade</td>
+<td>barricade.wood</td>
+</tr>
+<tr>
+<td>1024486167</td>
+<td>Barbed Wooden Barricade</td>
+<td>barricade.woodwire</td>
+</tr>
+<tr>
+<td>2021568998</td>
+<td>Battery - Small</td>
+<td>battery.small</td>
+</tr>
+<tr>
+<td>1325935999</td>
+<td>Bear Meat</td>
+<td>bearmeat</td>
+</tr>
+<tr>
+<td>-2066726403</td>
+<td>Burnt Bear Meat</td>
+<td>bearmeat.burned</td>
+</tr>
+<tr>
+<td>-2043730634</td>
+<td>Bear Meat Cooked</td>
+<td>bearmeat.cooked</td>
+</tr>
+<tr>
+<td>97409</td>
+<td>Bed</td>
+<td>bed</td>
+</tr>
+<tr>
+<td>1611480185</td>
+<td>Black Raspberries</td>
+<td>black.raspberries</td>
+</tr>
+<tr>
+<td>93832698</td>
+<td>Blood</td>
+<td>blood</td>
+</tr>
+<tr>
+<td>-1063412582</td>
+<td>Blueberries</td>
+<td>blueberries</td>
+</tr>
+<tr>
+<td>1186854727</td>
+<td>Bone Jacket</td>
+<td>bone.armor.jacket</td>
+</tr>
+<tr>
+<td>459479619</td>
+<td>Bone Armor Pants</td>
+<td>bone.armor.pants</td>
+</tr>
+<tr>
+<td>919780768</td>
+<td>Bone Club</td>
+<td>bone.club</td>
+</tr>
+<tr>
+<td>-365801095</td>
+<td>Bone Fragments</td>
+<td>bone.fragments</td>
+</tr>
+<tr>
+<td>68998734</td>
+<td>Bota Bag</td>
+<td>botabag</td>
+</tr>
+<tr>
+<td>-853695669</td>
+<td>Hunting Bow</td>
+<td>bow.hunting</td>
+</tr>
+<tr>
+<td>-1026117678</td>
+<td>Repair Bench</td>
+<td>box.repair.bench</td>
+</tr>
+<tr>
+<td>-770311783</td>
+<td>Wood Storage Box</td>
+<td>box.wooden</td>
+</tr>
+<tr>
+<td>271534758</td>
+<td>Large Wood Box</td>
+<td>box.wooden.large</td>
+</tr>
+<tr>
+<td>1260209393</td>
+<td>Bucket Helmet</td>
+<td>bucket.helmet</td>
+</tr>
+<tr>
+<td>-1192532973</td>
+<td>Water Bucket</td>
+<td>bucket.water</td>
+</tr>
+<tr>
+<td>-307490664</td>
+<td>Building Plan</td>
+<td>building.planner</td>
+</tr>
+<tr>
+<td>115739308</td>
+<td>Leather Gloves</td>
+<td>burlap.gloves</td>
+</tr>
+<tr>
+<td>-1035315940</td>
+<td>Burlap Headwrap</td>
+<td>burlap.headwrap</td>
+</tr>
+<tr>
+<td>707427396</td>
+<td>Burlap Shirt</td>
+<td>burlap.shirt</td>
+</tr>
+<tr>
+<td>707432758</td>
+<td>Burlap Shoes</td>
+<td>burlap.shoes</td>
+</tr>
+<tr>
+<td>1767561705</td>
+<td>Burlap Trousers</td>
+<td>burlap.trousers</td>
+</tr>
+<tr>
+<td>-139769801</td>
+<td>Camp Fire</td>
+<td>campfire</td>
+</tr>
+<tr>
+<td>-1043746011</td>
+<td>Can of Beans</td>
+<td>can.beans</td>
+</tr>
+<tr>
+<td>2080339268</td>
+<td>Empty Can Of Beans</td>
+<td>can.beans.empty</td>
+</tr>
+<tr>
+<td>-171664558</td>
+<td>Can of Tuna</td>
+<td>can.tuna</td>
+</tr>
+<tr>
+<td>1050986417</td>
+<td>Empty Tuna Can</td>
+<td>can.tuna.empty</td>
+</tr>
+<tr>
+<td>523409530</td>
+<td>Candy Cane</td>
+<td>candycane</td>
+</tr>
+<tr>
+<td>1300054961</td>
+<td>CCTV Camera</td>
+<td>cctv.camera</td>
+</tr>
+<tr>
+<td>-2095387015</td>
+<td>Ceiling Light</td>
+<td>ceilinglight</td>
+</tr>
+<tr>
+<td>1436001773</td>
+<td>Charcoal</td>
+<td>charcoal</td>
+</tr>
+<tr>
+<td>1711323399</td>
+<td>Burned Chicken</td>
+<td>chicken.burned</td>
+</tr>
+<tr>
+<td>1734319168</td>
+<td>Cooked Chicken.</td>
+<td>chicken.cooked</td>
+</tr>
+<tr>
+<td>-1658459025</td>
+<td>Raw Chicken Breast</td>
+<td>chicken.raw</td>
+</tr>
+<tr>
+<td>-726947205</td>
+<td>Spoiled Chicken</td>
+<td>chicken.spoiled</td>
+</tr>
+<tr>
+<td>-341443994</td>
+<td>Chocolate Bar</td>
+<td>chocholate</td>
+</tr>
+<tr>
+<td>94756378</td>
+<td>Cloth</td>
+<td>cloth</td>
+</tr>
+<tr>
+<td>3059095</td>
+<td>Coal :(</td>
+<td>coal</td>
+</tr>
+<tr>
+<td>-2128719593</td>
+<td>Coffee Can Helmet</td>
+<td>coffeecan.helmet</td>
+</tr>
+<tr>
+<td>3059624</td>
+<td>Corn</td>
+<td>corn</td>
+</tr>
+<tr>
+<td>2123300234</td>
+<td>Crossbow</td>
+<td>crossbow</td>
+</tr>
+<tr>
+<td>1983936587</td>
+<td>Crude Oil</td>
+<td>crude.oil</td>
+</tr>
+<tr>
+<td>1257201758</td>
+<td>Tool Cupboard</td>
+<td>cupboard.tool</td>
+</tr>
+<tr>
+<td>-1598790097</td>
+<td>Sheet Metal Double Door</td>
+<td>door.double.hinged.metal</td>
+</tr>
+<tr>
+<td>-933236257</td>
+<td>Armored Double Door</td>
+<td>door.double.hinged.toptier</td>
+</tr>
+<tr>
+<td>-1575287163</td>
+<td>Wood Double Door</td>
+<td>door.double.hinged.wood</td>
+</tr>
+<tr>
+<td>-2104481870</td>
+<td>Sheet Metal Door</td>
+<td>door.hinged.metal</td>
+</tr>
+<tr>
+<td>-1571725662</td>
+<td>Armored Door</td>
+<td>door.hinged.toptier</td>
+</tr>
+<tr>
+<td>1456441506</td>
+<td>Wooden Door</td>
+<td>door.hinged.wood</td>
+</tr>
+<tr>
+<td>1200628767</td>
+<td>Door Key</td>
+<td>door.key</td>
+</tr>
+<tr>
+<td>498591726</td>
+<td>Timed Explosive Charge</td>
+<td>explosive.timed</td>
+</tr>
+<tr>
+<td>1755466030</td>
+<td>Explosives</td>
+<td>explosives</td>
+</tr>
+<tr>
+<td>-1034048911</td>
+<td>Animal Fat</td>
+<td>fat.animal</td>
+</tr>
+<tr>
+<td>-2078972355</td>
+<td>Cooked Fish</td>
+<td>fish.cooked</td>
+</tr>
+<tr>
+<td>88869913</td>
+<td>Minnows</td>
+<td>fish.minnows</td>
+</tr>
+<tr>
+<td>-533484654</td>
+<td>Raw Fish</td>
+<td>fish.raw</td>
+</tr>
+<tr>
+<td>865679437</td>
+<td>Small Trout</td>
+<td>fish.troutsmall</td>
+</tr>
+<tr>
+<td>1369769822</td>
+<td>Survival Fish Trap</td>
+<td>fishtrap.small</td>
+</tr>
+<tr>
+<td>1045869440</td>
+<td>Flame Thrower</td>
+<td>flamethrower</td>
+</tr>
+<tr>
+<td>97513422</td>
+<td>Flare</td>
+<td>flare</td>
+</tr>
+<tr>
+<td>-1722829188</td>
+<td>A floor grill</td>
+<td>floor.grill</td>
+</tr>
+<tr>
+<td>1849912854</td>
+<td>Ladder Hatch</td>
+<td>floor.ladder.hatch</td>
+</tr>
+<tr>
+<td>-217113639</td>
+<td>Acoustic Guitar</td>
+<td>fun.guitar</td>
+</tr>
+<tr>
+<td>-505639592</td>
+<td>Furnace</td>
+<td>furnace</td>
+</tr>
+<tr>
+<td>1598149413</td>
+<td>Large Furnace</td>
+<td>furnace.large</td>
+</tr>
+<tr>
+<td>-1779401418</td>
+<td>High External Stone Gate</td>
+<td>gates.external.high.stone</td>
+</tr>
+<tr>
+<td>-57285700</td>
+<td>High External Wooden Gate</td>
+<td>gates.external.high.wood</td>
+</tr>
+<tr>
+<td>277631078</td>
+<td>Wind Turbine</td>
+<td>generator.wind.scrap</td>
+</tr>
+<tr>
+<td>718197703</td>
+<td>Granola Bar</td>
+<td>granolabar</td>
+</tr>
+<tr>
+<td>384204160</td>
+<td>Beancan Grenade</td>
+<td>grenade.beancan</td>
+</tr>
+<tr>
+<td>-1308622549</td>
+<td>F1 Grenade</td>
+<td>grenade.f1</td>
+</tr>
+<tr>
+<td>-1580059655</td>
+<td>Gun Powder</td>
+<td>gunpowder</td>
+</tr>
+<tr>
+<td>-1224598842</td>
+<td>Hammer</td>
+<td>hammer</td>
+</tr>
+<tr>
+<td>-1976561211</td>
+<td>Salvaged Hammer</td>
+<td>hammer.salvaged</td>
+</tr>
+<tr>
+<td>-1406876421</td>
+<td>Beenie Hat</td>
+<td>hat.beenie</td>
+</tr>
+<tr>
+<td>-1397343301</td>
+<td>Boonie Hat</td>
+<td>hat.boonie</td>
+</tr>
+<tr>
+<td>-1381682752</td>
+<td>Candle Hat</td>
+<td>hat.candle</td>
+</tr>
+<tr>
+<td>696727039</td>
+<td>Baseball Cap</td>
+<td>hat.cap</td>
+</tr>
+<tr>
+<td>-450738836</td>
+<td>Miners Hat</td>
+<td>hat.miner</td>
+</tr>
+<tr>
+<td>124310981</td>
+<td>Wolf Headdress</td>
+<td>hat.wolf</td>
+</tr>
+<tr>
+<td>698310895</td>
+<td>Hatchet</td>
+<td>hatchet</td>
+</tr>
+<tr>
+<td>-1078788046</td>
+<td>Hazmat Boots</td>
+<td>hazmat.boots</td>
+</tr>
+<tr>
+<td>1057685737</td>
+<td>Hazmat Gloves</td>
+<td>hazmat.gloves</td>
+</tr>
+<tr>
+<td>1079752220</td>
+<td>Hazmat Helmet</td>
+<td>hazmat.helmet</td>
+</tr>
+<tr>
+<td>1133046397</td>
+<td>Hazmat Jacket</td>
+<td>hazmat.jacket</td>
+</tr>
+<tr>
+<td>-1066276787</td>
+<td>Hazmat Pants</td>
+<td>hazmat.pants</td>
+</tr>
+<tr>
+<td>-1211618504</td>
+<td>Hoodie</td>
+<td>hoodie</td>
+</tr>
+<tr>
+<td>2133577942</td>
+<td>High Quality Metal Ore</td>
+<td>hq.metal.ore</td>
+</tr>
+<tr>
+<td>-1014825244</td>
+<td>Burned Human Meat</td>
+<td>humanmeat.burned</td>
+</tr>
+<tr>
+<td>-991829475</td>
+<td>Cooked Human Meat</td>
+<td>humanmeat.cooked</td>
+</tr>
+<tr>
+<td>-642008142</td>
+<td>Raw Human Meat</td>
+<td>humanmeat.raw</td>
+</tr>
+<tr>
+<td>661790782</td>
+<td>Spoiled Human Meat</td>
+<td>humanmeat.spoiled</td>
+</tr>
+<tr>
+<td>-1440143841</td>
+<td>Salvaged Icepick</td>
+<td>icepick.salvaged</td>
+</tr>
+<tr>
+<td>-1167640370</td>
+<td>Jacket</td>
+<td>jacket</td>
+</tr>
+<tr>
+<td>-1616887133</td>
+<td>Snow Jacket - Red</td>
+<td>jacket.snow</td>
+</tr>
+<tr>
+<td>-1284735799</td>
+<td>Jack O Lantern Angry</td>
+<td>jackolantern.angry</td>
+</tr>
+<tr>
+<td>-1278649848</td>
+<td>Jack O Lantern Happy</td>
+<td>jackolantern.happy</td>
+</tr>
+<tr>
+<td>776005741</td>
+<td>Bone Knife</td>
+<td>knife.bone</td>
+</tr>
+<tr>
+<td>108061910</td>
+<td>Wooden Ladder</td>
+<td>ladder.wooden.wall</td>
+</tr>
+<tr>
+<td>-51678842</td>
+<td>Lantern</td>
+<td>lantern</td>
+</tr>
+<tr>
+<td>-789202811</td>
+<td>Large Medkit</td>
+<td>largemedkit</td>
+</tr>
+<tr>
+<td>50834473</td>
+<td>Leather</td>
+<td>leather</td>
+</tr>
+<tr>
+<td>193190034</td>
+<td>M249</td>
+<td>lmg.m249</td>
+</tr>
+<tr>
+<td>-975723312</td>
+<td>Code Lock</td>
+<td>lock.code</td>
+</tr>
+<tr>
+<td>1908195100</td>
+<td>Lock</td>
+<td>lock.key</td>
+</tr>
+<tr>
+<td>146685185</td>
+<td>Longsword</td>
+<td>longsword</td>
+</tr>
+<tr>
+<td>28178745</td>
+<td>Low Grade Fuel</td>
+<td>lowgradefuel</td>
+</tr>
+<tr>
+<td>3343606</td>
+<td>Mace</td>
+<td>mace</td>
+</tr>
+<tr>
+<td>825308669</td>
+<td>Machete</td>
+<td>machete</td>
+</tr>
+<tr>
+<td>107868</td>
+<td>Paper Map</td>
+<td>map</td>
+</tr>
+<tr>
+<td>997973965</td>
+<td>Improvised Balaclava</td>
+<td>mask.balaclava</td>
+</tr>
+<tr>
+<td>-46188931</td>
+<td>Bandana Mask</td>
+<td>mask.bandana</td>
+</tr>
+<tr>
+<td>-253819519</td>
+<td>Pork</td>
+<td>meat.boar</td>
+</tr>
+<tr>
+<td>968732481</td>
+<td>Burned Pork</td>
+<td>meat.pork.burned</td>
+</tr>
+<tr>
+<td>991728250</td>
+<td>Cooked Pork</td>
+<td>meat.pork.cooked</td>
+</tr>
+<tr>
+<td>-46848560</td>
+<td>Metal Facemask</td>
+<td>metal.facemask</td>
+</tr>
+<tr>
+<td>688032252</td>
+<td>Metal Fragments</td>
+<td>metal.fragments</td>
+</tr>
+<tr>
+<td>-1059362949</td>
+<td>Metal Ore</td>
+<td>metal.ore</td>
+</tr>
+<tr>
+<td>1265861812</td>
+<td>Metal Chest Plate</td>
+<td>metal.plate.torso</td>
+</tr>
+<tr>
+<td>374890416</td>
+<td>High Quality Metal</td>
+<td>metal.refined</td>
+</tr>
+<tr>
+<td>-758925787</td>
+<td>Pump Jack</td>
+<td>mining.pumpjack</td>
+</tr>
+<tr>
+<td>-1411620422</td>
+<td>Mining Quarry</td>
+<td>mining.quarry</td>
+</tr>
+<tr>
+<td>843418712</td>
+<td>Mushroom</td>
+<td>mushroom</td>
+</tr>
+<tr>
+<td>3387378</td>
+<td>Note</td>
+<td>note</td>
+</tr>
+<tr>
+<td>106433500</td>
+<td>Pants</td>
+<td>pants</td>
+</tr>
+<tr>
+<td>106434956</td>
+<td>Paper</td>
+<td>paper</td>
+</tr>
+<tr>
+<td>-578028723</td>
+<td>Pick Axe</td>
+<td>pickaxe</td>
+</tr>
+<tr>
+<td>-1379225193</td>
+<td>Eoka Pistol</td>
+<td>pistol.eoka</td>
+</tr>
+<tr>
+<td>-930579334</td>
+<td>Revolver</td>
+<td>pistol.revolver</td>
+</tr>
+<tr>
+<td>548699316</td>
+<td>Semi-Automatic Pistol</td>
+<td>pistol.semiauto</td>
+</tr>
+<tr>
+<td>640562379</td>
+<td>Pookie Bear</td>
+<td>pookie.bear</td>
+</tr>
+<tr>
+<td>-225085592</td>
+<td>Pumpkin</td>
+<td>pumpkin</td>
+</tr>
+<tr>
+<td>1987447227</td>
+<td>Research Table</td>
+<td>research.table</td>
+</tr>
+<tr>
+<td>-1461508848</td>
+<td>Assault Rifle</td>
+<td>rifle.ak</td>
+</tr>
+<tr>
+<td>-55660037</td>
+<td>Bolt Action Rifle</td>
+<td>rifle.bolt</td>
+</tr>
+<tr>
+<td>-1745053053</td>
+<td>Semi-Automatic Rifle</td>
+<td>rifle.semiauto</td>
+</tr>
+<tr>
+<td>340009023</td>
+<td>Riot Helmet</td>
+<td>riot.helmet</td>
+</tr>
+<tr>
+<td>-288010497</td>
+<td>Road Sign Jacket</td>
+<td>roadsign.jacket</td>
+</tr>
+<tr>
+<td>-1595790889</td>
+<td>Road Sign Kilt</td>
+<td>roadsign.kilt</td>
+</tr>
+<tr>
+<td>3506021</td>
+<td>Rock</td>
+<td>rock</td>
+</tr>
+<tr>
+<td>649603450</td>
+<td>Rocket Launcher</td>
+<td>rocket.launcher</td>
+</tr>
+<tr>
+<td>-1775234707</td>
+<td>Salvaged Cleaver</td>
+<td>salvaged.cleaver</td>
+</tr>
+<tr>
+<td>-388967316</td>
+<td>Salvaged Sword</td>
+<td>salvaged.sword</td>
+</tr>
+<tr>
+<td>2007564590</td>
+<td>Santa Hat</td>
+<td>santahat</td>
+</tr>
+<tr>
+<td>583366917</td>
+<td>Corn Seed</td>
+<td>seed.corn</td>
+</tr>
+<tr>
+<td>583506109</td>
+<td>Hemp Seed</td>
+<td>seed.hemp</td>
+</tr>
+<tr>
+<td>466113771</td>
+<td>Pumpkin Seed</td>
+<td>seed.pumpkin</td>
+</tr>
+<tr>
+<td>2057749608</td>
+<td>Salvaged Shelves</td>
+<td>shelves</td>
+</tr>
+<tr>
+<td>2107229499</td>
+<td>Boots</td>
+<td>shoes.boots</td>
+</tr>
+<tr>
+<td>-1009492144</td>
+<td>Pump Shotgun</td>
+<td>shotgun.pump</td>
+</tr>
+<tr>
+<td>2077983581</td>
+<td>Waterpipe Shotgun</td>
+<td>shotgun.waterpipe</td>
+</tr>
+<tr>
+<td>-529054135</td>
+<td>Metal horizontal embrasure</td>
+<td>shutter.metal.embrasure.a</td>
+</tr>
+<tr>
+<td>-529054134</td>
+<td>Metal Vertical embrasure</td>
+<td>shutter.metal.embrasure.b</td>
+</tr>
+<tr>
+<td>486166145</td>
+<td>Wood Shutters</td>
+<td>shutter.wood.a</td>
+</tr>
+<tr>
+<td>1498516223</td>
+<td>Two Sided Hanging Sign</td>
+<td>sign.hanging</td>
+</tr>
+<tr>
+<td>1628490888</td>
+<td>Large Banner Hanging</td>
+<td>sign.hanging.banner.large</td>
+</tr>
+<tr>
+<td>-632459882</td>
+<td>Two Sided Ornate Hanging Sign</td>
+<td>sign.hanging.ornate</td>
+</tr>
+<tr>
+<td>-626812403</td>
+<td>Landscape Picture Frame</td>
+<td>sign.pictureframe.landscape</td>
+</tr>
+<tr>
+<td>385802761</td>
+<td>Portrait Picture Frame</td>
+<td>sign.pictureframe.portrait</td>
+</tr>
+<tr>
+<td>2117976603</td>
+<td>Tall Picture Frame</td>
+<td>sign.pictureframe.tall</td>
+</tr>
+<tr>
+<td>1338515426</td>
+<td>XL Picture Frame</td>
+<td>sign.pictureframe.xl</td>
+</tr>
+<tr>
+<td>-1455694274</td>
+<td>XXL Picture Frame</td>
+<td>sign.pictureframe.xxl</td>
+</tr>
+<tr>
+<td>1579245182</td>
+<td>Large Banner on pole</td>
+<td>sign.pole.banner.large</td>
+</tr>
+<tr>
+<td>-587434450</td>
+<td>Double Sign Post</td>
+<td>sign.post.double</td>
+</tr>
+<tr>
+<td>-163742043</td>
+<td>Single Sign Post</td>
+<td>sign.post.single</td>
+</tr>
+<tr>
+<td>-1224714193</td>
+<td>One Sided Town Sign Post</td>
+<td>sign.post.town</td>
+</tr>
+<tr>
+<td>644359987</td>
+<td>Two Sided Town Sign Post</td>
+<td>sign.post.town.roof</td>
+</tr>
+<tr>
+<td>-1962514734</td>
+<td>Huge Wooden Sign</td>
+<td>sign.wooden.huge</td>
+</tr>
+<tr>
+<td>-705305612</td>
+<td>Large Wooden Sign</td>
+<td>sign.wooden.large</td>
+</tr>
+<tr>
+<td>-357728804</td>
+<td>Wooden Sign</td>
+<td>sign.wooden.medium</td>
+</tr>
+<tr>
+<td>-698499648</td>
+<td>Small Wooden Sign</td>
+<td>sign.wooden.small</td>
+</tr>
+<tr>
+<td>960793436</td>
+<td>Human Skull</td>
+<td>skull.human</td>
+</tr>
+<tr>
+<td>1001265731</td>
+<td>Wolf Skull</td>
+<td>skull.wolf</td>
+</tr>
+<tr>
+<td>1253290621</td>
+<td>Sleeping Bag</td>
+<td>sleepingbag</td>
+</tr>
+<tr>
+<td>470729623</td>
+<td>Small Oil Refinery</td>
+<td>small.oil.refinery</td>
+</tr>
+<tr>
+<td>927253046</td>
+<td>Small Water Bottle</td>
+<td>smallwaterbottle</td>
+</tr>
+<tr>
+<td>109552593</td>
+<td>Custom SMG</td>
+<td>smg.2</td>
+</tr>
+<tr>
+<td>456448245</td>
+<td>Thompson</td>
+<td>smg.thompson</td>
+</tr>
+<tr>
+<td>-2118132208</td>
+<td>Stone Spear</td>
+<td>spear.stone</td>
+</tr>
+<tr>
+<td>-1127699509</td>
+<td>Wooden Spear</td>
+<td>spear.wooden</td>
+</tr>
+<tr>
+<td>-685265909</td>
+<td>Wooden Floor Spikes</td>
+<td>spikes.floor</td>
+</tr>
+<tr>
+<td>1051155022</td>
+<td>Small Stash</td>
+<td>stash.small</td>
+</tr>
+<tr>
+<td>-1623330855</td>
+<td>SUPER Stocking</td>
+<td>stocking.large</td>
+</tr>
+<tr>
+<td>-1616524891</td>
+<td>Small Stocking</td>
+<td>stocking.small</td>
+</tr>
+<tr>
+<td>789892804</td>
+<td>Stone Pick Axe</td>
+<td>stone.pickaxe</td>
+</tr>
+<tr>
+<td>-1289478934</td>
+<td>Stone Hatchet</td>
+<td>stonehatchet</td>
+</tr>
+<tr>
+<td>-892070738</td>
+<td>Stones</td>
+<td>stones</td>
+</tr>
+<tr>
+<td>-891243783</td>
+<td>Sulfur</td>
+<td>sulfur</td>
+</tr>
+<tr>
+<td>889398893</td>
+<td>Sulfur Ore</td>
+<td>sulfur.ore</td>
+</tr>
+<tr>
+<td>-1625468793</td>
+<td>Supply Signal</td>
+<td>supply.signal</td>
+</tr>
+<tr>
+<td>1293049486</td>
+<td>Survey Charge</td>
+<td>surveycharge</td>
+</tr>
+<tr>
+<td>586484018</td>
+<td>Medical Syringe</td>
+<td>syringe.medical</td>
+</tr>
+<tr>
+<td>2069925558</td>
+<td>Reactive Target</td>
+<td>target.reactive</td>
+</tr>
+<tr>
+<td>1490499512</td>
+<td>Targeting Computer</td>
+<td>targeting.computer</td>
+</tr>
+<tr>
+<td>-1342405573</td>
+<td>Camera</td>
+<td>tool.camera</td>
+</tr>
+<tr>
+<td>110547964</td>
+<td>Torch</td>
+<td>torch</td>
+</tr>
+<tr>
+<td>1046072789</td>
+<td>Snap Trap</td>
+<td>trap.bear</td>
+</tr>
+<tr>
+<td>255101535</td>
+<td>Land Mine</td>
+<td>trap.landmine</td>
+</tr>
+<tr>
+<td>-864578046</td>
+<td>T-Shirt</td>
+<td>tshirt</td>
+</tr>
+<tr>
+<td>1660607208</td>
+<td>Longsleeve T-Shirt</td>
+<td>tshirt.long</td>
+</tr>
+<tr>
+<td>-1792066367</td>
+<td>High External Wooden Wall</td>
+<td>wall.external.high</td>
+</tr>
+<tr>
+<td>-496055048</td>
+<td>High External Stone Wall</td>
+<td>wall.external.high.stone</td>
+</tr>
+<tr>
+<td>-427925529</td>
+<td>Prison Cell Wall</td>
+<td>wall.frame.cell</td>
+</tr>
+<tr>
+<td>562888306</td>
+<td>Prison Cell Gate</td>
+<td>wall.frame.cell.gate</td>
+</tr>
+<tr>
+<td>-378017204</td>
+<td>Chainlink Fence</td>
+<td>wall.frame.fence</td>
+</tr>
+<tr>
+<td>995306285</td>
+<td>Chainlink Fence Gate</td>
+<td>wall.frame.fence.gate</td>
+</tr>
+<tr>
+<td>1175970190</td>
+<td>Shop Front</td>
+<td>wall.frame.shopfront</td>
+</tr>
+<tr>
+<td>-1021702157</td>
+<td>Metal Window Bars</td>
+<td>wall.window.bars.metal</td>
+</tr>
+<tr>
+<td>-402507101</td>
+<td>Reinforced Window Bars</td>
+<td>wall.window.bars.toptier</td>
+</tr>
+<tr>
+<td>-1556671423</td>
+<td>Wooden Window Bars</td>
+<td>wall.window.bars.wood</td>
+</tr>
+<tr>
+<td>112903447</td>
+<td>Water</td>
+<td>water</td>
+</tr>
+<tr>
+<td>-1628526499</td>
+<td>Water Barrel</td>
+<td>water.barrel</td>
+</tr>
+<tr>
+<td>1817873886</td>
+<td>Large Water Catcher</td>
+<td>water.catcher.large</td>
+</tr>
+<tr>
+<td>1824679850</td>
+<td>Small Water Catcher</td>
+<td>water.catcher.small</td>
+</tr>
+<tr>
+<td>1840561315</td>
+<td>Water Purifier</td>
+<td>water.purifier</td>
+</tr>
+<tr>
+<td>1916127949</td>
+<td>Salt Water</td>
+<td>water.salt</td>
+</tr>
+<tr>
+<td>547302405</td>
+<td>Water Jug</td>
+<td>waterjug</td>
+</tr>
+<tr>
+<td>1229879204</td>
+<td>Weapon Flashlight</td>
+<td>weapon.mod.flashlight</td>
+</tr>
+<tr>
+<td>-465236267</td>
+<td>Holosight</td>
+<td>weapon.mod.holosight</td>
+</tr>
+<tr>
+<td>516382256</td>
+<td>Weapon Lasersight</td>
+<td>weapon.mod.lasersight</td>
+</tr>
+<tr>
+<td>-1569356508</td>
+<td>Muzzle Boost</td>
+<td>weapon.mod.muzzleboost</td>
+</tr>
+<tr>
+<td>-1569280852</td>
+<td>Muzzle Brake</td>
+<td>weapon.mod.muzzlebrake</td>
+</tr>
+<tr>
+<td>1213686767</td>
+<td>Silencer</td>
+<td>weapon.mod.silencer</td>
+</tr>
+<tr>
+<td>-141135377</td>
+<td>4x Zoom Scope</td>
+<td>weapon.mod.small.scope</td>
+</tr>
+<tr>
+<td>-1714986849</td>
+<td>Burned Wolf Meat</td>
+<td>wolfmeat.burned</td>
+</tr>
+<tr>
+<td>-1691991080</td>
+<td>Cooked Wolf Meat</td>
+<td>wolfmeat.cooked</td>
+</tr>
+<tr>
+<td>179448791</td>
+<td>Raw Wolf Meat</td>
+<td>wolfmeat.raw</td>
+</tr>
+<tr>
+<td>431617507</td>
+<td>Spoiled Wolf Meat</td>
+<td>wolfmeat.spoiled</td>
+</tr>
+<tr>
+<td>3655341</td>
+<td>Wood</td>
+<td>wood</td>
+</tr>
+<tr>
+<td>1554697726</td>
+<td>Wood Chestplate</td>
+<td>wood.armor.jacket</td>
+</tr>
+<tr>
+<td>-1883959124</td>
+<td>Wood Armor Pants</td>
+<td>wood.armor.pants</td>
+</tr>
+<tr>
+<td>-1732316031</td>
+<td>Large Present</td>
+<td>xmas.present.large</td>
+</tr>
+<tr>
+<td>-2130280721</td>
+<td>Medium Present</td>
+<td>xmas.present.medium</td>
+</tr>
+<tr>
+<td>-1725510067</td>
+<td>Small Present</td>
+<td>xmas.present.small</td>
+</tr>
+</tbody></table>
+
+      </div>
+      <div class="dark-box">
+      </div>
+    </div>
+    <script type="text/javascript">
+  // Redirect github.io to custom domain
+  (function() {
+    if (window.location.href.indexOf("github.io") > -1) {
+      window.location.replace("http://docs.oxidemod.org/");
+    }
+  })();
+</script>
+
+  </body>
+</html>

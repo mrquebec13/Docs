@@ -1,0 +1,226 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <title>API Documentation</title>
+
+    <link rel="canonical" href="http://docs.oxidemod.org"/>
+
+    <link href="../../stylesheets/screen.css" rel="stylesheet" type="text/css" media="screen" />
+    <link href="../../stylesheets/print.css" rel="stylesheet" type="text/css" media="print" />
+
+    <link href="../../favicon.ico" rel="icon" type="image/ico" />
+    <link sizes="16x16" href="../../favicon-16x16.png" rel="icon" type="image/png" />
+    <link sizes="32x32" href="../../favicon-32x32.png" rel="icon" type="image/png" />
+    <link sizes="96x96" href="../../favicon-96x96.png" rel="icon" type="image/png" />
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+      <script src="../../javascripts/all_nosearch.js" type="text/javascript"></script>
+
+  </head>
+
+  <body class="includes includes_styling_messages includes_styling_messages_index">
+    <a href="#" id="nav-button">
+      <span>
+        NAV
+        <img src="../../images/navbar.png" />
+      </span>
+    </a>
+    <div class="tocify-wrapper">
+      <a href="/" id="logo-button">
+        <img src="../../images/logo.png" />
+      </a>
+      <div id="toc"></div>
+      <ul class="toc-footer">
+  <li><a href='http://oxidemod.org'>Get help on our forums</a></li>
+  <li><a href='https://github.com/OxideMod/Oxide'>View the source on GitHub</a></li>
+  <li><a href='https://github.com/OxideMod/Docs'>Contribute to the Docs on GitHub</a></li>
+</ul>
+
+    </div>
+    <div class="page-wrapper">
+      <div class="dark-box"></div>
+      <div class="content">
+        <h1 id="styling-messages">Styling Messages</h1>
+
+<blockquote>
+<p>Render the text in boldface</p>
+</blockquote>
+<pre class="highlight html"><code>We are <span class="nt">&lt;b&gt;</span>not<span class="nt">&lt;/b&gt;</span> amused.
+</code></pre>
+
+<blockquote>
+<p>Render the text in italics</p>
+</blockquote>
+<pre class="highlight html"><code>We are <span class="nt">&lt;i&gt;</span>usually<span class="nt">&lt;/i&gt;</span> not amused.
+</code></pre>
+
+<blockquote>
+<p>It is possible to apply more than one style to a section of text by nesting one element inside another.</p>
+</blockquote>
+<pre class="highlight html"><code>We are <span class="nt">&lt;b&gt;&lt;i&gt;</span>definitely not<span class="nt">&lt;/i&gt;&lt;/b&gt;</span> amused
+</code></pre>
+
+<blockquote>
+<p>Note the ordering of the ending tags, which is in reverse to that of the starting tags. The reason for this is perhaps clearer when you consider that the inner tags need not span the whole text of the outermost element.</p>
+</blockquote>
+<pre class="highlight html"><code>We are <span class="nt">&lt;b&gt;</span>absolutely <span class="nt">&lt;i&gt;</span>definitely<span class="nt">&lt;/i&gt;</span> not<span class="nt">&lt;/b&gt;</span> amused
+</code></pre>
+
+<blockquote>
+<p>Change the size of text, by pixel value</p>
+</blockquote>
+<pre class="highlight html"><code>We are <span class="nt">&lt;size</span><span class="err">=</span><span class="na">50</span><span class="nt">&gt;</span>largely<span class="nt">&lt;/size&gt;</span> unaffected.
+</code></pre>
+
+<blockquote>
+<p>Change the color of text</p>
+</blockquote>
+<pre class="highlight html"><code><span class="nt">&lt;color</span><span class="err">=#</span><span class="na">00ffffff</span><span class="nt">&gt;</span>Hello world<span class="nt">&lt;/color&gt;</span>
+</code></pre>
+
+<p>Messages sent from the server via plugins can be stylized using basic HTML. Styling is limited to bold, italic, size, and color.</p>
+
+<p>The color can be specified in the traditional HTML format. <code class="prettyprint">#rrggbbaa</code>&hellip; where the letters correspond to pairs of hexadecimal digits denoting the red, green, blue and alpha (transparency) values for the color.</p>
+
+<p>Another option is to use the name of the color. This is easier to understand but naturally, the range of colors is limited and full opacity is always assumed. <code class="prettyprint">&lt;color=cyan&gt;</code>&hellip; The available color names are given in the table below.</p>
+
+<table><thead>
+<tr>
+<th>Color Name</th>
+<th>Hex Value</th>
+<th>Swatch</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>aqua (same as cyan)</td>
+<td>#00ffffff</td>
+<td><img src="../../images/cyan-swatch.png" /></td>
+</tr>
+<tr>
+<td>black</td>
+<td>#000000ff</td>
+<td><img src="../../images/black-swatch.png" /></td>
+</tr>
+<tr>
+<td>blue</td>
+<td>#0000ffff</td>
+<td><img src="../../images/blue-swatch.png" /></td>
+</tr>
+<tr>
+<td>brown</td>
+<td>#a52a2aff</td>
+<td><img src="../../images/brown-swatch.png" /></td>
+</tr>
+<tr>
+<td>cyan (same as aqua)</td>
+<td>#00ffffff</td>
+<td><img src="../../images/cyan-swatch.png" /></td>
+</tr>
+<tr>
+<td>darkblue</td>
+<td>#0000a0ff</td>
+<td><img src="../../images/darkblue-swatch.png" /></td>
+</tr>
+<tr>
+<td>fuchsia (same as magenta)</td>
+<td>#ff00ffff</td>
+<td><img src="../../images/magenta-swatch.png" /></td>
+</tr>
+<tr>
+<td>green</td>
+<td>#008000ff</td>
+<td><img src="../../images/green-swatch.png" /></td>
+</tr>
+<tr>
+<td>grey</td>
+<td>#808080ff</td>
+<td><img src="../../images/grey-swatch.png" /></td>
+</tr>
+<tr>
+<td>lightblue</td>
+<td>#add8e6ff</td>
+<td><img src="../../images/lightblue-swatch.png" /></td>
+</tr>
+<tr>
+<td>lime</td>
+<td>#00ff00ff</td>
+<td><img src="../../images/lime-swatch.png" /></td>
+</tr>
+<tr>
+<td>magenta (same as fuchsia)</td>
+<td>#ff00ffff</td>
+<td><img src="../../images/magenta-swatch.png" /></td>
+</tr>
+<tr>
+<td>maroon</td>
+<td>#800000ff</td>
+<td><img src="../../images/maroon-swatch.png" /></td>
+</tr>
+<tr>
+<td>navy</td>
+<td>#000080ff</td>
+<td><img src="../../images/navy-swatch.png" /></td>
+</tr>
+<tr>
+<td>olive</td>
+<td>#808000ff</td>
+<td><img src="../../images/olive-swatch.png" /></td>
+</tr>
+<tr>
+<td>orange</td>
+<td>#ffa500ff</td>
+<td><img src="../../images/orange-swatch.png" /></td>
+</tr>
+<tr>
+<td>purple</td>
+<td>#800080ff</td>
+<td><img src="../../images/purple-swatch.png" /></td>
+</tr>
+<tr>
+<td>red</td>
+<td>#ff0000ff</td>
+<td><img src="../../images/red-swatch.png" /></td>
+</tr>
+<tr>
+<td>silver</td>
+<td>#c0c0c0ff</td>
+<td><img src="../../images/silver-swatch.png" /></td>
+</tr>
+<tr>
+<td>teal</td>
+<td>#008080ff</td>
+<td><img src="../../images/teal-swatch.png" /></td>
+</tr>
+<tr>
+<td>white</td>
+<td>#ffffffff</td>
+<td><img src="../../images/white-swatch.png" /></td>
+</tr>
+<tr>
+<td>yellow</td>
+<td>#ffff00ff</td>
+<td><img src="../../images/yellow-swatch.png" /></td>
+</tr>
+</tbody></table>
+
+<p><em>Source: <a href="http://docs.unity3d.com/Manual/StyledText.html">http://docs.unity3d.com/Manual/StyledText.html</a></em></p>
+
+      </div>
+      <div class="dark-box">
+      </div>
+    </div>
+    <script type="text/javascript">
+  // Redirect github.io to custom domain
+  (function() {
+    if (window.location.href.indexOf("github.io") > -1) {
+      window.location.replace("http://docs.oxidemod.org/");
+    }
+  })();
+</script>
+
+  </body>
+</html>

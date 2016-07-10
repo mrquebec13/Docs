@@ -1,0 +1,191 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <title>API Documentation</title>
+
+    <link rel="canonical" href="http://docs.oxidemod.org"/>
+
+    <link href="../../stylesheets/screen.css" rel="stylesheet" type="text/css" media="screen" />
+    <link href="../../stylesheets/print.css" rel="stylesheet" type="text/css" media="print" />
+
+    <link href="../../favicon.ico" rel="icon" type="image/ico" />
+    <link sizes="16x16" href="../../favicon-16x16.png" rel="icon" type="image/png" />
+    <link sizes="32x32" href="../../favicon-32x32.png" rel="icon" type="image/png" />
+    <link sizes="96x96" href="../../favicon-96x96.png" rel="icon" type="image/png" />
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+      <script src="../../javascripts/all_nosearch.js" type="text/javascript"></script>
+
+  </head>
+
+  <body class="includes includes_permissions includes_permissions_index">
+    <a href="#" id="nav-button">
+      <span>
+        NAV
+        <img src="../../images/navbar.png" />
+      </span>
+    </a>
+    <div class="tocify-wrapper">
+      <a href="/" id="logo-button">
+        <img src="../../images/logo.png" />
+      </a>
+      <div id="toc"></div>
+      <ul class="toc-footer">
+  <li><a href='http://oxidemod.org'>Get help on our forums</a></li>
+  <li><a href='https://github.com/OxideMod/Oxide'>View the source on GitHub</a></li>
+  <li><a href='https://github.com/OxideMod/Docs'>Contribute to the Docs on GitHub</a></li>
+</ul>
+
+    </div>
+    <div class="page-wrapper">
+      <div class="dark-box"></div>
+      <div class="content">
+        <h1 id="permissions">Permissions</h1>
+
+<h2 id="getting-setting-user-data">Getting/setting user data</h2>
+
+<h3 id="lastseennickname">LastSeenNickname</h3>
+
+<h3 id="perms">Perms</h3>
+
+<h3 id="groups">Groups</h3>
+
+<h2 id="getting-setting-group-data">Getting/setting group data</h2>
+
+<h3 id="title">Title</h3>
+
+<h3 id="rank">Rank</h3>
+
+<h3 id="perms">Perms</h3>
+
+<h2 id="adding-user-to-group">Adding user to group</h2>
+
+<p>AddUserGroup(string userid, string groupname)</p>
+
+<p>Adds a user to a specified group.</p>
+
+<h2 id="creating-a-group">Creating a group</h2>
+
+<p>CreateGroup(string name, string title, int rank)</p>
+
+<p>Creates a new usergroup.</p>
+
+<h2 id="getting-group-rank">Getting group rank</h2>
+
+<p>GetGroupRank(string groupname)</p>
+
+<p>Returns the rank of the specified group.</p>
+
+<h2 id="getting-user-data">Getting user data</h2>
+
+<p>GetUserData(string userid)</p>
+
+<p>Returns the data for the specified user.</p>
+
+<h2 id="getting-user-groups">Getting user groups</h2>
+
+<p>GetUserGroups(string userid)</p>
+
+<p>Returns the groups to which the specified user belongs.</p>
+
+<h2 id="granting-permission-to-group">Granting permission to group</h2>
+
+<p>GrantGroupPermission(string groupname, string perm, Plugin owner)</p>
+
+<p>Assigns the specified permission to the specified group.</p>
+
+<h2 id="granting-permission-to-user">Granting permission to user</h2>
+
+<p>GrantUserPermission(string userid, string perm, Plugin owner)</p>
+
+<p>Assigns the specified permission to the specified user.</p>
+
+<h2 id="checking-if-group-exists">Checking if group exists</h2>
+
+<p>GroupExists(string groupname)</p>
+
+<p>Returns a boolean if the specified group exists or not.</p>
+
+<h2 id="checking-if-group-has-permission">Checking if group has permission</h2>
+
+<p>GroupHasPermission(string groupname, string perm)</p>
+
+<p>Returns a boolean if the specified group has the specified permission.</p>
+
+<h2 id="checking-if-groups-have-permission">Checking if groups have permission</h2>
+
+<p>GroupsHavePermission</p>
+
+<h2 id="checking-if-permission-exists">Checking if permission exists</h2>
+
+<p>PermissionExists(string name, Plugin owner)</p>
+
+<p>Returns a boolean if the specified permission exists or not.</p>
+
+<h2 id="registering-a-permission">Registering a permission</h2>
+
+<p>RegisterPermission(string name, Plugin owner)</p>
+
+<p>Registers the specified permission.</p>
+
+<h2 id="removing-a-group">Removing a group</h2>
+
+<p>RemoveGroup(string name)</p>
+
+<p>Removes the specified grouop.</p>
+
+<h2 id="removing-a-user-from-a-group">Removing a user from a group</h2>
+
+<p>RemoveUserGroup(string userid, string groupname)</p>
+
+<p>Removes the specified user from the specified grooup.</p>
+
+<h2 id="revoking-a-group-39-s-permission">Revoking a group&rsquo;s permission</h2>
+
+<p>RevokeGroupPermission(string groupname, string perm)</p>
+
+<p>Revokes the specified permission from the specified group.</p>
+
+<h2 id="revoking-a-user-39-s-permission">Revoking a user&rsquo;s permission</h2>
+
+<p>RevokeUserPermission(string userid, string perm)</p>
+
+<p>Revokes the specified permission from the specified user.</p>
+
+<h2 id="setting-a-group-39-s-rank">Setting a group&rsquo;s rank</h2>
+
+<p>SetGroupRank(string groupname, int rank)</p>
+
+<p>Sets the rank of the specified group.</p>
+
+<h2 id="setting-a-group-39-s-title">Setting a group&rsquo;s title</h2>
+
+<p>SetGroupTitle(string groupname, string title)</p>
+
+<p>Sets the title of the specified group.</p>
+
+<h2 id="checking-if-user-has-permission">Checking if user has permission</h2>
+
+<p>UserHasPermission(string userid, string perm)</p>
+
+<p>Returns a boolean if the specified user has the specified permission.</p>
+
+      </div>
+      <div class="dark-box">
+      </div>
+    </div>
+    <script type="text/javascript">
+  // Redirect github.io to custom domain
+  (function() {
+    if (window.location.href.indexOf("github.io") > -1) {
+      window.location.replace("http://docs.oxidemod.org/");
+    }
+  })();
+</script>
+
+  </body>
+</html>

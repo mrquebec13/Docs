@@ -1,0 +1,186 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <title>Oxide API Reference</title>
+
+    <link rel="canonical" href="http://docs.oxidemod.org"/>
+
+    <link href="stylesheets/screen.css" rel="stylesheet" type="text/css" media="screen" />
+    <link href="stylesheets/print.css" rel="stylesheet" type="text/css" media="print" />
+
+    <link href="favicon.ico" rel="icon" type="image/ico" />
+    <link sizes="16x16" href="favicon-16x16.png" rel="icon" type="image/png" />
+    <link sizes="32x32" href="favicon-32x32.png" rel="icon" type="image/png" />
+    <link sizes="96x96" href="favicon-96x96.png" rel="icon" type="image/png" />
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+      <script src="javascripts/all.js" type="text/javascript"></script>
+
+  </head>
+
+  <body class="index">
+    <a href="#" id="nav-button">
+      <span>
+        NAV
+        <img src="images/navbar.png" />
+      </span>
+    </a>
+    <div class="tocify-wrapper">
+      <a href="/" id="logo-button">
+        <img src="images/logo.png" />
+      </a>
+        <div class="search">
+          <input type="text" class="search" id="input-search" placeholder="Search">
+        </div>
+        <ul class="search-results"></ul>
+      <div id="toc"></div>
+      <ul class="toc-footer">
+  <li><a href='http://oxidemod.org'>Get help on our forums</a></li>
+  <li><a href='https://github.com/OxideMod/Oxide'>View the source on GitHub</a></li>
+  <li><a href='https://github.com/OxideMod/Docs'>Contribute to the Docs on GitHub</a></li>
+</ul>
+
+    </div>
+    <div class="page-wrapper">
+      <div class="dark-box"></div>
+      <div class="content">
+        
+          <h1 id="overview">Overview</h1>
+
+<blockquote>
+<p><a href="/7-days-to-die/"><img alt="7 Days to Die" src="images/7-days-to-die/favicon-96x96.png" /></a>
+<a href="/blockstorm/"><img alt="Blockstorm" src="images/blockstorm/favicon-96x96.png" /></a>
+<a href="/hide-hold-out/"><img alt="Hide &amp; Hold Out" src="images/hide-hold-out/favicon-96x96.png" /></a>
+<a href="/hurtworld/"><img alt="Hurtworld" src="images/hurtworld/favicon-96x96.png" /></a>
+<a href="/reign-of-kings/"><img alt="Reign of Kings" src="images/reign-of-kings/favicon-96x96.png" /></a>
+<a href="/rust/"><img alt="Rust" src="images/rust/favicon-96x96.png" /></a>
+<a href="/rust-legacy/"><img alt="Rust Legacy" src="images/rust-legacy/favicon-96x96.png" /></a>
+<a href="/space-engineers/"><img alt="Space Enegineers" src="images/space-engineers/favicon-96x96.png" /></a>
+<a href="/terraria/"><img alt="Terraria" src="images/terraria/favicon-96x96.png" /></a>
+<a href="/the-forest/"><img alt="The Forest" src="images/the-forest/favicon-96x96.png" /></a>
+<a href="/unturned/"><img alt="Unturned" src="images/unturned/favicon-96x96.png" /></a></p>
+</blockquote>
+
+<p>Oxide is a complete rewrite of the popular, original Oxide API and Lua plugin framework. Previously only available for the legacy Rust game, Oxide now supports numerous games. Oxide&rsquo;s focus is on modularity and extensibility. The core is highly abstracted and loosely coupled, and could be used to mod any game that uses the .NET Framework.</p>
+
+<p>Plugins can currently be developed for the games <a href="#7-days-to-die">7 Days to Die</a>, <a href="#blockstorm">Blockstorm</a>, <a href="#hide-hold-out">Hide &amp; Hold Out</a>, <a href="#hurtworld">Hurtworld</a>, <a href="#reign-of-kings">Reign of Kings</a>, <a href="#rust">Rust</a>, <a href="#rust-legacy">Rust Legacy</a>, <a href="#space-engineers">Space Engineeers</a>, <a href="#terraria">Terraria</a>, <a href="#the-forest">The Forest</a>, and <a href="#unturned">Unturned</a>, with support for more on the way!</p>
+
+<p>Oxide provides support for multiple programming languages to develop plugins: <a href="https://en.wikipedia.org/wiki/C_Sharp_(programming_language)">C# (CSharp)</a>, <a href="http://www.lua.org/">Lua</a>, <a href="http://coffeescript.org/">CoffeeScript</a>, <a href="https://en.wikipedia.org/wiki/JavaScript">JavaScript</a>, and <a href="https://en.wikipedia.org/wiki/Python_(programming_language)">Python</a>. Make them as complicated or as simple as you&rsquo;d like, your imagination is the limit!</p>
+
+<p>Database support for plugins is also available in the <a href="https://www.mysql.com/">MySQL</a> and <a href="https://www.sqlite.org/">SQLite</a> varieties, so if JSON files aren&rsquo;t enough, you have options! If you&rsquo;d prefer another database type, those can always be accessed via web requests and your own custom bridge script on your site.</p>
+
+          <h1 id="supported-games">Supported Games</h1>
+
+<h2 id="7-days-to-die">7 Days to Die</h2>
+
+<p>Oxide support for 7 Days to Die is currently limited, and in an alpha state. More hooks will be added soon.</p>
+
+<p><strong><a href="http://7daystodie.com/">Homepage</a> | <a href="http://store.steampowered.com/app/251570/">Steam Page</a> | <a href="/7-days-to-die/">API documentation</a></strong></p>
+
+<h2 id="blockstorm">Blockstorm</h2>
+
+<p>Oxide support for Blockstorm is currently limited, and in a very alpha state. More hooks will be added soon.</p>
+
+<p><strong><a href="http://www.playblockstorm.com/">Homepage</a> | <a href="http://store.steampowered.com/app/263060/">Steam Page</a> | <a href="/blockstorm/">API documentation</a></strong></p>
+
+<h2 id="hide-amp-hold-out">Hide &amp; Hold Out</h2>
+
+<p>Oxide support for Hide &amp; Hold Out is actively developed, but in a very alpha state. More hooks will be added soon.</p>
+
+<p><strong><a href="http://h2o-game.net/">Homepage</a> | <a href="http://store.steampowered.com/app/377140/">Steam Page</a> | <a href="/hide-hold-out/">API documentation</a></strong></p>
+
+<h2 id="hurtworld">Hurtworld</h2>
+
+<p>Oxide support for Hurtworld is actively developed, but in an alpha state. More hooks will be added soon.</p>
+
+<p><strong><a href="http://hurtworld.com/">Homepage</a> | <a href="http://store.steampowered.com/app/393420/">Steam Page</a> | <a href="/hurtworld/">API documentation</a></strong></p>
+
+<h2 id="reign-of-kings">Reign of Kings</h2>
+
+<p>Oxide support for Reign of Kings is currently limited, and in a very alpha state. More hooks will be added soon.</p>
+
+<p><strong><a href="http://www.reignofkings.net/">Homepage</a> | <a href="http://store.steampowered.com/app/344760/">Steam Page</a> | <a href="/reign-of-kings/">API documentation</a></strong></p>
+
+<h2 id="rust">Rust</h2>
+
+<p>Oxide support for Rust <em>(formerly Rust Experimental)</em> is actively developed. This is the version of Rust supported by the Facepunch developers.</p>
+
+<p><strong><a href="http://playrust.com/">Homepage</a> | <a href="http://store.steampowered.com/app/252490/">Steam Page</a> | <a href="/rust/">API documentation</a></strong></p>
+
+<h2 id="rust-legacy">Rust Legacy</h2>
+
+<p>Oxide support for Rust Legacy is mostly complete, but it may receive fixes as needed. The game itself has been discontinued by the developers though. You can access this version of Rust by using the <code class="prettyprint">-beta legacy</code> command-line parameter with SteamCMD.</p>
+
+<p><strong><a href="http://playrust.com/">Homepage</a> | <a href="http://store.steampowered.com/app/252490/">Steam Page</a> | <a href="/rust-legacy/">API documentation</a></strong></p>
+
+<h2 id="space-engineers">Space Engineers</h2>
+
+<p>Oxide support for Space Engineers is currently limited, and in a very alpha state. More hooks will be added soon.</p>
+
+<p><strong><a href="http://www.spaceengineersgame.com/">Homepage</a> | <a href="http://store.steampowered.com/app/244850/">Steam Page</a> | <a href="/space-engineers/">API documentation</a></strong></p>
+
+<h2 id="terraria">Terraria</h2>
+
+<p>Oxide support for Terraria is currently limited, and in a very alpha state. More hooks will be added soon.</p>
+
+<p><strong><a href="https://terraria.org/">Homepage</a> | <a href="http://store.steampowered.com/app/105600/">Steam Page</a> | <a href="/terraria/">API documentation</a></strong></p>
+
+<h2 id="the-forest">The Forest</h2>
+
+<p>Oxide support for The Forest is currently limited, and in a very alpha state. More hooks will be added soon.</p>
+
+<p><strong><a href="http://survivetheforest.com/">Homepage</a> | <a href="http://store.steampowered.com/app/242760/">Steam Page</a> | <a href="/the-forest/">API documentation</a></strong></p>
+
+<h2 id="unturned">Unturned</h2>
+
+<p>Oxide support for Unturned is currently limited, and in a very alpha state. More hooks will be added soon.</p>
+
+<p><strong><a href="http://smartlydressedgames.com/">Homepage</a> | <a href="http://store.steampowered.com/app/304930/">Steam Page</a> | <a href="/unturned/">API documentation</a></strong></p>
+
+          <h1 id="getting-help">Getting Help</h1>
+
+<ul>
+<li>Still need help? Search our <a href="http://oxidemod.org/">community forums</a> or create a new thread if needed.</li>
+</ul>
+
+          <h1 id="contributing">Contributing</h1>
+
+<ul>
+<li><p>Got an idea or suggestion? Use our <a href="http://oxidemod.org/">community forums</a> to share and discuss it.</p></li>
+<li><p>Troubleshoot issues you run into on the community forums so everyone can help and reference it later.</p></li>
+<li><p>File detailed <a href="https://github.com/OxideMod/Oxide/issues">issues</a> on GitHub (version number, what you did, and actual vs expected outcomes).</p></li>
+<li><p>Want Oxide and plugins for your favorite game? Hook us up and we&rsquo;ll see what we can do!</p></li>
+</ul>
+
+          <h1 id="compiling-source">Compiling Source</h1>
+
+<p>While we recommend using one of the <a href="http://oxidemod.org/downloads/">official release builds</a>, you can compile your own builds if you&rsquo;d like. Keep in mind that only official builds are supported by the Oxide team and community. <em>Good luck!</em></p>
+
+<ol>
+<li><p>Download a Git client such as <a href="https://desktop.github.com/">GitHub Desktop</a> or <a href="https://www.sourcetreeapp.com/">SourceTree</a>.</p></li>
+<li><p>Clone the repo <code class="prettyprint">https://github.com/OxideMod/Oxide.git</code> <em>(recommended)</em> or download and extract the <a href="https://github.com/OxideMod/Oxide/archive/master.zip">latest zip</a> archive.</p></li>
+<li><p>Download and install <a href="https://www.visualstudio.com/en-us/downloads/visual-studio-2015-downloads-vs.aspx">Visual Studio 2015</a> <em>(community is free, but any edition will work)</em> if you do not have it installed already.</p></li>
+<li><p>Open the <code class="prettyprint">Oxide.sln</code> solution file in Visual Studio 2015.</p></li>
+<li><p>Build the solution. If you get errors, you&rsquo;re likely not using the latest Visual Studio 2015 which is required as Oxide uses some <a href="https://github.com/dotnet/roslyn/wiki/New-Language-Features-in-C%23-6">C# 6.0</a> features.</p></li>
+<li><p>Copy the files from the <code class="prettyprint">Bundles</code> directory for your game of choice to your server installation, then just start the server!</p></li>
+</ol>
+
+      </div>
+      <div class="dark-box">
+      </div>
+    </div>
+    <script type="text/javascript">
+  // Redirect github.io to custom domain
+  (function() {
+    if (window.location.href.indexOf("github.io") > -1) {
+      window.location.replace("http://docs.oxidemod.org/");
+    }
+  })();
+</script>
+
+  </body>
+</html>
